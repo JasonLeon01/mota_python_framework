@@ -19,3 +19,4 @@ class Config:
         self.stairSE = main_config.get("stairse", "")
         self.getSE = main_config.get("getse", "")
         self.windowOpacity = int(main_config.get("windowopacity", 0))
+        
