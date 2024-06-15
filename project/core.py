@@ -1,33 +1,17 @@
 import time
 import configparser
-from scripts import config
+import project.scripts.config
 import sys
-sys.path.append('custom_lib')
-import arcade
+import os
+project_directory = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(project_directory, 'custom_lib'))
 
-class GameWindow(arcade.Window):
-    def __init__(self, width, height, title):
-        super().__init__(width, height, title)
+iniconfig = configparser.ConfigParser()
+iniconfig.read('mota.ini')
+width, height = 640, 480
+width = int(width * iniconfig["Mota"].getfloat("resolution", 640))
+height = int(height * iniconfig["Mota"].getfloat("resolution", 480))
+title = iniconfig["Mota"].get("title", "Mota")
 
-        self.viewport_left = 0
-        self.viewport_bottom = 0
-
-        arcade.set_background_color(arcade.color.BLACK)
-    def setup(self):
-        pass
-    def on_draw(self):
-        self.clear()
-
-if __name__ == "__main__":
-    config = configparser.ConfigParser()
-    config.read('mota.ini')
-    width, height = 640, 480
-    width = int(width * config["Mota"].getfloat("resolution", 640))
-    height = int(height * config["Mota"].getfloat("resolution", 480))
-    title = config["Mota"].get("title", "Mota")
-    
-    window = GameWindow(width, height, title)
-    window.setup()
-    arcade.run()
-    
-    time.sleep(1)
+print("Initializing pygame...")
+time.sleep(1)
