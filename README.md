@@ -7,6 +7,12 @@ Python 3.9.0或更高级的版本
 
 `pip install pygame`
 
+同时需删除自带引用`pygame`处前方的
+```
+project_directory = os.getcwd()
+sys.path.append(os.path.join(project_directory, 'custom_lib'))
+```
+
 否则要安装在项目目录内：
 
 `pip install pygame --target=custom_lib --no-user`
