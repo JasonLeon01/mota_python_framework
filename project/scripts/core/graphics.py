@@ -12,6 +12,7 @@ class Graphics:
         self.__system = system
         self.__sprite_group = pygame.sprite.Group()
         self.__surface_group = []
+        self.canvas = pygame.Surface((640, 480))
     
     def add_sprite(self, sprite):
         self.__sprite_group.add(sprite)
@@ -35,17 +36,17 @@ class Graphics:
         total_count = len(self.__surface_group) + len(self.__sprite_group)
         count = 0
         self.__system.canvas.fill((0, 0, 0))
-        canvas = pygame.Surface((640, 480))
+        self.canvas.fill((0, 0, 0))
         while count < total_count:
             for surface in self.__surface_group:
                 if surface.z == count:
-                    canvas.blit(surface, surface.get_pos())
+                    surface.update()
                     count += 1
             for sprite in self.__sprite_group:
                 if sprite.z == count:
-                    canvas.blit(sprite.image, sprite.rect)
+                    sprite.update()
                     count += 1
-        self.__system.canvas.blit(canvas, (0, 0))#(canvas.scale(__system.get_size()), (0, 0))
+        self.__system.canvas.blit(pygame.transform.scale(self.canvas, self.__system.get_size()), (0, 0))
         pygame.display.flip()
         self.__system.clock.tick(self.__system.frame_rate)
 

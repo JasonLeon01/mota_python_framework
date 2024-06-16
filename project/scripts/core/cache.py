@@ -63,4 +63,11 @@ class Cache:
             raise ValueError(f"Error: The tileset file '{tileset_file}' does not exist.")
             sys.exit(1)
             
+    def system(self, system_file):
+        if system_file in self.__cache['system']:
+            return self.__cache['system'][system_file]
+        else:
+            raise ValueError(f"Error: The system file '{system_file}' does not exist.")
+            sys.exit(1)
+            
 mota_cache = Cache(r'project\assets', '.png')
