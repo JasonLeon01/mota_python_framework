@@ -9,6 +9,7 @@ class Object(project.scripts.core.sprite.Sprite):
         self.y = 0
         self.z = 0
         self.scale = 1.0
+        self.opacity = 255
         self.condition = [0, 0, 0]
         self.move = False
         self.todo = {}

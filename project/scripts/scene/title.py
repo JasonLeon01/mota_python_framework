@@ -17,7 +17,16 @@ class Scene(scene_base.Scene_Base):
         self.star_sprite.y = 32
         self.star_sprite.move = True
         self.star_sprite.interval = 15
+        self.__change = False
         super().__init__()
         
     def update(self):
+        if self.title_sprite.opacity == 255 and not self.__change:
+            self.__change = True
+        elif self.title_sprite.opacity == 128 and self.__change:
+            self.__change = False
+        if self.__change:
+            self.title_sprite.opacity -= 1
+        else:
+            self.title_sprite.opacity += 1
         super().update()

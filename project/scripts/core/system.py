@@ -2,8 +2,7 @@ import configparser
 import os
 import sys
 
-project_directory = os.getcwd()
-sys.path.append(os.path.join(project_directory, 'custom_lib'))
+sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
 class System:

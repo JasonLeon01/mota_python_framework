@@ -3,8 +3,7 @@ import sys
 
 from project.scripts.core.graphics import mota_graphics
 
-project_directory = os.getcwd()
-sys.path.append(os.path.join(project_directory, 'custom_lib'))
+sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
 class Surface(pygame.Surface):
@@ -12,6 +11,7 @@ class Surface(pygame.Surface):
         super().__init__((rect.width, rect.height))
         self.__rect = rect
         self.z = 0
+        self.opacity = 255
         self.scale = 1.0
         self.__sprite_group = []
         
@@ -29,7 +29,9 @@ class Surface(pygame.Surface):
         rect = draw_surface.get_rect()
         rect.x = self.__rect.x
         rect.y = self.__rect.y
-        dst.blit(draw_surface, rect)
+        show = draw_surface.copy()
+        show.set_alpha(self.opacity)
+        dst.blit(show, rect)
         
     def dispose(self, group = mota_graphics):
         self.__sprite_group.clear()
