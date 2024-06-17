@@ -11,7 +11,7 @@ class Scene(scene_base.Scene_Base):
         self.title_sprite = sprite.Sprite(mota_cache.system(mota_config.title_file))
         self.title_sprite.x = 320
         self.title_sprite.y = 240
-        self.star_sprite = sprite.Sprite([mota_cache.system('star-1'), mota_cache.system('star-2'), mota_cache.system('star-3'), mota_cache.system('star-2'), mota_cache.system('star-1')])
+        self.star_sprite = sprite.Sprite(mota_cache.system(['star-1', 'star-2', 'star-3', 'star-2', 'star-1']))
         self.star_sprite.x = 320
         self.star_sprite.y = 32
         self.star_sprite.move = True

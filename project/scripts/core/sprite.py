@@ -32,8 +32,6 @@ class Sprite(pygame.sprite.Sprite):
             self.__frames = [frames]
     
     def update(self):
-        if not self.move:
-            self.__frame_count = 0
         now_index = int(self.__frame_count / self.interval)
         self.image = pygame.transform.scale(self.__frames[now_index], (int(self.__frames[now_index].get_width() * self.scale), int(self.__frames[now_index].get_height() * self.scale)))
         rect = self.image.get_rect()
@@ -41,7 +39,8 @@ class Sprite(pygame.sprite.Sprite):
         rect.y = self.y
         rect.center = (self.x, self.y)
         self.__graphics.canvas.blit(self.image, rect)
-        self.__frame_count = (self.__frame_count + 1) % (len(self.__frames) * self.interval)
+        if self.move:
+            self.__frame_count = (self.__frame_count + 1) % (len(self.__frames) * self.interval)
         
     def dispose(self):
         self.__graphics.remove_sprite(self)

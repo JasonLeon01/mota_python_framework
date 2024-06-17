@@ -16,7 +16,6 @@ class Graphics:
     
     def add_sprite(self, sprite):
         self.__sprite_group.append(sprite)
-        print(len(self.__sprite_group))
         
     def remove_sprite(self, sprite):
         if sprite in self.__sprite_group:
