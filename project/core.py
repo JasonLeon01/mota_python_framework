@@ -12,3 +12,4 @@ if __name__ == '__main__':
     mota_system.scene = title.Scene()
     while mota_system.running and mota_system.scene != None:
         mota_system.scene.update()
+    mota_system.scene = None

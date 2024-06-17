@@ -10,6 +10,7 @@ class Object(project.scripts.core.sprite.Sprite):
         self.z = 0
         self.scale = 1.0
         self.condition = [0, 0, 0]
+        self.move = False
         self.todo = {}
     
     def dispose(self):

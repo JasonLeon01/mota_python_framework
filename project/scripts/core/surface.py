@@ -8,23 +8,30 @@ sys.path.append(os.path.join(project_directory, 'custom_lib'))
 import pygame
 
 class Surface(pygame.Surface):
-    def __init__(self, rect, graphics = mota_graphics):
+    def __init__(self, rect):
         super().__init__((rect.width, rect.height))
-        self.__graphics = graphics
         self.__rect = rect
         self.z = 0
         self.scale = 1.0
-        self.__graphics.add_surface(self)
+        self.__sprite_group = []
         
-    def update(self):
-        draw_surface = pygame.transform.scale(self, (int(self.get_width() * self.scale), int(self.get_height() * self.scale)))
+    def add_sprite(self, sprite):
+        self.__sprite_group.append(sprite)
+        
+    def remove_sprite(self, sprite):
+        self.__sprite_group.remove(sprite)
+        
+    def update(self, dst = mota_graphics.canvas):
+        row_surface = self.copy()
+        for sprite in self.__sprite_group:
+            sprite.update(row_surface)
+        draw_surface = pygame.transform.scale(row_surface, (int(row_surface.get_width() * self.scale), int(row_surface.get_height() * self.scale)))
         rect = draw_surface.get_rect()
         rect.x = self.__rect.x
         rect.y = self.__rect.y
-        self.__graphics.canvas.blit(draw_surface, rect)
+        dst.blit(draw_surface, rect)
         
-    def dispose(self):
-        self.__graphics.remove_surface(self)
-        
-    def __del__(self):
-        self.dispose()
+    def dispose(self, group = mota_graphics):
+        self.__sprite_group.clear()
+        group.remove_surface(self)
+    

@@ -18,20 +18,19 @@ class Graphics:
         self.__sprite_group.append(sprite)
         
     def remove_sprite(self, sprite):
-        if sprite in self.__sprite_group:
-            self.__sprite_group.remove(sprite)
+        self.__sprite_group.remove(sprite)
     
     def add_surface(self, surface):
         self.__surface_group.append(surface)
         
     def remove_surface(self, surface):
-        if surface in self.__surface_group:
-            self.__surface_group.remove(surface)
+        self.__surface_group.remove(surface)
         
     def update(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.__system.running = False
+                self.__system.scene.quit()
                 return
         import project.scripts.core.sprite as sprite
         import project.scripts.core.surface as surface

@@ -1,6 +1,7 @@
 from project.scripts.core.system import mota_system
 from project.scripts.core.cache import mota_cache
 from project.scripts.core.config import mota_config
+from project.scripts.core.graphics import mota_graphics
 import project.scripts.core.sprite as sprite
 
 import project.scripts.core.scene as scene_base
@@ -16,6 +17,7 @@ class Scene(scene_base.Scene_Base):
         self.star_sprite.y = 32
         self.star_sprite.move = True
         self.star_sprite.interval = 15
+        super().__init__()
         
     def update(self):
         super().update()
