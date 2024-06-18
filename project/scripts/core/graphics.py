@@ -35,8 +35,8 @@ class Graphics:
         import project.scripts.core.surface as surface
         total_count = len(self.__surface_group) + len(self.__sprite_group)
         count, z = 0, 0
-        self.__system.canvas.fill((0, 0, 0))
-        self.canvas.fill((0, 0, 0))
+        self.__system.canvas.fill((0, 0, 0, 0))
+        self.canvas.fill((0, 0, 0, 0))
         while count < total_count:
             for surface in self.__surface_group:
                 if surface.z == z:

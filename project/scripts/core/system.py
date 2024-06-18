@@ -11,9 +11,9 @@ class System:
         iniconfig = configparser.ConfigParser()
         iniconfig.read(inifile)
         self.__width, self.__height = 640, 480
-        self.scale = iniconfig['Mota'].getfloat('Scale')
-        self.__width = int(self.__width * self.scale)
-        self.__height = int(self.__height * self.scale)
+        self.__scale = iniconfig['Mota'].getfloat('Scale')
+        self.__width = int(self.__width * self.__scale)
+        self.__height = int(self.__height * self.__scale)
         self.canvas = pygame.display.set_mode((self.__width, self.__height))
         self.title = iniconfig['Mota'].get('title', 'Mota')
         pygame.display.set_caption(self.title)
@@ -30,7 +30,7 @@ class System:
         return self.__width, self.__height
     
     def change_scale(self, scale):
-        self.scale = scale
+        self.__scale = scale
         self.__width = int(640 * scale)
         self.__height = int(480 * scale)
         pygame.display.quit()
