@@ -21,6 +21,7 @@ class Scene(scene_base.Scene_Base):
         self.title_surface.x = 320
         self.title_surface.y = 240
         self.title_surface_2 = surface.Surface((320, 240))
+        self.title_surface_2.draw_text(0, 0, 160, 32, 'MOTASYSTEM')
         ssstar_sprite = sprite.Sprite(mota_cache.system(['star-1', 'star-2', 'star-3', 'star-2', 'star-1']))
         ssstar_sprite.x = 160
         ssstar_sprite.y = 120
@@ -35,16 +36,21 @@ class Scene(scene_base.Scene_Base):
         self.star_sprite.move = True
         self.star_sprite.interval = 15
         self.__change = False
+        self.count = 0
         super().__init__()
+        print('LOG: Scene Title launched successfully.')
         
     def update(self):
-        if self.title_surface.opacity == 255 and not self.__change:
+        if self.title_surface_2.opacity == 255 and not self.__change:
             self.__change = True
-        elif self.title_surface.opacity == 190 and self.__change:
+        elif self.title_surface_2.opacity <= 96 and self.__change:
             self.__change = False
         if self.__change:
-            self.title_surface.opacity -= 1
+            self.title_surface_2.opacity -= 3
         else:
-            self.title_surface.opacity += 1
+            self.title_surface_2.opacity += 3
         self.star_sprite.angle += 1
+        self.count += 1
+        if self.count == 1500:
+            self.title_surface_2.clear()
         super().update()

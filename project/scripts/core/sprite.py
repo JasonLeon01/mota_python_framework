@@ -23,12 +23,14 @@ class Sprite(pygame.sprite.Sprite):
                 self.__frames = frames
             else:
                 self.__frames = [frames]
+        print('LOG: Sprite created successfully.', self.__frames)
         
     def set_frames(self, frames):
         if isinstance(frames, list):
             self.__frames = frames
         else:
             self.__frames = [frames]
+        print('LOG: Sprite frames updated successfully.', self.__frames)
     
     def update(self, dst = mota_graphics.canvas):
         self.angle = self.angle % 360
@@ -47,4 +49,5 @@ class Sprite(pygame.sprite.Sprite):
         
     def dispose(self, group = mota_graphics):
         group.remove_sprite(self)
+        print('LOG: Sprite disposed successfully.')
     

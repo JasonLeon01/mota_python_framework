@@ -22,5 +22,6 @@ class Config:
         self.stair_se = config['stair_se']
         self.get_se = config['get_se']
         self.window_opacity = config['window_opacity']
+        print('LOG: Config loaded successfully.')
         
 mota_config = Config(r'project\data\system\config.json')

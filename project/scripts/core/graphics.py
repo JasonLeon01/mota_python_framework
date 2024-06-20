@@ -12,18 +12,23 @@ class Graphics:
         self.__sprite_group = []
         self.__surface_group = []
         self.canvas = pygame.Surface((640, 480))
+        print('LOG: Graphics initialized.')
     
     def add_sprite(self, sprite):
         self.__sprite_group.append(sprite)
+        print('LOG: Sprite added.')
         
     def remove_sprite(self, sprite):
         self.__sprite_group.remove(sprite)
+        print('LOG: Sprite removed.')
     
     def add_surface(self, surface):
         self.__surface_group.append(surface)
+        print('LOG: Surface added.')
         
     def remove_surface(self, surface):
         self.__surface_group.remove(surface)
+        print('LOG: Surface removed.')
         
     def update(self):
         for event in pygame.event.get():

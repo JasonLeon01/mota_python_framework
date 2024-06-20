@@ -15,10 +15,11 @@ class Window(surface.Surface):
         super().__init__(size)
         self.contents = None
         self.asset = asset
+        print('LOG: Window initialized successfully.')
 
     def __draw_back(self):
         self.clear()
-        self.blit(pygame.transform.scale(pygame.Subsurface(self.asset, (0, 0, 128, 128)), (self.size[0], self.size[1])))
+        self.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (0, 0, 128, 128)), (self.size[0], self.size[1])))
 
     def update(self, dst = mota_graphics.canvas):
         self.__draw_back()

@@ -20,6 +20,7 @@ class Cache:
                     full_path = os.path.join(root, file)
                     file_without_ext = os.path.splitext(file)[0]
                     self.__cache[current_dict_key][file_without_ext] = pygame.image.load(full_path)
+                    print(f'LOG: Loaded image: {full_path}')
                 
     def block(self, block_file):
         if isinstance(block_file, list):
