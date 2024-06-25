@@ -1,7 +1,7 @@
 import os
 import sys
 
-from project.scripts.core.graphics import mota_graphics
+from project.scripts.core.graphics import Graphics
 
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
@@ -32,7 +32,7 @@ class Sprite(pygame.sprite.Sprite):
             self.__frames = [frames]
         print('LOG: Sprite frames updated successfully.', self.__frames)
     
-    def update(self, dst = mota_graphics.canvas):
+    def update(self, dst = Graphics.canvas):
         self.angle = self.angle % 360
         self.opacity = max(0, min(255, self.opacity))
         now_index = int(self.__frame_count / self.interval)
@@ -47,7 +47,7 @@ class Sprite(pygame.sprite.Sprite):
         if self.move:
             self.__frame_count = (self.__frame_count + 1) % (len(self.__frames) * self.interval)
         
-    def dispose(self, group = mota_graphics):
-        group.remove_sprite(self)
+    def dispose(self):
+        Graphics.remove_sprite(self)
         print('LOG: Sprite disposed successfully.')
     

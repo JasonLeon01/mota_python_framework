@@ -1,8 +1,8 @@
 import project.scripts.core.sprite
 
 class Object(project.scripts.core.sprite.Sprite):
-    def __init__(self, frames = None, graphics = project.scripts.core.graphics.mota_graphics):
-        super().__init__(frames, graphics)
+    def __init__(self, frames = None):
+        super().__init__(frames)
         self.id = 0
         self.name = ''
         self.x = 0

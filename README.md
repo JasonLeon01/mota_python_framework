@@ -1,7 +1,7 @@
 # mota_python_framework
 
 ## 需求和安装
-Python 3.9.0或更高级的版本
+Python 3.9.0或更高级的版本，如果使用的不是3.9.0，那么就必须根据[Game-Launcher](https://github.com/JasonLeon01/Game-Launcher)里面的`README.md`指示构建自己的exe。
 
 如果要将项目整体打包为新的exe，则可以安装`pygame`至系统：
 ```

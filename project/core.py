@@ -1,16 +1,16 @@
-import time
-import sys
-import os
+from tkinter import messagebox
+from project.scripts.core.system import System
+System.init('mota.ini')
+from project.scripts.core.cache import Cache
+Cache.init(r'project\assets', '.png')
+from project.scripts.core.graphics import Graphics
+Graphics.init()
 
-from project.scripts.core.system import mota_system
-
-import project.scripts.core.scene as scene_base
 import project.scripts.scene.title as title
-
 
 if __name__ == '__main__':
     print('LOG: Game launched successfully.')
-    mota_system.scene = title.Scene()
-    while mota_system.running and mota_system.scene != None:
-        mota_system.scene.update()
-    mota_system.scene = None
+    System.scene = title.Scene()
+    while System.running and System.scene != None:
+        System.scene.update()
+    System.scene = None

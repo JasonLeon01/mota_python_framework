@@ -1,8 +1,8 @@
 import os
 import sys
 
-from project.scripts.core.graphics import mota_graphics
-from project.scripts.core.system import mota_system
+from project.scripts.core.graphics import Graphics
+from project.scripts.core.system import System
 
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
@@ -28,7 +28,7 @@ class Surface(pygame.Surface):
         self.__sprite_group.remove(sprite)
         print('LOG: Sprite removed from surface.', self)
 
-    def draw_text(self, x, y, width, height, text, pos = 0, colour = (255, 255, 255), font = mota_system.font):
+    def draw_text(self, x, y, width, height, text, pos = 0, colour = (255, 255, 255), font = System.font):
         size = font.size(text)
         dx, dy = 0, 0
         if size[0] < width:
@@ -46,7 +46,7 @@ class Surface(pygame.Surface):
         self.fill((0, 0, 0, 0))
         print('LOG: Surface cleared.', self)
         
-    def update(self, dst = mota_graphics.canvas):
+    def update(self, dst = Graphics.canvas):
         self.angle = self.angle % 360
         row_surface = self.copy()
         for sprite in self.__sprite_group:
@@ -60,8 +60,8 @@ class Surface(pygame.Surface):
         rect.center = (self.x, self.y)
         dst.blit(show, rect)
         
-    def dispose(self, group = mota_graphics):
+    def dispose(self):
         self.__sprite_group.clear()
-        group.remove_surface(self)
+        Graphics.remove_surface(self)
         print('LOG: Surface disposed.', self)
     

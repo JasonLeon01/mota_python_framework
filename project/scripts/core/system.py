@@ -2,43 +2,60 @@ import configparser
 import os
 import sys
 
-from project.scripts.core.config import mota_config
+from project.scripts.core.config import Config
+Config.init(r'project\data\system\config.json')
 
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
 class System:
-    def __init__(self, inifile):
+    __width = None
+    __height = None
+    __scale = None
+    __width = None
+    __height = None
+    canvas = None
+    title = None
+    font = None
+    frame_rate = None
+    running = None
+    clock = None
+    bgm_on = None
+    se_on = None
+    scene = None
+
+    @classmethod
+    def init(cls, inifile):
         pygame.init()
         iniconfig = configparser.ConfigParser()
         iniconfig.read(inifile)
-        self.__width, self.__height = 640, 480
-        self.__scale = iniconfig['Mota'].getfloat('Scale')
-        self.__width = int(self.__width * self.__scale)
-        self.__height = int(self.__height * self.__scale)
-        self.canvas = pygame.display.set_mode((self.__width, self.__height))
-        self.title = iniconfig['Mota'].get('title', 'Mota')
-        pygame.display.set_caption(self.title)
+        cls.__width, cls.__height = 640, 480
+        cls.__scale = iniconfig['Mota'].getfloat('Scale')
+        cls.__width = int(cls.__width * cls.__scale)
+        cls.__height = int(cls.__height * cls.__scale)
+        cls.canvas = pygame.display.set_mode((cls.__width, cls.__height))
+        cls.title = iniconfig['Mota'].get('title', 'Mota')
+        pygame.display.set_caption(cls.title)
         icon = pygame.image.load('icon.ico')
         pygame.display.set_icon(icon)
-        self.font = pygame.font.Font((r'project\assets\fonts\{}'.format(mota_config.font_name)), 22)
-        self.frame_rate = iniconfig['Mota'].getint('FrameRate')
-        self.running = True
-        self.clock = pygame.time.Clock()
-        self.bgm_on = True
-        self.se_on = True
-        self.scene = None
+        cls.font = pygame.font.Font((r'project\assets\fonts\{}'.format(Config.font_name)), 22)
+        cls.frame_rate = iniconfig['Mota'].getint('FrameRate')
+        cls.running = True
+        cls.clock = pygame.time.Clock()
+        cls.bgm_on = True
+        cls.se_on = True
+        cls.scene = None
         print('LOG: System initialized.')
         
-    def get_size(self):
-        return self.__width, self.__height
+    @classmethod
+    def get_size(cls):
+        return cls.__width, cls.__height
     
-    def change_scale(self, scale):
-        self.__scale = scale
-        self.__width = int(640 * scale)
-        self.__height = int(480 * scale)
+    @classmethod
+    def change_scale(cls, scale):
+        cls.__scale = scale
+        cls.__width = int(640 * scale)
+        cls.__height = int(480 * scale)
         pygame.display.quit()
-        self.canvas = pygame.display.set_mode(self.get_size())
+        cls.canvas = pygame.display.set_mode(cls.get_size())
         print('LOG: System scale changed.')
-        
-mota_system = System('mota.ini')

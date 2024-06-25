@@ -1,23 +1,28 @@
 import project.scripts.core.sprite as sprite
 import project.scripts.core.surface as surface
-from project.scripts.core.graphics import mota_graphics
+import project.scripts.core.window as window
+from project.scripts.core.graphics import Graphics
 
 class Scene_Base:
     def __init__(self):
         for attr_name, attr_value in self.__dict__.items():
             if isinstance(attr_value, list):
                 for sub in attr_value:
-                    if isinstance(sub, surface.Surface):
-                        mota_graphics.add_surface(sub)
+                    if isinstance(sub, window.Window):
+                        Graphics.add_window(sub)
+                    elif isinstance(sub, surface.Surface):
+                        Graphics.add_surface(sub)
                     elif isinstance(sub, sprite.Sprite):
-                        mota_graphics.add_sprite(sub)
+                        Graphics.add_sprite(sub)
+            elif isinstance(attr_value, window.Window):
+                Graphics.add_window(attr_value)
             elif isinstance(attr_value, surface.Surface):
-                mota_graphics.add_surface(attr_value)
+                Graphics.add_surface(attr_value)
             elif isinstance(attr_value, sprite.Sprite):
-                mota_graphics.add_sprite(attr_value)
+                Graphics.add_sprite(attr_value)
                 
     def update(self):
-        mota_graphics.update()
+        Graphics.update()
         
     def quit(self):
         for attr_name, attr_value in self.__dict__.items():

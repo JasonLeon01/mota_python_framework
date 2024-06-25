@@ -1,4 +1,6 @@
-from project.scripts.core.cache import mota_cache
+import sys
+import os
+from project.scripts.core.graphics import Graphics
 
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
@@ -25,10 +27,11 @@ class Animation:
         return whole
         
     
-    def update(self, dst = sprite.mota_graphics.canvas):
+    def update(self, dst = Graphics.canvas):
         frame_whole = self.frame()
         rect = frame_whole.get_rect()
         rect.x = self.x
         rect.y = self.y
         rect.center = (self.x, self.y)
         dst.blit(self.frame(), rect)
+        self.__frame_count += 1
