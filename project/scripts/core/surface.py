@@ -17,6 +17,7 @@ class Surface(pygame.Surface):
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
+        self.visible = True
         self._sprite_group = []
         print('LOG: Surface initialized.')
         
@@ -28,7 +29,7 @@ class Surface(pygame.Surface):
         self._sprite_group.remove(sprite)
         print('LOG: Sprite removed from surface.', self, sprite)
 
-    def draw_text(self, x, y, width, height, text, pos = 0, colour = (255, 255, 255), font = System.font):
+    def draw_text(self, x, y, width, height, text, pos = 0, colour = (255, 255, 255, 255), font = System.font):
         size = font.size(text)
         dx, dy = 0, 0
         if size[0] < width:
@@ -47,6 +48,8 @@ class Surface(pygame.Surface):
         print('LOG: Surface cleared.', self)
         
     def update(self, dst = Graphics.canvas):
+        if not self.visible:
+            return
         self.angle = self.angle % 360
         row_surface = self.copy()
         for sprite in self._sprite_group:
@@ -64,3 +67,19 @@ class Surface(pygame.Surface):
         Graphics.remove_surface(self)
         print('LOG: Surface disposed.', self)
     
+    def get_color(self, clr):
+        color_map = {
+            "white": (255, 255, 255, 255),
+            "gray": (175, 175, 175, 255),
+            "dkgray": (192, 192, 192, 255),
+            "black": (0, 0, 0, 255),
+            "red": (255, 50, 50, 255),
+            "yellow": (255, 255, 128, 255),
+            "orange": (255, 185, 25, 255),
+            "brown": (200, 150, 75, 255),
+            "blue": (128, 255, 255, 255),
+            "dkblue": (128, 185, 255, 255),
+            "green": (128, 255, 128, 255),
+            "pink": (255, 128, 255, 255)
+        }
+        return color_map.get(clr, (255, 255, 255, 255))

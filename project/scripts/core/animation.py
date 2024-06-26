@@ -11,7 +11,9 @@ class Animation:
         self.__voices = voices
         self.x = 0
         self.y = 0
+        self.loop = False
         self.__frame_count = 0
+        self.__voice_count = 0
         
     def frame(self):
         whole = pygame.Surface((320, 320))
@@ -34,4 +36,17 @@ class Animation:
         rect.y = self.y
         rect.center = (self.x, self.y)
         dst.blit(self.frame(), rect)
+        if self.__frame_count == self.__voices[self.__voice_count][0]:
+            pygame.mixer.Sound(self.__voices[self.__voice_count][1]).play()
+            self.__voice_count += 1
         self.__frame_count += 1
+        if self.__frame_count == len(self.__frames):
+            if self.loop:
+                self.__frame_count = 0
+                self.__voice_count = 0
+            else:
+                self.dispose()
+
+    def dispose(self):
+        Graphics.remove_animation(self)
+        print('LOG: Animation disposed successfully.')

@@ -15,6 +15,7 @@ class Sprite(pygame.sprite.Sprite):
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
+        self.visible = True
         self.move = False
         self.interval = 30
         self.__frame_count = 0
@@ -33,6 +34,8 @@ class Sprite(pygame.sprite.Sprite):
         print('LOG: Sprite frames updated successfully.', self.__frames)
     
     def update(self, dst = Graphics.canvas):
+        if not self.visible:
+            return
         self.angle = self.angle % 360
         self.opacity = max(0, min(255, self.opacity))
         now_index = int(self.__frame_count / self.interval)

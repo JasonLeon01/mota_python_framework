@@ -10,6 +10,7 @@ class Graphics:
     __sprite_group = []
     __surface_group = []
     __window_group = []
+    __animation_group = []
     canvas = pygame.Surface((640, 480))
 
     @classmethod
@@ -17,6 +18,7 @@ class Graphics:
         cls.__sprite_group = []
         cls.__surface_group = []
         cls.__window_group = []
+        cls.__animation_group = []
         cls.canvas = pygame.Surface((640, 480))
         print('LOG: Graphics initialized.')
     
@@ -49,6 +51,16 @@ class Graphics:
     def remove_surface(cls, surface):
         cls.__surface_group.remove(surface)
         print('LOG: Surface removed.', surface)
+
+    @classmethod
+    def add_animation(cls, animation):
+        cls.__animation_group.append(animation)
+        print('LOG: Animation added.', animation)
+
+    @classmethod
+    def remove_animation(cls, animation):
+        cls.__animation_group.remove(animation)
+        print('LOG: Animation removed.', animation)
         
     @classmethod
     def update(cls):
@@ -77,6 +89,8 @@ class Graphics:
                     window.update()
                     count += 1
             z += 1
+        for animation in cls.__animation_group:
+            animation.update()
         System.canvas.blit(pygame.transform.smoothscale(cls.canvas, System.get_size()), (0, 0))
         pygame.display.update()
         System.clock.tick(System.frame_rate)
