@@ -3,6 +3,7 @@ import sys
 
 import project.scripts.core.surface as surface
 
+from project.scripts.core.graphics import Graphics
 from project.scripts.core.cache import Cache
 from project.scripts.core.config import Config
 
@@ -39,3 +40,9 @@ class Window(surface.Surface):
             self.contents.y = self.size[1] / 2
             self.contents.update(self)
         super().update()
+
+    def dispose(self):
+        self._sprite_group.clear()
+        self.contents = None
+        Graphics.remove_window(self)
+        print('LOG: Window disposed.', self)

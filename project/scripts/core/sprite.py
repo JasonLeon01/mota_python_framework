@@ -36,14 +36,13 @@ class Sprite(pygame.sprite.Sprite):
         self.angle = self.angle % 360
         self.opacity = max(0, min(255, self.opacity))
         now_index = int(self.__frame_count / self.interval)
-        self.image = pygame.transform.scale(self.__frames[now_index], (int(self.__frames[now_index].get_width() * self.scale), int(self.__frames[now_index].get_height() * self.scale)))
-        show = pygame.transform.rotate(self.image, self.angle)
-        show.set_alpha(self.opacity)
-        rect = show.get_rect()
+        self.image = pygame.transform.rotozoom(self.__frames[now_index], self.angle, self.scale)
+        self.image.set_alpha(self.opacity)
+        rect = self.image.get_rect()
         rect.x = self.x
         rect.y = self.y
         rect.center = (self.x, self.y)
-        dst.blit(show, rect)
+        dst.blit(self.image, rect)
         if self.move:
             self.__frame_count = (self.__frame_count + 1) % (len(self.__frames) * self.interval)
         

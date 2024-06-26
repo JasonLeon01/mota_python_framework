@@ -23,32 +23,32 @@ class Graphics:
     @classmethod
     def add_window(cls, window):
         cls.__window_group.append(window)
-        print('LOG: Window added.')
+        print('LOG: Window added.', window)
 
     @classmethod
     def remove_window(cls, window):
         cls.__window_group.remove(window)
-        print('LOG: Window removed.')
+        print('LOG: Window removed.', window)
 
     @classmethod
     def add_sprite(cls, sprite):
         cls.__sprite_group.append(sprite)
-        print('LOG: Sprite added.')
+        print('LOG: Sprite added.', sprite)
         
     @classmethod
     def remove_sprite(cls, sprite):
         cls.__sprite_group.remove(sprite)
-        print('LOG: Sprite removed.')
+        print('LOG: Sprite removed.', sprite)
     
     @classmethod
     def add_surface(cls, surface):
         cls.__surface_group.append(surface)
-        print('LOG: Surface added.')
+        print('LOG: Surface added.', surface)
     
     @classmethod
     def remove_surface(cls, surface):
         cls.__surface_group.remove(surface)
-        print('LOG: Surface removed.')
+        print('LOG: Surface removed.', surface)
         
     @classmethod
     def update(cls):
@@ -77,6 +77,6 @@ class Graphics:
                     window.update()
                     count += 1
             z += 1
-        System.canvas.blit(pygame.transform.scale(cls.canvas, System.get_size()), (0, 0))
+        System.canvas.blit(pygame.transform.smoothscale(cls.canvas, System.get_size()), (0, 0))
         pygame.display.update()
         System.clock.tick(System.frame_rate)

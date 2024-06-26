@@ -43,8 +43,8 @@ class Scene(scene_base.Scene_Base):
         self.star_sprite.move = True
         self.star_sprite.interval = 15
 
-        self.window = window.Window((320, 240))
-        self.window.contents = surface.Surface((288, 208))
+        self.window = window.Window((352, 256))
+        self.window.contents = surface.Surface((320, 224))
         self.window.contents.draw_text(0, 0, 256, 32, '呜呀啦哈！')
         self.window.x = 320
         self.window.y = 240
@@ -63,6 +63,7 @@ class Scene(scene_base.Scene_Base):
         else:
             self.title_surface_2.opacity += 3
         self.star_sprite.angle += 1
+        self.window.angle += 1
         self.count += 1
         if self.count == 1500:
             self.title_surface_2.clear()

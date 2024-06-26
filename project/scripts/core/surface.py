@@ -17,16 +17,16 @@ class Surface(pygame.Surface):
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
-        self.__sprite_group = []
+        self._sprite_group = []
         print('LOG: Surface initialized.')
         
     def add_sprite(self, sprite):
-        self.__sprite_group.append(sprite)
-        print('LOG: Sprite added into surface.', self)
+        self._sprite_group.append(sprite)
+        print('LOG: Sprite added into surface.', self, sprite)
         
     def remove_sprite(self, sprite):
-        self.__sprite_group.remove(sprite)
-        print('LOG: Sprite removed from surface.', self)
+        self._sprite_group.remove(sprite)
+        print('LOG: Sprite removed from surface.', self, sprite)
 
     def draw_text(self, x, y, width, height, text, pos = 0, colour = (255, 255, 255), font = System.font):
         size = font.size(text)
@@ -49,19 +49,18 @@ class Surface(pygame.Surface):
     def update(self, dst = Graphics.canvas):
         self.angle = self.angle % 360
         row_surface = self.copy()
-        for sprite in self.__sprite_group:
+        for sprite in self._sprite_group:
             sprite.update(row_surface)
-        draw_surface = pygame.transform.scale(row_surface, (int(row_surface.get_width() * self.scale), int(row_surface.get_height() * self.scale)))
-        show = pygame.transform.rotate(draw_surface, self.angle)
-        show.set_alpha(self.opacity)
-        rect = show.get_rect()
+        draw_surface = pygame.transform.rotozoom(row_surface, self.angle, self.scale)
+        draw_surface.set_alpha(self.opacity)
+        rect = draw_surface.get_rect()
         rect.x = self.x
         rect.y = self.y
         rect.center = (self.x, self.y)
-        dst.blit(show, rect)
+        dst.blit(draw_surface, rect)
         
     def dispose(self):
-        self.__sprite_group.clear()
+        self._sprite_group.clear()
         Graphics.remove_surface(self)
         print('LOG: Surface disposed.', self)
     
