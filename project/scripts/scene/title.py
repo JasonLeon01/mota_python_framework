@@ -25,7 +25,7 @@ class Scene(scene_base.Scene_Base):
         self.title_surface.x = 320
         self.title_surface.y = 240
         self.title_surface_2 = surface.Surface((320, 240))
-        self.title_surface_2.draw_text(0, 0, 160, 32, 'MOTASYSTEM')
+        self.title_surface_2.draw_text(0, 0, 256, 32, 'MOTASYSTEM啊哈')
 
         ssstar_sprite = sprite.Sprite(Cache.system(['star-1', 'star-2', 'star-3', 'star-2', 'star-1']))
         ssstar_sprite.x = 160
@@ -44,6 +44,8 @@ class Scene(scene_base.Scene_Base):
         self.star_sprite.interval = 15
 
         self.window = window.Window((320, 240))
+        self.window.contents = surface.Surface((288, 208))
+        self.window.contents.draw_text(0, 0, 256, 32, '呜呀啦哈！')
         self.window.x = 320
         self.window.y = 240
         self.__change = False

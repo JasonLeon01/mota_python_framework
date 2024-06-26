@@ -14,21 +14,28 @@ class Window(surface.Surface):
         super().__init__(size)
         self.contents = None
         self.asset = Cache.system(Config.windowskin_file)
-        self.opacity = Config.window_opacity
+        self.back_opacity = Config.window_opacity
         print('LOG: Window initialized successfully.')
-        self.__draw_back()
 
     def __draw_back(self):
-        self.clear()
-        rect = self.get_rect()
-        rect.x = 0
-        rect.y = 0
+        self.fill((0, 0, 0, 0))
         row_surface = self.copy()
-        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (0, 0, 128, 128)), (self.size[0], self.size[1])), rect)
-        row_surface.set_alpha(self.opacity)
-        self.blit(row_surface, rect)
+        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (0, 0, 128, 128)), (self.size[0] - 2, self.size[1] - 2)), (1, 1))
+        row_surface.set_alpha(self.back_opacity)
+        row_surface.blit(pygame.Surface.subsurface(self.asset, (128, 0, 16, 16)), (0, 0))
+        row_surface.blit(pygame.Surface.subsurface(self.asset, (176, 0, 16, 16)), (self.size[0] - 16, 0))
+        row_surface.blit(pygame.Surface.subsurface(self.asset, (128, 48, 16, 16)), (0, self.size[1] - 16))
+        row_surface.blit(pygame.Surface.subsurface(self.asset, (176, 48, 16, 16)), (self.size[0] - 16, self.size[1] - 16))
+        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (144, 0, 32, 16)), (self.size[0] - 32, 16)), (16, 0))
+        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (144, 48, 32, 16)), (self.size[0] - 32, 16)), (16, self.size[1] - 16))
+        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (128, 16, 16, 32)), (16, self.size[1] - 32)), (0, 16))
+        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (176, 16, 16, 32)), (16, self.size[1] - 32)), (self.size[0] - 16, 16))
+        self.blit(row_surface, self.get_rect())
 
     def update(self):
+        self.__draw_back()
         if self.contents:
+            self.contents.x = self.size[0] / 2
+            self.contents.y = self.size[1] / 2
             self.contents.update(self)
         super().update()
