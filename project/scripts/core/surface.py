@@ -1,6 +1,5 @@
 import os
 import sys
-
 from project.scripts.core.graphics import Graphics
 from project.scripts.core.system import System
 

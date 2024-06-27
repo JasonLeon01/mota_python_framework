@@ -1,6 +1,5 @@
 import sys
 import os
-
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -26,64 +25,38 @@ class Cache:
                     print(f'LOG: Loaded image: {full_path}')
                 
     @classmethod
-    def block(cls, block_file):
-        if isinstance(block_file, list):
-            return [cls.block(block) for block in block_file]
-        if block_file in cls.__cache['blocks']:
-            return cls.__cache['blocks'][block_file]
+    def get(cls, part, file):
+        if isinstance(file, list):
+            return [cls.get(part, f) for f in file]
+        if file in cls.__cache[part]:
+            return cls.__cache[part][file]
         else:
-            raise FileNotFoundError(f"Error: The block file '{block_file}' does not exist.")
+            raise FileNotFoundError(f"Error: The {part} file '{file}' does not exist.")
+                
+    @classmethod
+    def block(cls, block_file):
+        return cls.get('blocks', block_file)
     
     @classmethod
     def character(cls, character_file):
-        if isinstance(character_file, list):
-            return [cls.character(character) for character in character_file]
-        if character_file in cls.__cache['characters']:
-            return cls.__cache['characters'][character_file]
-        else:
-            raise FileNotFoundError(f"Error: The character file '{character_file}' does not exist.")
+        return cls.get('characters', character_file)
     
     @classmethod
     def enemy(cls, enemy_file):
-        if isinstance(enemy_file, list):
-            return [cls.enemy(enemy) for enemy in enemy_file]
-        if enemy_file in cls.__cache['enemies']:
-            return cls.__cache['enemies'][enemy_file]
-        else:
-            raise FileNotFoundError(f"Error: The enemy file '{enemy_file}' does not exist.")
+        return cls.get('enemies', enemy_file)
     
     @classmethod
     def item(cls, item_file):
-        if isinstance(item_file, list):
-            return [cls.item(item) for item in item_file]
-        if item_file in cls.__cache['items']:
-            return cls.__cache['items'][item_file]
-        else:
-            raise FileNotFoundError(f"Error: The item file '{item_file}' does not exist.")
+        return cls.get('items', item_file)
     
     @classmethod
     def npc(cls, npc_file):
-        if isinstance(npc_file, list):
-            return [cls.npc(npc) for npc in npc_file]
-        if npc_file in cls.__cache['npcs']:
-            return cls.__cache['npcs'][npc_file]
-        else:
-            raise FileNotFoundError(f"Error: The NPC file '{npc_file}' does not exist.")
+        return cls.get('npcs', npc_file)
     
     @classmethod
     def tileset(cls, tileset_file):
-        if isinstance(tileset_file, list):
-            return [cls.tileset(tileset) for tileset in tileset_file]
-        if tileset_file in cls.__cache['tilesets']:
-            return cls.__cache['tilesets'][tileset_file]
-        else:
-            raise FileNotFoundError(f"Error: The tileset file '{tileset_file}' does not exist.")
+        return cls.get('tilesets', tileset_file)
 
     @classmethod
     def system(cls, system_file):
-        if isinstance(system_file, list):
-            return [cls.system(system) for system in system_file]
-        if system_file in cls.__cache['system']:
-            return cls.__cache['system'][system_file]
-        else:
-            raise FileNotFoundError(f"Error: The system file '{system_file}' does not exist.")
+        return cls.get('system', system_file)

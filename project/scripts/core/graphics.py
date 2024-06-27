@@ -1,8 +1,6 @@
 import os
 import sys
-
 from project.scripts.core.system import System
-
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -72,6 +70,9 @@ class Graphics:
             elif event.type == pygame.MOUSEWHEEL:
                 if event.y != 0:
                     System.wheel = event.y
+                    print('LOG: Mouse wheel event detected.', System.wheel)
+            else:
+                System.wheel = 0
         total_count = len(cls.__window_group) + len(cls.__surface_group) + len(cls.__sprite_group)
         count, z = 0, 0
         System.canvas.fill((0, 0, 0, 0))

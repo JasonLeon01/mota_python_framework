@@ -1,10 +1,8 @@
 import configparser
 import os
 import sys
-
 from project.scripts.core.config import Config
 Config.init(r'project\data\system\config.json')
-
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -52,6 +50,10 @@ class System:
     @classmethod
     def get_size(cls):
         return cls.__width, cls.__height
+    
+    @classmethod
+    def get_scale(cls):
+        return cls.__scale
     
     @classmethod
     def change_scale(cls, scale):

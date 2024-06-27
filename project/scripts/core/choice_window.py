@@ -1,7 +1,6 @@
 import os
 import sys
 import math
-
 from project.scripts.core.audio import Audio
 from project.scripts.core.config import Config
 from project.scripts.core.system import System
@@ -23,20 +22,19 @@ class ChoiceWindow(window.Window):
     def rows(self):
         return int(math.ceil(1.0 * self.items / self.colomn))
 
-    def render_rect(self, x, y, width, height):
-        pass
-
     def update_cursor_rect(self):
         row = self.index / self.colomn
         cursor_width = self.size[0] / self.colomn - 32
         x = self.index % self.colomn * (cursor_width + 32)
         y = int(row) * self.cursor_height
         if self.contents:
-            y -= self.oy
-        self.render_rect(x, y, cursor_width, self.cursor_height)
+            y -= self.contents.oy
+        self.set_rect(x, y, cursor_width, self.cursor_height)
 
     def mouse_in_rect(self):
         x, y = pygame.mouse.get_pos()
+        x /= System.get_scale()
+        y /= System.get_scale()
         if x > self.x and x < self.x + self.size[0] and y > self.y and y < self.y + self.size[1]:
             return True
         return False
@@ -61,12 +59,22 @@ class ChoiceWindow(window.Window):
             if (self.colomn == 1 and Input.trigger(pygame.K_DOWN)) or self.index < self.items - self.colomn:
                 self.index = (self.index + self.colomn) % self.items
                 Audio.play_voice(Config.cursor_se)
-        if Input.repeat(pygame.K_LEFT) or (self.mouse_in_rect() and System.wheel > 0):
+        if Input.repeat(pygame.K_LEFT):
             if self.colomn > 1 and self.index > 0:
-                self.index -= 1
-        if Input.repeat(pygame.K_RIGHT) or (self.mouse_in_rect() and System.wheel < 0):
+                self.index = (self.index - 1 + self.items) % self.items
+                Audio.play_voice(Config.cursor_se)
+        if Input.repeat(pygame.K_RIGHT):
             if self.colomn > 1 and self.index < self.items - 1:
-                self.index += 1
+                self.index = (self.index + 1) % self.items
+                Audio.play_voice(Config.cursor_se)
+        if self.mouse_in_rect() and System.wheel != 0:
+            if System.wheel > 0:
+                self.index = (self.index - 1 + self.items) % self.items
+                Audio.play_voice(Config.cursor_se)
+            elif System.wheel < 0:
+                self.index = (self.index + 1) % self.items
+                Audio.play_voice(Config.cursor_se)
+            System.wheel = 0
         if self.contents:
             if (self.index / self.colomn) * 32 - self.contents.oy + 32 > self.size[1] - 32:
                 self.contents.oy = (self.index / self.colomn) * 32 - self.size[1] + 64

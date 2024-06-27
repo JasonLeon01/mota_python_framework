@@ -2,7 +2,6 @@ import sys
 import os
 from project.scripts.core.audio import Audio
 from project.scripts.core.graphics import Graphics
-
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 

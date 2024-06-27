@@ -1,8 +1,6 @@
 import os
 import sys
-
 import project.scripts.core.surface as surface
-
 from project.scripts.core.graphics import Graphics
 from project.scripts.core.cache import Cache
 from project.scripts.core.config import Config
@@ -19,6 +17,8 @@ class Window(surface.Surface):
         self.__content_surface = surface.Surface((self.size[0] - 32, self.size[1] - 32))
         self.__content_surface.x = 16
         self.__content_surface.y = 16
+        self.__has_rect = False
+        self.__rect_rect = (0, 0, 0, 0)
         print('LOG: Window initialized successfully.')
 
     def __draw_back(self):
@@ -39,10 +39,20 @@ class Window(surface.Surface):
         row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (176, 16, 16, 32)), (16, self.size[1] - 32)), (self.size[0] - 16, 16))
         self.blit(row_surface, self.get_rect())
 
+    def set_rect(self, x, y, width, height):
+        self.__has_rect = True
+        self.__rect_rect = (x, y, width, height)
+        
+    def __render_rect(self, rect, dst):
+        x, y, width, height = rect
+        dst.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (128, 64, 32, 32)), (width, height)), (x, y))
+    
     def update(self):
         self.__draw_back()
         if self.contents:
             self.contents.update(self.__content_surface)
+            if self.__has_rect:
+                self.__render_rect(self.__rect_rect, self.__content_surface)
             self.__content_surface.update(self)
         super().update()
 
