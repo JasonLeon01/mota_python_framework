@@ -12,12 +12,15 @@ class Surface(pygame.Surface):
         super().__init__(size, pygame.SRCALPHA)
         self.x = 0
         self.y = 0
+        self.ox = 0
+        self.oy = 0
         self.z = 0
         self.size = size
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
         self.visible = True
+        self.centre = False
         self._sprite_group = []
         print('LOG: Surface initialized.')
         
@@ -42,7 +45,6 @@ class Surface(pygame.Surface):
         text_surface = font.render(text, True, colour)
         self.blit(text_surface, (x + dx, y + dy), (0, 0, min(size[0], width), min(size[1], height)))
 
-
     def clear(self):
         self.fill((0, 0, 0, 0))
         print('LOG: Surface cleared.', self)
@@ -57,10 +59,11 @@ class Surface(pygame.Surface):
         draw_surface = pygame.transform.rotozoom(row_surface, self.angle, self.scale)
         draw_surface.set_alpha(self.opacity)
         rect = draw_surface.get_rect()
-        rect.x = self.x
-        rect.y = self.y
-        rect.center = (self.x, self.y)
-        dst.blit(draw_surface, rect)
+        rect.x = self.x - self.ox
+        rect.y = self.y - self.oy
+        if self.centre:
+            rect.center = (self.x, self.y)
+        dst.blit(draw_surface, (rect.x, rect.y))
         
     def dispose(self):
         self._sprite_group.clear()

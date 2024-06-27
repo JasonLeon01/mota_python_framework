@@ -32,8 +32,7 @@ class Cache:
         if block_file in cls.__cache['blocks']:
             return cls.__cache['blocks'][block_file]
         else:
-            raise ValueError(f"Error: The block file '{block_file}' does not exist.")
-            sys.exit(1)
+            raise FileNotFoundError(f"Error: The block file '{block_file}' does not exist.")
     
     @classmethod
     def character(cls, character_file):
@@ -42,8 +41,7 @@ class Cache:
         if character_file in cls.__cache['characters']:
             return cls.__cache['characters'][character_file]
         else:
-            raise ValueError(f"Error: The character file '{character_file}' does not exist.")
-            sys.exit(1)
+            raise FileNotFoundError(f"Error: The character file '{character_file}' does not exist.")
     
     @classmethod
     def enemy(cls, enemy_file):
@@ -52,8 +50,7 @@ class Cache:
         if enemy_file in cls.__cache['enemies']:
             return cls.__cache['enemies'][enemy_file]
         else:
-            raise ValueError(f"Error: The enemy file '{enemy_file}' does not exist.")
-            sys.exit(1)
+            raise FileNotFoundError(f"Error: The enemy file '{enemy_file}' does not exist.")
     
     @classmethod
     def item(cls, item_file):
@@ -62,8 +59,7 @@ class Cache:
         if item_file in cls.__cache['items']:
             return cls.__cache['items'][item_file]
         else:
-            raise ValueError(f"Error: The item file '{item_file}' does not exist.")
-            sys.exit(1)
+            raise FileNotFoundError(f"Error: The item file '{item_file}' does not exist.")
     
     @classmethod
     def npc(cls, npc_file):
@@ -72,8 +68,7 @@ class Cache:
         if npc_file in cls.__cache['npcs']:
             return cls.__cache['npcs'][npc_file]
         else:
-            raise ValueError(f"Error: The NPC file '{npc_file}' does not exist.")
-            sys.exit(1)
+            raise FileNotFoundError(f"Error: The NPC file '{npc_file}' does not exist.")
     
     @classmethod
     def tileset(cls, tileset_file):
@@ -82,8 +77,7 @@ class Cache:
         if tileset_file in cls.__cache['tilesets']:
             return cls.__cache['tilesets'][tileset_file]
         else:
-            raise ValueError(f"Error: The tileset file '{tileset_file}' does not exist.")
-            sys.exit(1)
+            raise FileNotFoundError(f"Error: The tileset file '{tileset_file}' does not exist.")
 
     @classmethod
     def system(cls, system_file):
@@ -92,5 +86,4 @@ class Cache:
         if system_file in cls.__cache['system']:
             return cls.__cache['system'][system_file]
         else:
-            raise ValueError(f"Error: The system file '{system_file}' does not exist.")
-            sys.exit(1)
+            raise FileNotFoundError(f"Error: The system file '{system_file}' does not exist.")

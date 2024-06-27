@@ -17,6 +17,7 @@ class Sprite(pygame.sprite.Sprite):
         self.scale = 1.0
         self.visible = True
         self.move = False
+        self.centre = False
         self.interval = 30
         self.__frame_count = 0
         if frames:
@@ -44,7 +45,8 @@ class Sprite(pygame.sprite.Sprite):
         rect = self.image.get_rect()
         rect.x = self.x
         rect.y = self.y
-        rect.center = (self.x, self.y)
+        if self.centre:
+            rect.center = (self.x, self.y)
         dst.blit(self.image, rect)
         if self.move:
             self.__frame_count = (self.__frame_count + 1) % (len(self.__frames) * self.interval)

@@ -16,10 +16,16 @@ class Window(surface.Surface):
         self.contents = None
         self.asset = Cache.system(Config.windowskin_file)
         self.back_opacity = Config.window_opacity
+        self.__content_surface = surface.Surface((self.size[0] - 32, self.size[1] - 32))
+        self.__content_surface.x = 16
+        self.__content_surface.y = 16
         print('LOG: Window initialized successfully.')
 
     def __draw_back(self):
         self.fill((0, 0, 0, 0))
+        self.__content_surface.fill((0, 0, 0, 0))
+        if self.__content_surface.size != (self.size[0] - 32, self.size[1] - 32):
+            self.__content_surface = surface.Surface((self.size[0] - 32, self.size[1] - 32))
         row_surface = self.copy()
         row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (0, 0, 128, 128)), (self.size[0] - 2, self.size[1] - 2)), (1, 1))
         row_surface.set_alpha(self.back_opacity)
@@ -36,9 +42,8 @@ class Window(surface.Surface):
     def update(self):
         self.__draw_back()
         if self.contents:
-            self.contents.x = self.size[0] / 2
-            self.contents.y = self.size[1] / 2
-            self.contents.update(self)
+            self.contents.update(self.__content_surface)
+            self.__content_surface.update(self)
         super().update()
 
     def dispose(self):

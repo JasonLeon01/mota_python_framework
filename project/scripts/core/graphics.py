@@ -69,8 +69,9 @@ class Graphics:
                 System.running = False
                 System.scene.quit()
                 return
-        import project.scripts.core.sprite as sprite
-        import project.scripts.core.surface as surface
+            elif event.type == pygame.MOUSEWHEEL:
+                if event.y != 0:
+                    System.wheel = event.y
         total_count = len(cls.__window_group) + len(cls.__surface_group) + len(cls.__sprite_group)
         count, z = 0, 0
         System.canvas.fill((0, 0, 0, 0))

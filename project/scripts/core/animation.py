@@ -1,5 +1,6 @@
 import sys
 import os
+from project.scripts.core.audio import Audio
 from project.scripts.core.graphics import Graphics
 
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
@@ -37,7 +38,7 @@ class Animation:
         rect.center = (self.x, self.y)
         dst.blit(self.frame(), rect)
         if self.__frame_count == self.__voices[self.__voice_count][0]:
-            pygame.mixer.Sound(self.__voices[self.__voice_count][1]).play()
+            Audio.play_voice(self.__voices[self.__voice_count][1])
             self.__voice_count += 1
         self.__frame_count += 1
         if self.__frame_count == len(self.__frames):

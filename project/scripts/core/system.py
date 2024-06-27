@@ -23,6 +23,7 @@ class System:
     bgm_on = None
     se_on = None
     scene = None
+    wheel = 0
 
     @classmethod
     def init(cls, inifile):
@@ -45,6 +46,7 @@ class System:
         cls.bgm_on = True
         cls.se_on = True
         cls.scene = None
+        cls.wheel = 0
         print('LOG: System initialized.')
         
     @classmethod
