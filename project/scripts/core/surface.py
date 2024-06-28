@@ -59,7 +59,7 @@ class Surface(pygame.Surface):
         if self.scale != 1.0 or self.angle != 0:
             draw_surface = pygame.transform.rotozoom(row_surface, self.angle, self.scale)
         else:
-            draw_surface = row_surface.copy()
+            draw_surface = row_surface
         draw_surface.set_alpha(self.opacity)
         rect = draw_surface.get_rect()
         rect.x = self.x - self.ox

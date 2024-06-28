@@ -21,7 +21,15 @@ class Window(Surface):
         self.__rect_rect = (0, 0, 0, 0)
         print('LOG: Window initialized successfully.')
 
-    def __draw_back(self):
+    def __render_corner(self, area_rects, positions, dst):
+        for i in range(4):
+            dst.blit(pygame.Surface.subsurface(self.asset, area_rects[i]), positions[i])
+
+    def __render_edge(self, area_rects, target_scales, positions, dst):
+        for i in range(4):
+            dst.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, area_rects[i]), target_scales[i]), positions[i])
+
+    def __render_back(self):
         self.fill((0, 0, 0, 0))
         self.__content_surface.fill((0, 0, 0, 0))
         if self.__content_surface.size != (self.size[0] - 32, self.size[1] - 32):
@@ -29,15 +37,9 @@ class Window(Surface):
         row_surface = self.copy()
         row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (0, 0, 128, 128)), (self.size[0] - 2, self.size[1] - 2)), (1, 1))
         row_surface.set_alpha(self.back_opacity)
-        row_surface.blit(pygame.Surface.subsurface(self.asset, (128, 0, 16, 16)), (0, 0))
-        row_surface.blit(pygame.Surface.subsurface(self.asset, (176, 0, 16, 16)), (self.size[0] - 16, 0))
-        row_surface.blit(pygame.Surface.subsurface(self.asset, (128, 48, 16, 16)), (0, self.size[1] - 16))
-        row_surface.blit(pygame.Surface.subsurface(self.asset, (176, 48, 16, 16)), (self.size[0] - 16, self.size[1] - 16))
-        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (144, 0, 32, 16)), (self.size[0] - 32, 16)), (16, 0))
-        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (144, 48, 32, 16)), (self.size[0] - 32, 16)), (16, self.size[1] - 16))
-        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (128, 16, 16, 32)), (16, self.size[1] - 32)), (0, 16))
-        row_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (176, 16, 16, 32)), (16, self.size[1] - 32)), (self.size[0] - 16, 16))
         self.blit(row_surface, self.get_rect())
+        self.__render_corner([(128, 0, 16, 16), (176, 0, 16, 16), (128, 48, 16, 16), (176, 48, 16, 16)], [(0, 0), (self.size[0] - 16, 0), (0, self.size[1] - 16), (self.size[0] - 16, self.size[1] - 16)], self)
+        self.__render_edge([(144, 0, 32, 16), (144, 48, 32, 16), (128, 16, 16, 32), (176, 16, 16, 32)], [(self.size[0] - 32, 16), (self.size[0] - 32, 16), (16, self.size[1] - 32), (16, self.size[1] - 32)], [(16, 0), (16, self.size[1] - 16), (0, 16), (self.size[0] - 16, 16)], self)
 
     def set_rect(self, x, y, width, height):
         self.__has_rect = True
@@ -47,19 +49,13 @@ class Window(Surface):
         x, y, width, height = rect
         draw_surface = pygame.surface.Surface((width, height), pygame.SRCALPHA)
         draw_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (132, 68, 24, 24)), (width - 8, height - 8)), (4, 4))
-        draw_surface.blit(pygame.Surface.subsurface(self.asset, (128, 64, 4, 4)), (0, 0))
-        draw_surface.blit(pygame.Surface.subsurface(self.asset, (156, 64, 4, 4)), (0 + width - 4, 0))
-        draw_surface.blit(pygame.Surface.subsurface(self.asset, (128, 92, 4, 4)), (0, height - 4))
-        draw_surface.blit(pygame.Surface.subsurface(self.asset, (156, 92, 4, 4)), (0 + width - 4, height - 4))
-        draw_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (132, 64, 24, 4)), (width - 8, 4)), (4, 0))
-        draw_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (132, 92, 24, 4)), (width - 8, 4)), (4, height - 4))
-        draw_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (128, 68, 4, 24)), (4, height - 8)), (0, 4))
-        draw_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (156, 68, 4, 24)), (4, height - 8)), (width - 4, 4))
+        self.__render_corner([(128, 64, 4, 4), (156, 64, 4, 4), (128, 92, 4, 4), (156, 92, 4, 4)], [(0, 0), (width - 4, 0), (0, height - 4), (width - 4, height - 4)], draw_surface)
+        self.__render_edge([(132, 64, 24, 4), (132, 92, 24, 4), (128, 68, 4, 24), (156, 68, 4, 24)], [(width - 8, 4), (width - 8, 4), (4, height - 8), (4, height - 8)], [(4, 0), (4, height - 4), (0, 4), (width - 4, 4)], draw_surface)
         draw_surface.set_alpha(120 + 5 * abs(27 - Graphics.frame_count() % 54))
         dst.blit(draw_surface, (x, y))
 
     def update(self):
-        self.__draw_back()
+        self.__render_back()
         if self.contents:
             self.contents.update(self.__content_surface)
             if self.__has_rect:
