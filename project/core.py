@@ -14,3 +14,5 @@ if __name__ == '__main__':
     while System.running and System.scene != None:
         System.scene.update()
     System.scene = None
+    Graphics.transition()
+    print('LOG: Game exited successfully.')

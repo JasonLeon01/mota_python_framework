@@ -4,13 +4,13 @@ import math
 from project.scripts.core.audio import Audio
 from project.scripts.core.config import Config
 from project.scripts.core.system import System
-import project.scripts.core.window as window
+from project.scripts.core.window import Window
 from project.scripts.core.input import Input
 
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
-class ChoiceWindow(window.Window):
+class ChoiceWindow(Window):
     def __init__(self, size):
         super().__init__(size)
         self.colomn = 1

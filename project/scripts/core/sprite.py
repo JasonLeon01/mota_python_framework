@@ -39,7 +39,10 @@ class Sprite(pygame.sprite.Sprite):
         self.angle = self.angle % 360
         self.opacity = max(0, min(255, self.opacity))
         now_index = int(self.__frame_count / self.interval)
-        self.image = pygame.transform.rotozoom(self.__frames[now_index], self.angle, self.scale)
+        if self.scale != 1.0 or self.angle != 0:
+            self.image = pygame.transform.rotozoom(self.__frames[now_index], self.angle, self.scale)
+        else:
+            self.image = self.__frames[now_index]
         self.image.set_alpha(self.opacity)
         rect = self.image.get_rect()
         rect.x = self.x

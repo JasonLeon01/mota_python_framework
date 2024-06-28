@@ -1,6 +1,6 @@
-import project.scripts.core.sprite
+from project.scripts.core.sprite import Sprite
 
-class Object(project.scripts.core.sprite.Sprite):
+class Object(Sprite):
     def __init__(self, frames = None):
         super().__init__(frames)
         self.id = 0

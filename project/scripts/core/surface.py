@@ -43,6 +43,7 @@ class Surface(pygame.Surface):
             dy = (height - size[1]) / 2
         text_surface = font.render(text, True, colour)
         self.blit(text_surface, (x + dx, y + dy), (0, 0, min(size[0], width), min(size[1], height)))
+        print('LOG: Text drawn.', text)
 
     def clear(self):
         self.fill((0, 0, 0, 0))
@@ -55,7 +56,10 @@ class Surface(pygame.Surface):
         row_surface = self.copy()
         for sprite in self._sprite_group:
             sprite.update(row_surface)
-        draw_surface = pygame.transform.rotozoom(row_surface, self.angle, self.scale)
+        if self.scale != 1.0 or self.angle != 0:
+            draw_surface = pygame.transform.rotozoom(row_surface, self.angle, self.scale)
+        else:
+            draw_surface = row_surface.copy()
         draw_surface.set_alpha(self.opacity)
         rect = draw_surface.get_rect()
         rect.x = self.x - self.ox

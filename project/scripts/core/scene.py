@@ -1,6 +1,10 @@
-import project.scripts.core.sprite as sprite
-import project.scripts.core.surface as surface
-import project.scripts.core.window as window
+import json
+import os
+from project.scripts.core.cache import Cache
+from project.scripts.core.config import Config
+from project.scripts.core.sprite import Sprite
+from project.scripts.core.surface import Surface
+from project.scripts.core.window import Window
 from project.scripts.core.graphics import Graphics
 
 class Scene_Base:
@@ -8,23 +12,55 @@ class Scene_Base:
         for attr_name, attr_value in self.__dict__.items():
             if isinstance(attr_value, list):
                 for sub in attr_value:
-                    if isinstance(sub, window.Window):
+                    if isinstance(sub, Window):
                         Graphics.add_window(sub)
-                    elif isinstance(sub, surface.Surface):
+                    elif isinstance(sub, Surface):
                         Graphics.add_surface(sub)
-                    elif isinstance(sub, sprite.Sprite):
+                    elif isinstance(sub, Sprite):
                         Graphics.add_sprite(sub)
-            elif isinstance(attr_value, window.Window):
+            elif isinstance(attr_value, Window):
                 Graphics.add_window(attr_value)
-            elif isinstance(attr_value, surface.Surface):
+            elif isinstance(attr_value, Surface):
                 Graphics.add_surface(attr_value)
-            elif isinstance(attr_value, sprite.Sprite):
+            elif isinstance(attr_value, Sprite):
                 Graphics.add_sprite(attr_value)
                 
+    def load_data_from_json(self, file):
+        script_name = os.path.basename(file)
+        with open('project\\data\\scene_settings\\' + os.path.splitext(script_name)[0] + '.json', 'r', encoding='utf-8') as file:
+            scene_setting = file.read()
+        scene_setting_data = json.loads(scene_setting)
+        setting_str = ''
+        for key, value in scene_setting_data.items():
+            flag = False
+            for key2, value2 in value.items():
+                if key2 == 'type':
+                    flag = True
+                    mdl = value2.split('.')[0]
+                    clss = value2.split('.')[1]
+                    if f'from project.scripts.core.{mdl} import {clss}' not in setting_str:
+                        setting_str += f'from project.scripts.core.{mdl} import {clss}\n'
+                    setting_str += f'self.{key}={clss}('
+                    if 'para' in value:
+                        flag = False
+                elif key2 == 'para':
+                    for key3, value3 in value2.items():
+                        setting_str += f'{key3}={value3},'
+                    setting_str = setting_str[:-1]
+                    flag = True
+                else:
+                    setting_str += f'self.{key}.{key2}={value2}\n'
+                if flag:
+                    setting_str += ')\n'
+                    flag = False
+        print('exec string:\n', setting_str)
+        exec(setting_str)
+
     def update(self):
         Graphics.update()
         
     def quit(self):
+        Graphics.freeze()
         for attr_name, attr_value in self.__dict__.items():
             if isinstance(attr_value, list):
                 for sub in attr_value:

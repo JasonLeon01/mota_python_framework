@@ -1,0 +1,32 @@
+{
+    "sprite": {
+        "type": "sprite.Sprite",
+        "para": {
+            "frames":  "Cache.system(Config.title_file)"
+        }
+    },
+    "star_sprite": {
+        "type": "sprite.Sprite",
+        "para": {
+            "frames": "Cache.system(['star-1', 'star-2', 'star-3', 'star-2', 'star-1'])"
+        },
+        "x": 160,
+        "y": 128,
+        "move": "True",
+        "centre": "True"
+
+    },
+    "window_command": {
+        "type": "command_window.CommandWindow",
+        "para": {
+            "width": 320,
+            "commands": [
+                "新游戏",
+                "继续游戏",
+                "退出游戏"
+            ]
+        },
+        "x": 160,
+        "y": 256
+    }
+}

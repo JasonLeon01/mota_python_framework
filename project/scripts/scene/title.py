@@ -1,77 +1,10 @@
-from project.scripts.core.cache import Cache
-from project.scripts.core.config import Config
-import project.scripts.core.sprite as sprite
-import project.scripts.core.surface as surface
-import project.scripts.core.choice_window as window
+from project.scripts.core.scene import Scene_Base
 
-import project.scripts.core.scene as scene_base
-
-class Scene(scene_base.Scene_Base):
+class Scene(Scene_Base):
     def __init__(self):
-        self.title_surface = surface.Surface((640, 480))
-        
-        title_sprite = sprite.Sprite(Cache.system(Config.title_file))
-        title_sprite.x = 0
-        title_sprite.y = 0
-
-        self.title_surface.add_sprite(title_sprite)
-        sstar_sprite = sprite.Sprite(Cache.system(['star-1', 'star-2', 'star-3', 'star-2', 'star-1']))
-        sstar_sprite.x = 160
-        sstar_sprite.y = 128
-        sstar_sprite.move = True
-        sstar_sprite.centre = True
-        sstar_sprite.interval = 5
-
-        self.title_surface.add_sprite(sstar_sprite)
-        self.title_surface_2 = surface.Surface((320, 240))
-        self.title_surface_2.draw_text(0, 0, 256, 32, 'MOTASYSTEM啊哈')
-
-        ssstar_sprite = sprite.Sprite(Cache.system(['star-1', 'star-2', 'star-3', 'star-2', 'star-1']))
-        ssstar_sprite.x = 160
-        ssstar_sprite.y = 120
-        ssstar_sprite.move = True
-        ssstar_sprite.centre = True
-        ssstar_sprite.interval = 10
-
-        self.title_surface_2.add_sprite(ssstar_sprite)
-        self.title_surface_2.x = 128
-        self.title_surface_2.y = 96
-
-        self.star_sprite = sprite.Sprite(Cache.system(['star-1', 'star-2', 'star-3', 'star-2', 'star-1']))
-        self.star_sprite.x = 320
-        self.star_sprite.y = 32
-        self.star_sprite.move = True
-        self.star_sprite.centre = True
-        self.star_sprite.interval = 15
-
-        self.window = window.ChoiceWindow((352, 96))
-        self.window.contents = surface.Surface((320, 128))
-        self.window.contents.draw_text(0, 0, 256, 32, '呜呀啦哈1')
-        self.window.contents.draw_text(0, 32, 256, 32, '呜呀啦哈2')
-        self.window.contents.draw_text(0, 64, 256, 32, '呜呀啦哈3')
-        self.window.contents.draw_text(0, 96, 256, 32, '呜呀啦哈4')
-        self.window.items = 4
-        
-        self.window.x = 320
-        self.window.y = 240
-        self.window.centre = True
-        self.__change = False
-        self.count = 0
+        self.load_data_from_json(__file__)
         super().__init__()
         print('LOG: Scene Title launched successfully.')
         
     def update(self):
-        if self.title_surface_2.opacity == 255 and not self.__change:
-            self.__change = True
-        elif self.title_surface_2.opacity <= 96 and self.__change:
-            self.__change = False
-        if self.__change:
-            self.title_surface_2.opacity -= 3
-        else:
-            self.title_surface_2.opacity += 3
-        self.star_sprite.angle += 1
-        self.window.angle += 1
-        self.count += 1
-        if self.count == 1500:
-            self.title_surface_2.clear()
         super().update()
