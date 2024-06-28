@@ -1,4 +1,5 @@
-import json
+
+from project.scripts.core.system import System
 
 class Config:
     windowskin_file = None
@@ -19,9 +20,7 @@ class Config:
 
     @classmethod
     def init(cls, file):
-        with open(file, 'r', encoding='utf-8') as file:
-            config_json = file.read()
-        config = json.loads(config_json)
+        config = System.load_json_file(file)
         
         cls.windowskin_file = config['windowskin_file']
         cls.title_file = config['title_file']

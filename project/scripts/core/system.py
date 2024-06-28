@@ -1,6 +1,7 @@
 import configparser
 import os
 import sys
+import json
 from project.scripts.core.config import Config
 Config.init(r'project\data\system\config.json')
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
@@ -22,6 +23,8 @@ class System:
     se_on = None
     scene = None
     wheel = 0
+
+    variables = {}
 
     @classmethod
     def init(cls, inifile):
@@ -45,6 +48,8 @@ class System:
         cls.se_on = True
         cls.scene = None
         cls.wheel = 0
+
+        cls.variables = {}
         print('LOG: System initialized.')
         
     @classmethod
@@ -63,3 +68,15 @@ class System:
         pygame.display.quit()
         cls.canvas = pygame.display.set_mode(cls.get_size())
         print('LOG: System scale changed.')
+
+    @classmethod
+    def load_json_file(cls, file_path):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            json_data = file.read()
+        return json.loads(json_data)
+
+    @classmethod
+    def get_variable(cls, name):
+        if name in cls.variables:
+            return cls.variables[name]
+        return 0

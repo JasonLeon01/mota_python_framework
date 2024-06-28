@@ -2,7 +2,6 @@ import os
 import sys
 from project.scripts.core.graphics import Graphics
 from project.scripts.core.system import System
-
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -30,6 +29,10 @@ class Surface(pygame.Surface):
     def remove_sprite(self, sprite):
         self._sprite_group.remove(sprite)
         print('LOG: Sprite removed from surface.', self, sprite)
+
+    def clear_sprite(self):
+        self._sprite_group.clear()
+        print('LOG: Sprite cleared from surface.', self)
 
     def draw_text(self, x, y, width, height, text, pos = 0, colour = (255, 255, 255, 255), font = System.font):
         size = font.size(text)

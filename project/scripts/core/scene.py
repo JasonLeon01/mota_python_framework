@@ -1,9 +1,9 @@
-import json
 import os
 from project.scripts.core.cache import Cache
 from project.scripts.core.config import Config
 from project.scripts.core.sprite import Sprite
 from project.scripts.core.surface import Surface
+from project.scripts.core.system import System
 from project.scripts.core.window import Window
 from project.scripts.core.graphics import Graphics
 
@@ -27,9 +27,7 @@ class Scene_Base:
                 
     def load_data_from_json(self, file):
         script_name = os.path.basename(file)
-        with open('project\\data\\scene_settings\\' + os.path.splitext(script_name)[0] + '.json', 'r', encoding='utf-8') as file:
-            scene_setting = file.read()
-        scene_setting_data = json.loads(scene_setting)
+        scene_setting_data = System.load_json_file('project\\data\\scene_settings\\' + os.path.splitext(script_name)[0] + '.json')
         setting_str = ''
         for key, value in scene_setting_data.items():
             flag = False

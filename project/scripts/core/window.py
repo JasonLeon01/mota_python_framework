@@ -4,7 +4,6 @@ from project.scripts.core.surface import Surface
 from project.scripts.core.graphics import Graphics
 from project.scripts.core.cache import Cache
 from project.scripts.core.config import Config
-
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
