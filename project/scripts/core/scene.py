@@ -9,6 +9,7 @@ from project.scripts.core.graphics import Graphics
 
 class Scene_Base:
     def __init__(self):
+        self.__quitted = False
         for attr_name, attr_value in self.__dict__.items():
             if isinstance(attr_value, list):
                 for sub in attr_value:
@@ -58,6 +59,7 @@ class Scene_Base:
         Graphics.update()
         
     def quit(self):
+        self.__quitted = True
         Graphics.freeze()
         for attr_name, attr_value in self.__dict__.items():
             if isinstance(attr_value, list):
@@ -66,4 +68,8 @@ class Scene_Base:
                         sub.dispose()
             elif hasattr(attr_value, 'dispose'):
                 attr_value.dispose()
+    
+    def __del__(self):
+        if not self.__quitted:
+            self.quit()
                 

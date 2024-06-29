@@ -1,4 +1,6 @@
 from tkinter import messagebox
+from project.scripts.core.config import Config
+Config.init(r'project\data\system\config.json')
 from project.scripts.core.system import System
 System.init('mota.ini')
 from project.scripts.core.cache import Cache

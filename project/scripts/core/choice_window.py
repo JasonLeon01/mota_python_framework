@@ -31,18 +31,13 @@ class ChoiceWindow(Window):
         self.set_rect(x, y, cursor_width, self.cursor_height)
 
     def mouse_in_rect(self):
-        x, y = pygame.mouse.get_pos()
-        x /= System.get_scale()
-        y /= System.get_scale()
-        if x > self.x and x < self.x + self.size[0] and y > self.y and y < self.y + self.size[1]:
-            return True
-        return False
+        return Input.in_rect((self.x + 16, self.y + 16, self.size[0] - 32, self.size[1] - 32))
     
     def confirm(self):
-        return self.mouse_in_rect() and Input.trigger(pygame.K_RETURN)
+        return self.mouse_in_rect() and Input.trigger(pygame.K_RETURN) or Input.left_click()
     
     def cancel(self):
-        return self.mouse_in_rect() and Input.trigger(pygame.K_ESCAPE)
+        return self.mouse_in_rect() and Input.trigger(pygame.K_ESCAPE) or Input.right_click()
 
     def _key_response(self):
         if Input.repeat(pygame.K_UP):

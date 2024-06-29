@@ -3,7 +3,6 @@ import os
 import sys
 import json
 from project.scripts.core.config import Config
-Config.init(r'project\data\system\config.json')
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
