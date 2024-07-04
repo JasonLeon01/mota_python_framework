@@ -13,9 +13,9 @@ class Sprite(pygame.sprite.Sprite):
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
-        self.visible = True
-        self.move = False
-        self.centre = False
+        self.is_visible = True
+        self.is_moving = False
+        self.is_centre = False
         self.frame_index = 0
         self.interval = 30
         self._frames = self.__process_frames(frames)
@@ -35,7 +35,7 @@ class Sprite(pygame.sprite.Sprite):
         print('LOG: Sprite frames updated successfully.', self._frames)
     
     def update(self, dst = Graphics.canvas):
-        if not self.visible:
+        if not self.is_visible:
             return
         self.angle = self.angle % 360
         self.opacity = max(0, min(255, self.opacity))
@@ -47,10 +47,10 @@ class Sprite(pygame.sprite.Sprite):
         rect = self.image.get_rect()
         rect.x = self.x
         rect.y = self.y
-        if self.centre:
+        if self.is_centre:
             rect.center = (self.x, self.y)
         dst.blit(self.image, rect)
-        if self.move:
+        if self.is_moving:
             self._frame_count = self._frame_count + 1
             if self._frame_count >= self.interval:
                 self._frame_count = 0

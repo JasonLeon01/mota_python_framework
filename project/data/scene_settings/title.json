@@ -12,8 +12,8 @@
         },
         "x": 160,
         "y": 128,
-        "move": "True",
-        "centre": "True"
+        "is_moving": "True",
+        "is_centre": "True"
 
     },
     "window_command": {

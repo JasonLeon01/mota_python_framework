@@ -16,7 +16,7 @@ class ChoiceWindow(Window):
         self.cursor_height = 32
         self.index = 0
         self.items = 1
-        self.active = True
+        self.is_active = True
     
     def rows(self):
         return int(math.ceil(1.0 * self.items / self.column))
@@ -69,7 +69,7 @@ class ChoiceWindow(Window):
 
     def update(self):
         super().update()
-        if not self.active or self.items == 0 or self.index < 0:
+        if not self.is_active or self.items == 0 or self.index < 0:
             return
         if self.index >= self.items:
             self.index = self.items - 1

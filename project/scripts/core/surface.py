@@ -17,8 +17,8 @@ class Surface(pygame.Surface):
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
-        self.visible = True
-        self.centre = False
+        self.is_visible = True
+        self.is_centre = False
         self._sprite_group = []
         print('LOG: Surface initialized.')
         
@@ -53,7 +53,7 @@ class Surface(pygame.Surface):
         print('LOG: Surface cleared.', self)
         
     def update(self, dst = Graphics.canvas):
-        if not self.visible:
+        if not self.is_visible:
             return
         self.angle = self.angle % 360
         row_surface = self.copy()
@@ -67,7 +67,7 @@ class Surface(pygame.Surface):
         rect = draw_surface.get_rect()
         rect.x = self.x - self.ox
         rect.y = self.y - self.oy
-        if self.centre:
+        if self.is_centre:
             rect.center = (self.x, self.y)
         dst.blit(draw_surface, (rect.x, rect.y))
         

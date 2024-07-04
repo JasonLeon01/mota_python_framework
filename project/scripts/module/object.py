@@ -19,9 +19,9 @@ class Object(Sprite):
         self.x = self.map_x * 32
         self.y = self.map_y * 32
         if not self.exist or System.get_variables(self.condition[0]) < self.condition[1]:
-            self.visible = False
+            self.is_visible = False
         else:
-            self.visible = True
+            self.is_visible = True
         super().update(dst)
 
     def dispose(self):

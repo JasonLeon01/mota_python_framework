@@ -18,8 +18,8 @@ class System:
     frame_rate = None
     running = None
     clock = None
-    bgm_on = None
-    se_on = None
+    is_music_on = None
+    is_voice_on = None
     scene = None
     wheel = 0
 
@@ -43,8 +43,8 @@ class System:
         cls.frame_rate = iniconfig['Mota'].getint('FrameRate')
         cls.running = True
         cls.clock = pygame.time.Clock()
-        cls.bgm_on = True
-        cls.se_on = True
+        cls.is_music_on = True
+        cls.is_voice_on = True
         cls.scene = None
         cls.wheel = 0
 

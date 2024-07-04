@@ -55,7 +55,7 @@ class Map:
             self.viewport2.add_sprite(add_obj)
 
     def update(self, dst = Graphics.canvas):
-        if not self.visible:
+        if not self.is_visible:
             return
         self.viewport.fill((0, 0, 0, 0))
         self.viewport.blit(self.background, (0, 0))

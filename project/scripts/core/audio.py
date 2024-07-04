@@ -1,12 +1,13 @@
 import sys
 import os
+from project.scripts.core.system import System
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
 class Audio:
     @classmethod
     def play_voice(cls, file):
-        if file == '':
+        if file == '' or System.is_voice_on:
             return
         file = r'project\assets\voices\{}'.format(file)
         if not os.path.exists(file):
@@ -15,7 +16,7 @@ class Audio:
 
     @classmethod
     def play_music(cls, file):
-        if file == '':
+        if file == '' or System.is_music_on:
             return
         file = r'project\assets\musics\{}'.format(file)
         if not os.path.exists(file):
