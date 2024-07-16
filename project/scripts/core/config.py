@@ -1,3 +1,4 @@
+import project.scripts.core.method as method
 
 class Config:
     windowskin_file = None
@@ -18,8 +19,7 @@ class Config:
 
     @classmethod
     def init(cls, file):
-        from project.scripts.core.system import System
-        config = System.load_json_file(file)
+        config = method.load_json_file(file)
         
         cls.windowskin_file = config['windowskin_file']
         cls.title_file = config['title_file']

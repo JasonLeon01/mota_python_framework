@@ -1,11 +1,12 @@
 from tkinter import messagebox
 from project.scripts.core.config import Config
-Config.init(r'project\data\system\config.json')
 from project.scripts.core.system import System
-System.init('mota.ini')
 from project.scripts.core.cache import Cache
-Cache.init(r'project\assets', '.png')
 from project.scripts.core.graphics import Graphics
+
+Config.init(r'project\data\system\config.json')
+System.init('mota.ini')
+Cache.init(r'project\assets', '.png')
 Graphics.init()
 
 import project.scripts.scene.title as title

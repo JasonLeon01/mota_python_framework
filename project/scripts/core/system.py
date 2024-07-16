@@ -1,7 +1,6 @@
 import configparser
 import os
 import sys
-import json
 from project.scripts.core.config import Config
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
@@ -67,12 +66,6 @@ class System:
         pygame.display.quit()
         cls.canvas = pygame.display.set_mode(cls.get_size())
         print('LOG: System scale changed.')
-
-    @classmethod
-    def load_json_file(cls, file_path):
-        with open(file_path, 'r', encoding='utf-8') as file:
-            json_data = file.read()
-        return json.loads(json_data)
 
     @classmethod
     def get_variable(cls, name):
