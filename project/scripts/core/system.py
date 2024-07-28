@@ -25,7 +25,7 @@ class System:
     variables = {}
 
     @classmethod
-    def init(cls, inifile):
+    def init(cls, inifile: str):
         pygame.init()
         iniconfig = configparser.ConfigParser()
         iniconfig.read(inifile)
@@ -59,7 +59,7 @@ class System:
         return cls.__scale
     
     @classmethod
-    def change_scale(cls, scale):
+    def change_scale(cls, scale: float):
         cls.__scale = scale
         cls.__width = int(640 * scale)
         cls.__height = int(480 * scale)

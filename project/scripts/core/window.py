@@ -40,7 +40,7 @@ class Window(Surface):
         self.__render_corner([(128, 0, 16, 16), (176, 0, 16, 16), (128, 48, 16, 16), (176, 48, 16, 16)], [(0, 0), (self.size[0] - 16, 0), (0, self.size[1] - 16), (self.size[0] - 16, self.size[1] - 16)], self)
         self.__render_edge([(144, 0, 32, 16), (144, 48, 32, 16), (128, 16, 16, 32), (176, 16, 16, 32)], [(self.size[0] - 32, 16), (self.size[0] - 32, 16), (16, self.size[1] - 32), (16, self.size[1] - 32)], [(16, 0), (16, self.size[1] - 16), (0, 16), (self.size[0] - 16, 16)], self)
 
-    def set_rect(self, x, y, width, height):
+    def set_rect(self, x: int, y: int, width: int, height: int):
         self.__has_rect = True
         self.__rect_rect = (x, y, width, height)
         

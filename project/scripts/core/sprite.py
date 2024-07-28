@@ -1,20 +1,20 @@
 import os
 import sys
+from typing import List, Union
 from project.scripts.core.graphics import Graphics
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
 class Sprite(pygame.sprite.Sprite):
-    def __init__(self, frames = None):
+    def __init__(self, frames: Union[List[pygame.Surface], pygame.Surface] = None, pos = (0, 0)):
         super().__init__()
-        self.x = 0
-        self.y = 0
+        self.x, self.y = pos
         self.z = 0
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
         self.is_visible = True
-        self.is_moving = False
+        self.is_animating = False
         self.is_centre = False
         self.frame_index = 0
         self.interval = 30
@@ -50,7 +50,7 @@ class Sprite(pygame.sprite.Sprite):
         if self.is_centre:
             rect.center = (self.x, self.y)
         dst.blit(self.image, rect)
-        if self.is_moving:
+        if self.is_animating:
             self._frame_count = self._frame_count + 1
             if self._frame_count >= self.interval:
                 self._frame_count = 0

@@ -27,7 +27,7 @@ class Scene_Base:
             elif isinstance(attr_value, Sprite):
                 Graphics.add_sprite(attr_value)
                 
-    def load_data_from_json(self, file):
+    def load_data_from_json(self, file: str):
         script_name = os.path.basename(file)
         scene_setting_data = method.load_json_file('project\\data\\scene_settings\\' + os.path.splitext(script_name)[0] + '.json')
         setting_str = ''

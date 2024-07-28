@@ -6,10 +6,9 @@ sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
 class Surface(pygame.Surface):
-    def __init__(self, size):
+    def __init__(self, size, pos = (0, 0)):
         super().__init__(size, pygame.SRCALPHA)
-        self.x = 0
-        self.y = 0
+        self.x, self.y = pos
         self.ox = 0
         self.oy = 0
         self.z = 0

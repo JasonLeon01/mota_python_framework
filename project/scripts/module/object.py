@@ -1,28 +1,43 @@
-from project.scripts.core.graphics import Graphics
 from project.scripts.core.sprite import Sprite
-from project.scripts.core.system import System
 
-class Object(Sprite):
-    def __init__(self, frames = None):
-        super().__init__(frames)
+class Object:
+    def __init__(self, sprite: Sprite = None, pos = (0, 0), interval = 30, is_animating = False):
         self.id = 0
-        self.name = ''
-        self.map_x = 0
-        self.map_y = 0
-        self.interval = 30
-        self.condition = ['', 0]
-        self.move = False
-        self.exist = True
-        self.todo = {}
+        self.sprite = sprite
+        self.x, self.y = pos
+        self.interval = interval
+        self.is_animating = is_animating
+        
+        self.__screen_x = self.x * 32
+        self.__screen_y = self.y * 32
+        self.__is_moving = False
     
     def update(self, dst):
-        self.x = self.map_x * 32
-        self.y = self.map_y * 32
-        if not self.exist or System.get_variables(self.condition[0]) < self.condition[1]:
-            self.is_visible = False
+        if not self.is_visible:
+            return
+        
+        self.sprite.is_animating = self.is_animating
+        self.sprite.update(dst)
+        
+        if self.__screen_x != self.x * 32 or self.__screen_y != self.y * 32:
+            self.__is_moving = True
         else:
-            self.is_visible = True
-        super().update(dst)
+            self.__is_moving = False
+            
+        if self.__screen_x < self.x * 32:
+            self.__screen_x += 4
+        elif self.__screen_x > self.x * 32:
+            self.__screen_x -= 4
+        if self.__screen_y < self.y * 32:
+            self.__screen_y += 4
+        elif self.__screen_y > self.y * 32:
+            self.__screen_y -= 4
+            
+        if not self.__is_moving:
+            self.onFunction()
+
+    def onFunction(self):
+        pass
 
     def dispose(self):
         self._frames = None

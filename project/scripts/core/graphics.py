@@ -1,7 +1,11 @@
 from math import ceil
 import os
 import sys
+from project.scripts.core.animation import Animation
 from project.scripts.core.system import System
+from project.scripts.core.sprite import Sprite
+from project.scripts.core.surface import Surface
+from project.scripts.core.window import Window
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -26,42 +30,42 @@ class Graphics:
         print('LOG: Graphics initialized.')
     
     @classmethod
-    def add_window(cls, window):
+    def add_window(cls, window: Window):
         cls.__window_group.append(window)
         print('LOG: Window added.', window)
 
     @classmethod
-    def remove_window(cls, window):
+    def remove_window(cls, window: Window):
         cls.__window_group.remove(window)
         print('LOG: Window removed.', window)
 
     @classmethod
-    def add_sprite(cls, sprite):
+    def add_sprite(cls, sprite: Sprite):
         cls.__sprite_group.append(sprite)
         print('LOG: Sprite added.', sprite)
         
     @classmethod
-    def remove_sprite(cls, sprite):
+    def remove_sprite(cls, sprite: Sprite):
         cls.__sprite_group.remove(sprite)
         print('LOG: Sprite removed.', sprite)
     
     @classmethod
-    def add_surface(cls, surface):
+    def add_surface(cls, surface: Surface):
         cls.__surface_group.append(surface)
         print('LOG: Surface added.', surface)
     
     @classmethod
-    def remove_surface(cls, surface):
+    def remove_surface(cls, surface: Surface):
         cls.__surface_group.remove(surface)
         print('LOG: Surface removed.', surface)
 
     @classmethod
-    def add_animation(cls, animation):
+    def add_animation(cls, animation: Animation):
         cls.__animation_group.append(animation)
         print('LOG: Animation added.', animation)
 
     @classmethod
-    def remove_animation(cls, animation):
+    def remove_animation(cls, animation: Animation):
         cls.__animation_group.remove(animation)
         print('LOG: Animation removed.', animation)
 
@@ -115,7 +119,7 @@ class Graphics:
         cls.__freeze_Image = cls.canvas.copy()
 
     @classmethod
-    def transition(cls, time = 20):
+    def transition(cls, time: int = 20):
         for i in range(time):
             cls.__freeze_Image.set_alpha(255 - ceil(255.0 / time) * i)
             cls.update()
