@@ -1,5 +1,6 @@
 import os
 import sys
+from project.scripts.core.system import System
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -41,16 +42,51 @@ class Input:
         return False
     
     @classmethod
-    def left_click(cls):
-        return pygame.mouse.get_pressed()[0]
+    def get_mouse_pos(cls):
+        x, y = pygame.mouse.get_pos()
+        x /= System.get_scale()
+        y /= System.get_scale()
+        return x, y
     
     @classmethod
-    def right_click(cls):
-        return pygame.mouse.get_pressed()[2]
+    def __check_click_type(cls, type, key, pressed, interval):
+        if type == 'press':
+            return pressed
+        elif type == 'trigger':
+            if key not in cls.__keys_hash:
+                cls.__keys_hash[key] = False
+            if cls.__keys_hash[key] and pressed:
+                return False
+            if pressed:
+                cls.__keys_hash[key] = True
+                return True
+            cls.__keys_hash[key] = False
+            return False
+        elif type == 'repeat':
+            if pressed:
+                if key not in cls.__keys_repeat:
+                    cls.__keys_repeat[key] = 0
+                    return True
+                cls.__keys_repeat[key] += 1
+            else:
+                cls.__keys_repeat.pop(key, None)
+                cls.__keys_hash[key] = False
+            if key in cls.__keys_repeat and cls.__keys_repeat[key] > interval:
+                cls.__keys_repeat[key] = 0
+                return True
+            return False
+        return False
+    
+    @classmethod
+    def left_click(cls, type = 'press', interval = 8):
+        return cls.__check_click_type(type, 0, pygame.mouse.get_pressed()[0], interval)
+    
+    @classmethod
+    def right_click(cls, type = 'press', interval = 8):
+        return cls.__check_click_type(type, 2, pygame.mouse.get_pressed()[2], interval)
     
     @classmethod
     def in_rect(cls, rect):
-        from project.scripts.core.system import System
         x, y = pygame.mouse.get_pos()
         x /= System.get_scale()
         y /= System.get_scale()

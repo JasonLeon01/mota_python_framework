@@ -1,3 +1,4 @@
+import logging
 import os
 import sys
 from project.scripts.core.surface import Surface
@@ -18,7 +19,7 @@ class Window(Surface):
         self.__content_surface.y = 16
         self.__has_rect = False
         self.__rect_rect = (0, 0, 0, 0)
-        print('LOG: Window initialized successfully.')
+        logging.info('Window initialized successfully.')
 
     def __render_corner(self, area_rects, positions, dst):
         for i in range(4):
@@ -66,4 +67,4 @@ class Window(Surface):
         self._sprite_group.clear()
         self.contents = None
         Graphics.remove_window(self)
-        print('LOG: Window disposed.', self)
+        logging.info('Window disposed. %s', self)

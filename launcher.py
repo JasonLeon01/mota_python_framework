@@ -1,12 +1,37 @@
 import os
 import sys
 import configparser
-from tkinter import messagebox
+import traceback
+from tkinter import Tk, messagebox
+import logging
+
+from project.scripts.core.config import Config
+from project.scripts.core.system import System
+from project.scripts.core.cache import Cache
+from project.scripts.core.graphics import Graphics
 
 def main():
+    root = Tk()
+    root.withdraw()
     config = configparser.ConfigParser()
     config.read('mota.ini')
-
+    
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler("app.log"),
+            logging.StreamHandler()
+        ]
+    )
+    
+    Config.init(r'project\data\system\config.json')
+    System.init('mota.ini')
+    Cache.init(r'project\assets', '.png')
+    Graphics.init()
+    
+    os.environ['DEBUG'] = 'True'
+    
     if 'Mota' not in config:
         messagebox.showinfo("Error", "'Mota' section not found in mota.ini.")
         sys.exit(1)
@@ -23,7 +48,11 @@ def main():
 
     with open(core_script, 'r', encoding='utf-8') as f:
         code = compile(f.read(), core_script, 'exec')
-        exec(code, globals())
+        try:
+            exec(code, globals(), locals())
+        except Exception as e:
+            messagebox.showinfo("Error", traceback.format_exc())
+            sys.exit(1)
 
 if __name__ == '__main__':
     main()

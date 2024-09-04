@@ -1,3 +1,4 @@
+import logging
 import os
 from project.scripts.core.cache import Cache
 from project.scripts.core.config import Config
@@ -53,7 +54,7 @@ class Scene_Base:
                 if flag:
                     setting_str += ')\n'
                     flag = False
-        print('exec string:\n', setting_str)
+        logging.warning('String generated from json will be exec\nexec string:\n %s', setting_str)
         exec(setting_str)
 
     def update(self):

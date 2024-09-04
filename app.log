@@ -1,0 +1,619 @@
+2024-09-05 02:05:08,075 - root - INFO - Config loaded successfully.
+2024-09-05 02:05:08,567 - root - INFO - System initialized.
+2024-09-05 02:05:58,002 - root - INFO - Config loaded successfully.
+2024-09-05 02:05:58,403 - root - INFO - System initialized.
+2024-09-05 02:05:58,404 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:05:58,404 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:05:58,405 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:05:58,406 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:05:58,407 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:05:58,408 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:05:58,408 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:05:58,409 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:05:58,410 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:05:58,411 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:05:58,411 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:05:58,413 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:05:58,413 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:05:58,417 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:05:58,418 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:05:58,419 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:05:58,421 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:05:58,422 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:05:58,423 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:05:58,424 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:05:58,425 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:05:58,426 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:05:58,427 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:05:58,428 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:05:58,429 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:05:58,430 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:05:58,430 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:05:58,431 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:05:58,431 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:05:58,432 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:05:58,433 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:05:58,434 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:05:58,437 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:05:58,437 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:05:58,438 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:05:58,439 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:05:58,439 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:05:58,442 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:05:58,443 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:05:58,443 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:05:58,443 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:05:58,449 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:06:35,005 - root - INFO - Config loaded successfully.
+2024-09-05 02:06:35,324 - root - INFO - System initialized.
+2024-09-05 02:06:35,325 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:06:35,327 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:06:35,328 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:06:35,329 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:06:35,330 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:06:35,330 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:06:35,331 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:06:35,332 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:06:35,333 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:06:35,334 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:06:35,335 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:06:35,336 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:06:35,337 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:06:35,340 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:06:35,341 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:06:35,342 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:06:35,344 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:06:35,345 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:06:35,347 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:06:35,348 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:06:35,349 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:06:35,350 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:06:35,351 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:06:35,352 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:06:35,353 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:06:35,353 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:06:35,354 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:06:35,355 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:06:35,355 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:06:35,356 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:06:35,357 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:06:35,359 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:06:35,360 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:06:35,360 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:06:35,361 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:06:35,362 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:06:35,362 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:06:35,365 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:06:35,366 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:06:35,366 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:06:35,367 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:06:35,373 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:06:35,373 - root - INFO - Graphics initialized.
+2024-09-05 02:06:35,384 - root - INFO - Game launched successfully.
+2024-09-05 02:06:35,408 - root - INFO - Surface initialized.
+2024-09-05 02:06:35,409 - root - INFO - Surface initialized.
+2024-09-05 02:06:35,409 - root - INFO - Window initialized successfully.
+2024-09-05 02:06:35,409 - root - INFO - Surface initialized.
+2024-09-05 02:06:35,480 - root - INFO - Scene Title launched successfully.
+2024-09-05 02:06:43,019 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:06:43,028 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:06:43,362 - root - INFO - Game exited successfully.
+2024-09-05 02:06:46,969 - root - INFO - Config loaded successfully.
+2024-09-05 02:06:47,328 - root - INFO - System initialized.
+2024-09-05 02:06:47,329 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:06:47,330 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:06:47,331 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:06:47,332 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:06:47,333 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:06:47,333 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:06:47,334 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:06:47,335 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:06:47,336 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:06:47,337 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:06:47,338 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:06:47,339 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:06:47,340 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:06:47,343 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:06:47,345 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:06:47,346 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:06:47,348 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:06:47,349 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:06:47,350 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:06:47,351 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:06:47,353 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:06:47,354 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:06:47,355 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:06:47,356 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:06:47,357 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:06:47,357 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:06:47,358 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:06:47,359 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:06:47,359 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:06:47,360 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:06:47,361 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:06:47,362 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:06:47,364 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:06:47,364 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:06:47,365 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:06:47,366 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:06:47,366 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:06:47,370 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:06:47,370 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:06:47,371 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:06:47,371 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:06:47,377 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:06:47,378 - root - INFO - Graphics initialized.
+2024-09-05 02:06:47,382 - root - INFO - Game launched successfully.
+2024-09-05 02:06:47,400 - root - INFO - Surface initialized.
+2024-09-05 02:06:47,400 - root - INFO - Surface initialized.
+2024-09-05 02:06:47,400 - root - INFO - Window initialized successfully.
+2024-09-05 02:06:47,400 - root - INFO - Surface initialized.
+2024-09-05 02:06:47,485 - root - INFO - Scene Title launched successfully.
+2024-09-05 02:06:54,937 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:06:54,945 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:06:55,282 - root - INFO - Game exited successfully.
+2024-09-05 02:12:50,325 - root - INFO - Config loaded successfully.
+2024-09-05 02:12:50,925 - root - INFO - System initialized.
+2024-09-05 02:12:50,926 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:12:50,926 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:12:50,927 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:12:50,928 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:12:50,928 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:12:50,929 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:12:50,929 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:12:50,930 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:12:50,930 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:12:50,931 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:12:50,931 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:12:50,932 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:12:50,933 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:12:50,935 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:12:50,936 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:12:50,937 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:12:50,938 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:12:50,939 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:12:50,940 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:12:50,941 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:12:50,942 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:12:50,943 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:12:50,944 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:12:50,944 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:12:50,945 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:12:50,946 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:12:50,946 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:12:50,947 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:12:50,948 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:12:50,949 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:12:50,950 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:12:50,951 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:12:50,952 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:12:50,954 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:12:50,955 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:12:50,956 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:12:50,956 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:12:50,959 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:12:50,960 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:12:50,960 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:12:50,961 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:12:50,968 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:12:50,969 - root - INFO - Graphics initialized.
+2024-09-05 02:12:50,979 - root - INFO - Game launched successfully.
+2024-09-05 02:12:50,980 - root - WARNING - String generated from json will be exec
+exec string:
+ from project.scripts.core.sprite import Sprite
+self.sprite=Sprite(frames=Cache.system(Config.title_file))
+self.star_sprite=Sprite(frames=Cache.system(['star-1', 'star-2', 'star-3', 'star-2']))
+self.star_sprite.x=160
+self.star_sprite.y=128
+self.star_sprite.is_animating=True
+self.star_sprite.is_centre=True
+from project.scripts.core.command_window import CommandWindow
+self.window_command=CommandWindow(width=320,commands=['新游戏', '继续游戏', '退出游戏', '关于游戏'])
+self.window_command.x=160
+self.window_command.y=256
+
+2024-09-05 02:12:50,980 - root - INFO - Sprite created successfully. [<Surface(640x480x32 SW)>]
+2024-09-05 02:12:50,981 - root - INFO - Sprite created successfully. [<Surface(8x8x32 SW)>, <Surface(16x16x32 SW)>, <Surface(24x24x32 SW)>, <Surface(16x16x32 SW)>]
+2024-09-05 02:12:50,984 - root - INFO - Surface initialized.
+2024-09-05 02:12:50,985 - root - INFO - Surface initialized.
+2024-09-05 02:12:50,985 - root - INFO - Window initialized successfully.
+2024-09-05 02:12:50,985 - root - INFO - Surface initialized.
+2024-09-05 02:12:50,985 - root - INFO - Surface cleared. <Surface(288x128x32 SW)>
+2024-09-05 02:12:50,985 - root - INFO - command: 新游戏
+2024-09-05 02:12:50,992 - root - INFO - Text drawn. 新游戏
+2024-09-05 02:12:50,992 - root - INFO - command: 继续游戏
+2024-09-05 02:12:50,997 - root - INFO - Text drawn. 继续游戏
+2024-09-05 02:12:50,998 - root - INFO - command: 退出游戏
+2024-09-05 02:12:51,003 - root - INFO - Text drawn. 退出游戏
+2024-09-05 02:12:51,003 - root - INFO - command: 关于游戏
+2024-09-05 02:12:51,008 - root - INFO - Text drawn. 关于游戏
+2024-09-05 02:12:51,008 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:12:51,008 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:12:51,008 - root - INFO - Window added. <Surface(320x160x32 SW)>
+2024-09-05 02:12:51,009 - root - INFO - Scene Title launched successfully.
+2024-09-05 02:12:53,562 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:12:53,562 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:12:53,562 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:12:53,562 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:12:53,562 - root - INFO - Window removed. <Surface(320x160x32 SW)>
+2024-09-05 02:12:53,564 - root - INFO - Window disposed. <Surface(320x160x32 SW)>
+2024-09-05 02:12:53,902 - root - INFO - Game exited successfully.
+2024-09-05 02:13:08,388 - root - INFO - Config loaded successfully.
+2024-09-05 02:13:08,769 - root - INFO - System initialized.
+2024-09-05 02:13:08,770 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:13:08,772 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:13:08,772 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:13:08,773 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:13:08,774 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:13:08,774 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:13:08,775 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:13:08,775 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:13:08,776 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:13:08,776 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:13:08,776 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:13:08,777 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:13:08,778 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:13:08,780 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:13:08,781 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:13:08,782 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:13:08,783 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:13:08,784 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:13:08,785 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:13:08,786 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:13:08,788 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:13:08,789 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:13:08,790 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:13:08,791 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:13:08,792 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:13:08,792 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:13:08,793 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:13:08,794 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:13:08,794 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:13:08,796 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:13:08,797 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:13:08,797 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:13:08,799 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:13:08,799 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:13:08,800 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:13:08,801 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:13:08,801 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:13:08,804 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:13:08,805 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:13:08,805 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:13:08,805 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:13:08,812 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:13:08,813 - root - INFO - Graphics initialized.
+2024-09-05 02:13:08,819 - root - INFO - Game launched successfully.
+2024-09-05 02:13:08,819 - root - WARNING - String generated from json will be exec
+exec string:
+ from project.scripts.core.sprite import Sprite
+self.sprite=Sprite(frames=Cache.system(Config.title_file))
+self.star_sprite=Sprite(frames=Cache.system(['star-1', 'star-2', 'star-3', 'star-2']))
+self.star_sprite.x=160
+self.star_sprite.y=128
+self.star_sprite.is_animating=True
+self.star_sprite.is_centre=True
+from project.scripts.core.command_window import CommandWindow
+self.window_command=CommandWindow(width=320,commands=['新游戏', '继续游戏', '退出游戏', '关于游戏'])
+self.window_command.x=160
+self.window_command.y=256
+
+2024-09-05 02:13:08,820 - root - INFO - Sprite created successfully. [<Surface(640x480x32 SW)>]
+2024-09-05 02:13:08,820 - root - INFO - Sprite created successfully. [<Surface(8x8x32 SW)>, <Surface(16x16x32 SW)>, <Surface(24x24x32 SW)>, <Surface(16x16x32 SW)>]
+2024-09-05 02:13:08,822 - root - INFO - Surface initialized.
+2024-09-05 02:13:08,823 - root - INFO - Surface initialized.
+2024-09-05 02:13:08,823 - root - INFO - Window initialized successfully.
+2024-09-05 02:13:08,823 - root - INFO - Surface initialized.
+2024-09-05 02:13:08,823 - root - INFO - Surface cleared. <Surface(288x128x32 SW)>
+2024-09-05 02:13:08,823 - root - INFO - command: 新游戏
+2024-09-05 02:13:08,823 - root - INFO - text 新游戏
+2024-09-05 02:13:08,824 - root - INFO - Text drawn. 新游戏
+2024-09-05 02:13:08,824 - root - INFO - command: 继续游戏
+2024-09-05 02:13:08,824 - root - INFO - text 继续游戏
+2024-09-05 02:13:08,825 - root - INFO - Text drawn. 继续游戏
+2024-09-05 02:13:08,825 - root - INFO - command: 退出游戏
+2024-09-05 02:13:08,825 - root - INFO - text 退出游戏
+2024-09-05 02:13:08,825 - root - INFO - Text drawn. 退出游戏
+2024-09-05 02:13:08,826 - root - INFO - command: 关于游戏
+2024-09-05 02:13:08,826 - root - INFO - text 关于游戏
+2024-09-05 02:13:08,826 - root - INFO - Text drawn. 关于游戏
+2024-09-05 02:13:08,826 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:13:08,826 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:13:08,826 - root - INFO - Window added. <Surface(320x160x32 SW)>
+2024-09-05 02:13:08,826 - root - INFO - Scene Title launched successfully.
+2024-09-05 02:13:22,369 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:22,616 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:22,782 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:22,897 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:23,144 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:27,710 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:27,777 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:27,916 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:27,996 - root - INFO - Mouse wheel event detected. -1
+2024-09-05 02:13:30,904 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:13:30,904 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:13:30,904 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:13:30,905 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:13:30,905 - root - INFO - Window removed. <Surface(320x160x32 SW)>
+2024-09-05 02:13:30,905 - root - INFO - Window disposed. <Surface(320x160x32 SW)>
+2024-09-05 02:13:31,232 - root - INFO - Game exited successfully.
+2024-09-05 02:14:29,569 - root - INFO - Config loaded successfully.
+2024-09-05 02:14:29,965 - root - INFO - System initialized.
+2024-09-05 02:14:29,967 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:14:29,968 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:14:29,969 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:14:29,969 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:14:29,970 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:14:29,971 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:14:29,972 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:14:29,973 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:14:29,974 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:14:29,974 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:14:29,975 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:14:29,976 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:14:29,977 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:14:29,980 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:14:29,981 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:14:29,981 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:14:29,984 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:14:29,985 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:14:29,987 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:14:29,988 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:14:29,989 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:14:29,990 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:14:29,991 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:14:29,992 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:14:29,992 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:14:29,993 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:14:29,993 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:14:29,994 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:14:29,995 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:14:29,996 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:14:29,997 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:14:29,998 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:14:29,999 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:14:29,999 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:14:30,000 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:14:30,001 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:14:30,001 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:14:30,004 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:14:30,005 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:14:30,006 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:14:30,006 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:14:30,012 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:14:30,013 - root - INFO - Graphics initialized.
+2024-09-05 02:14:30,017 - root - INFO - Game launched successfully.
+2024-09-05 02:14:30,017 - root - WARNING - String generated from json will be exec
+exec string:
+ from project.scripts.core.sprite import Sprite
+self.sprite=Sprite(frames=Cache.system(Config.title_file))
+self.star_sprite=Sprite(frames=Cache.system(['star-1', 'star-2', 'star-3', 'star-2']))
+self.star_sprite.x=160
+self.star_sprite.y=128
+self.star_sprite.is_animating=True
+self.star_sprite.is_centre=True
+from project.scripts.core.command_window import CommandWindow
+self.window_command=CommandWindow(width=320,commands=['新游戏', '继续游戏', '退出游戏', '关于游戏'])
+self.window_command.x=160
+self.window_command.y=256
+
+2024-09-05 02:14:30,018 - root - INFO - Sprite created successfully. [<Surface(640x480x32 SW)>]
+2024-09-05 02:14:30,018 - root - INFO - Sprite created successfully. [<Surface(8x8x32 SW)>, <Surface(16x16x32 SW)>, <Surface(24x24x32 SW)>, <Surface(16x16x32 SW)>]
+2024-09-05 02:14:30,023 - root - INFO - Surface initialized.
+2024-09-05 02:14:30,024 - root - INFO - Surface initialized.
+2024-09-05 02:14:30,024 - root - INFO - Window initialized successfully.
+2024-09-05 02:14:30,024 - root - INFO - Surface initialized.
+2024-09-05 02:14:30,024 - root - INFO - Surface cleared. <Surface(288x128x32 SW)>
+2024-09-05 02:14:30,025 - root - INFO - command: 新游戏
+2024-09-05 02:14:30,025 - root - INFO - text 新游戏
+2024-09-05 02:14:30,025 - root - INFO - Text drawn. 新游戏
+2024-09-05 02:14:30,026 - root - INFO - command: 继续游戏
+2024-09-05 02:14:30,026 - root - INFO - text 继续游戏
+2024-09-05 02:14:30,026 - root - INFO - Text drawn. 继续游戏
+2024-09-05 02:14:30,026 - root - INFO - command: 退出游戏
+2024-09-05 02:14:30,027 - root - INFO - text 退出游戏
+2024-09-05 02:14:30,027 - root - INFO - Text drawn. 退出游戏
+2024-09-05 02:14:30,027 - root - INFO - command: 关于游戏
+2024-09-05 02:14:30,027 - root - INFO - text 关于游戏
+2024-09-05 02:14:30,027 - root - INFO - Text drawn. 关于游戏
+2024-09-05 02:14:30,027 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:30,028 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:30,028 - root - INFO - Window added. <Surface(320x160x32 SW)>
+2024-09-05 02:14:30,028 - root - INFO - Scene Title launched successfully.
+2024-09-05 02:14:30,961 - root - INFO - Caught index on screen is 1.0, now index is 1.0
+2024-09-05 02:14:34,009 - root - INFO - Caught index on screen is 2.0, now index is 2.0
+2024-09-05 02:14:35,467 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:35,468 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:14:35,468 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:35,468 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:14:35,469 - root - INFO - Window removed. <Surface(320x160x32 SW)>
+2024-09-05 02:14:35,469 - root - INFO - Window disposed. <Surface(320x160x32 SW)>
+2024-09-05 02:14:35,796 - root - INFO - Game exited successfully.
+2024-09-05 02:14:48,934 - root - INFO - Config loaded successfully.
+2024-09-05 02:14:49,309 - root - INFO - System initialized.
+2024-09-05 02:14:49,311 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:14:49,312 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:14:49,313 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:14:49,313 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:14:49,314 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:14:49,314 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:14:49,315 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:14:49,316 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:14:49,317 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:14:49,318 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:14:49,319 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:14:49,321 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:14:49,321 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:14:49,324 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:14:49,326 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:14:49,327 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:14:49,329 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:14:49,330 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:14:49,331 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:14:49,332 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:14:49,334 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:14:49,334 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:14:49,335 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:14:49,336 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:14:49,337 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:14:49,338 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:14:49,339 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:14:49,339 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:14:49,340 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:14:49,341 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:14:49,342 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:14:49,343 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:14:49,344 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:14:49,345 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:14:49,346 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:14:49,346 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:14:49,347 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:14:49,350 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:14:49,351 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:14:49,351 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:14:49,351 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:14:49,357 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:14:49,358 - root - INFO - Graphics initialized.
+2024-09-05 02:14:49,361 - root - INFO - Game launched successfully.
+2024-09-05 02:14:49,362 - root - WARNING - String generated from json will be exec
+exec string:
+ from project.scripts.core.sprite import Sprite
+self.sprite=Sprite(frames=Cache.system(Config.title_file))
+self.star_sprite=Sprite(frames=Cache.system(['star-1', 'star-2', 'star-3', 'star-2']))
+self.star_sprite.x=160
+self.star_sprite.y=128
+self.star_sprite.is_animating=True
+self.star_sprite.is_centre=True
+from project.scripts.core.command_window import CommandWindow
+self.window_command=CommandWindow(width=320,commands=['新游戏', '继续游戏', '退出游戏', '关于游戏'])
+self.window_command.x=160
+self.window_command.y=256
+
+2024-09-05 02:14:49,362 - root - INFO - Sprite created successfully. [<Surface(640x480x32 SW)>]
+2024-09-05 02:14:49,363 - root - INFO - Sprite created successfully. [<Surface(8x8x32 SW)>, <Surface(16x16x32 SW)>, <Surface(24x24x32 SW)>, <Surface(16x16x32 SW)>]
+2024-09-05 02:14:49,368 - root - INFO - Surface initialized.
+2024-09-05 02:14:49,368 - root - INFO - Surface initialized.
+2024-09-05 02:14:49,368 - root - INFO - Window initialized successfully.
+2024-09-05 02:14:49,368 - root - INFO - Surface initialized.
+2024-09-05 02:14:49,368 - root - INFO - Surface cleared. <Surface(288x128x32 SW)>
+2024-09-05 02:14:49,368 - root - INFO - command: 新游戏
+2024-09-05 02:14:49,368 - root - INFO - text 新游戏
+2024-09-05 02:14:49,369 - root - INFO - Text drawn. 新游戏
+2024-09-05 02:14:49,369 - root - INFO - command: 继续游戏
+2024-09-05 02:14:49,369 - root - INFO - text 继续游戏
+2024-09-05 02:14:49,370 - root - INFO - Text drawn. 继续游戏
+2024-09-05 02:14:49,370 - root - INFO - command: 退出游戏
+2024-09-05 02:14:49,370 - root - INFO - text 退出游戏
+2024-09-05 02:14:49,370 - root - INFO - Text drawn. 退出游戏
+2024-09-05 02:14:49,370 - root - INFO - command: 关于游戏
+2024-09-05 02:14:49,371 - root - INFO - text 关于游戏
+2024-09-05 02:14:49,371 - root - INFO - Text drawn. 关于游戏
+2024-09-05 02:14:49,371 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:49,371 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:49,371 - root - INFO - Window added. <Surface(320x160x32 SW)>
+2024-09-05 02:14:49,371 - root - INFO - Scene Title launched successfully.
+2024-09-05 02:14:50,243 - root - INFO - Caught index on screen is 1.0, now index is 0
+2024-09-05 02:14:53,423 - root - INFO - Caught index on screen is 1.0, now index is 1.0
+2024-09-05 02:14:55,548 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:55,549 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:14:55,549 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:14:55,549 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:14:55,549 - root - INFO - Window removed. <Surface(320x160x32 SW)>
+2024-09-05 02:14:55,549 - root - INFO - Window disposed. <Surface(320x160x32 SW)>
+2024-09-05 02:14:55,889 - root - INFO - Game exited successfully.
+2024-09-05 02:15:36,428 - root - INFO - Config loaded successfully.
+2024-09-05 02:15:36,743 - root - INFO - System initialized.
+2024-09-05 02:15:36,745 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-001-single.png
+2024-09-05 02:15:36,745 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-002-single.png
+2024-09-05 02:15:36,746 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-003-single.png
+2024-09-05 02:15:36,747 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-004-single.png
+2024-09-05 02:15:36,748 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-005-single.png
+2024-09-05 02:15:36,748 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-006-single.png
+2024-09-05 02:15:36,749 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-007-single.png
+2024-09-05 02:15:36,750 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-008-single.png
+2024-09-05 02:15:36,750 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-009-single.png
+2024-09-05 02:15:36,751 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-010-single.png
+2024-09-05 02:15:36,752 - root - INFO -  Loaded image: project\assets\blocks\classic-doors-011-single.png
+2024-09-05 02:15:36,753 - root - INFO -  Loaded image: project\assets\characters\classic-cha-braver01.png
+2024-09-05 02:15:36,754 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-rock-single.png
+2024-09-05 02:15:36,756 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-01-slime-single.png
+2024-09-05 02:15:36,758 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-02-skeleton-single.png
+2024-09-05 02:15:36,758 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-03-bat-single.png
+2024-09-05 02:15:36,760 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-04-magician-single.png
+2024-09-05 02:15:36,761 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-05-guard-single.png
+2024-09-05 02:15:36,762 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-06-knight-single.png
+2024-09-05 02:15:36,763 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-07-beast-single.png
+2024-09-05 02:15:36,764 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-08-warrior-single.png
+2024-09-05 02:15:36,765 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-09-undead-single.png
+2024-09-05 02:15:36,766 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-10-king-single.png
+2024-09-05 02:15:36,766 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-50F-single.png
+2024-09-05 02:15:36,767 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x01-natural-single.png
+2024-09-05 02:15:36,768 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x02-golden.png
+2024-09-05 02:15:36,769 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x03-spirit-single.png
+2024-09-05 02:15:36,769 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x04-dark-single.png
+2024-09-05 02:15:36,770 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-x05-rotten-single.png
+2024-09-05 02:15:36,771 - root - INFO -  Loaded image: project\assets\enemies\classic-enemies-zset-50F-single.png
+2024-09-05 02:15:36,772 - root - INFO -  Loaded image: project\assets\items\classic-equips.png
+2024-09-05 02:15:36,773 - root - INFO -  Loaded image: project\assets\items\classic-gems.png
+2024-09-05 02:15:36,774 - root - INFO -  Loaded image: project\assets\items\classic-items.png
+2024-09-05 02:15:36,775 - root - INFO -  Loaded image: project\assets\items\classic-keys.png
+2024-09-05 02:15:36,776 - root - INFO -  Loaded image: project\assets\items\classic-potions.png
+2024-09-05 02:15:36,776 - root - INFO -  Loaded image: project\assets\npcs\classic-npcs-50F-single.png
+2024-09-05 02:15:36,777 - root - INFO -  Loaded image: project\assets\system\001-Blue01.png
+2024-09-05 02:15:36,781 - root - INFO -  Loaded image: project\assets\system\GrassBackground.png
+2024-09-05 02:15:36,781 - root - INFO -  Loaded image: project\assets\system\star-1.png
+2024-09-05 02:15:36,781 - root - INFO -  Loaded image: project\assets\system\star-2.png
+2024-09-05 02:15:36,782 - root - INFO -  Loaded image: project\assets\system\star-3.png
+2024-09-05 02:15:36,787 - root - INFO -  Loaded image: project\assets\tilesets\mota.png
+2024-09-05 02:15:36,788 - root - INFO - Graphics initialized.
+2024-09-05 02:15:36,791 - root - INFO - Game launched successfully.
+2024-09-05 02:15:36,792 - root - WARNING - String generated from json will be exec
+exec string:
+ from project.scripts.core.sprite import Sprite
+self.sprite=Sprite(frames=Cache.system(Config.title_file))
+self.star_sprite=Sprite(frames=Cache.system(['star-1', 'star-2', 'star-3', 'star-2']))
+self.star_sprite.x=160
+self.star_sprite.y=128
+self.star_sprite.is_animating=True
+self.star_sprite.is_centre=True
+from project.scripts.core.command_window import CommandWindow
+self.window_command=CommandWindow(width=320,commands=['新游戏', '继续游戏', '退出游戏', '关于游戏'])
+self.window_command.x=160
+self.window_command.y=256
+
+2024-09-05 02:15:36,792 - root - INFO - Sprite created successfully. [<Surface(640x480x32 SW)>]
+2024-09-05 02:15:36,793 - root - INFO - Sprite created successfully. [<Surface(8x8x32 SW)>, <Surface(16x16x32 SW)>, <Surface(24x24x32 SW)>, <Surface(16x16x32 SW)>]
+2024-09-05 02:15:36,795 - root - INFO - Surface initialized.
+2024-09-05 02:15:36,795 - root - INFO - Surface initialized.
+2024-09-05 02:15:36,795 - root - INFO - Window initialized successfully.
+2024-09-05 02:15:36,795 - root - INFO - Surface initialized.
+2024-09-05 02:15:36,796 - root - INFO - Surface cleared. <Surface(288x128x32 SW)>
+2024-09-05 02:15:36,796 - root - INFO - command: 新游戏
+2024-09-05 02:15:36,796 - root - INFO - text 新游戏
+2024-09-05 02:15:36,796 - root - INFO - Text drawn. 新游戏
+2024-09-05 02:15:36,797 - root - INFO - command: 继续游戏
+2024-09-05 02:15:36,797 - root - INFO - text 继续游戏
+2024-09-05 02:15:36,797 - root - INFO - Text drawn. 继续游戏
+2024-09-05 02:15:36,797 - root - INFO - command: 退出游戏
+2024-09-05 02:15:36,797 - root - INFO - text 退出游戏
+2024-09-05 02:15:36,797 - root - INFO - Text drawn. 退出游戏
+2024-09-05 02:15:36,797 - root - INFO - command: 关于游戏
+2024-09-05 02:15:36,798 - root - INFO - text 关于游戏
+2024-09-05 02:15:36,798 - root - INFO - Text drawn. 关于游戏
+2024-09-05 02:15:36,798 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:15:36,798 - root - INFO - Sprite added. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:15:36,799 - root - INFO - Window added. <Surface(320x160x32 SW)>
+2024-09-05 02:15:36,799 - root - INFO - Scene Title launched successfully.
+2024-09-05 02:15:37,820 - root - INFO - Caught index on screen is 3.0, now index is 0
+2024-09-05 02:15:39,413 - root - INFO - Caught index on screen is 2.0, now index is 3.0
+2024-09-05 02:15:40,362 - root - INFO - Caught index on screen is 3.0, now index is 2.0
+2024-09-05 02:15:40,675 - root - INFO - Caught index on screen is 3.0, now index is 3.0
+2024-09-05 02:15:41,177 - root - INFO - Caught index on screen is 2.0, now index is 3.0
+2024-09-05 02:15:41,656 - root - INFO - Caught index on screen is 2.0, now index is 2.0
+2024-09-05 02:15:41,656 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:15:41,657 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:15:41,657 - root - INFO - Sprite removed. <Sprite Sprite(in 0 groups)>
+2024-09-05 02:15:41,657 - root - INFO - Sprite disposed successfully.
+2024-09-05 02:15:41,657 - root - INFO - Window removed. <Surface(320x160x32 SW)>
+2024-09-05 02:15:41,657 - root - INFO - Window disposed. <Surface(320x160x32 SW)>
+2024-09-05 02:15:41,984 - root - INFO - Game exited successfully.

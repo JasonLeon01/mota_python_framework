@@ -1,4 +1,5 @@
 import configparser
+import logging
 import os
 import sys
 from project.scripts.core.config import Config
@@ -48,7 +49,7 @@ class System:
         cls.wheel = 0
 
         cls.variables = {}
-        print('LOG: System initialized.')
+        logging.info('System initialized.')
         
     @classmethod
     def get_size(cls):
@@ -65,7 +66,7 @@ class System:
         cls.__height = int(480 * scale)
         pygame.display.quit()
         cls.canvas = pygame.display.set_mode(cls.get_size())
-        print('LOG: System scale changed.')
+        logging.info('System scale changed. %s', cls.__scale)
 
     @classmethod
     def get_variable(cls, name):

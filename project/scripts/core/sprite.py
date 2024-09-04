@@ -1,5 +1,6 @@
 import os
 import sys
+import logging
 from typing import List, Union
 from project.scripts.core.graphics import Graphics
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
@@ -20,7 +21,7 @@ class Sprite(pygame.sprite.Sprite):
         self.interval = 30
         self._frames = self.__process_frames(frames)
         self._frame_count = 0
-        print('LOG: Sprite created successfully.', self._frames)
+        logging.info('Sprite created successfully. %s', self._frames)
         
     def __process_frames(self, frames):
         if frames is None:
@@ -32,7 +33,7 @@ class Sprite(pygame.sprite.Sprite):
         
     def set_frames(self, frames):
         self._frames = self.__process_frames(frames)
-        print('LOG: Sprite frames updated successfully.', self._frames)
+        logging.info('Sprite frames updated successfully. %s', self._frames)
     
     def update(self, dst = Graphics.canvas):
         if not self.is_visible:
@@ -59,5 +60,5 @@ class Sprite(pygame.sprite.Sprite):
     def dispose(self):
         self.image = None
         Graphics.remove_sprite(self)
-        print('LOG: Sprite disposed successfully.')
+        logging.info('Sprite disposed successfully.')
     

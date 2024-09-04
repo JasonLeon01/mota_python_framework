@@ -1,5 +1,6 @@
 import sys
 import os
+import logging
 from project.scripts.core.audio import Audio
 from project.scripts.core.graphics import Graphics
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
@@ -49,4 +50,4 @@ class Animation:
 
     def dispose(self):
         Graphics.remove_animation(self)
-        print('LOG: Animation disposed successfully.')
+        logging.info('Animation disposed successfully.')

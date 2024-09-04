@@ -1,5 +1,6 @@
 import sys
 import os
+import logging
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -22,7 +23,7 @@ class Cache:
                     full_path = os.path.join(root, file)
                     file_without_ext = os.path.splitext(file)[0]
                     cls.__cache[current_dict_key][file_without_ext] = pygame.image.load(full_path)
-                    print(f'LOG: Loaded image: {full_path}')
+                    logging.info(f' Loaded image: {full_path}')
                 
     @classmethod
     def get(cls, part: str, file: str):

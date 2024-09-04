@@ -1,3 +1,4 @@
+import logging
 import project.scripts.core.method as method
 
 class Config:
@@ -36,5 +37,5 @@ class Config:
         cls.stair_se = config['stair_se']
         cls.get_se = config['get_se']
         cls.window_opacity = config['window_opacity']
-        print('LOG: Config loaded successfully.')
+        logging.info('Config loaded successfully.')
         

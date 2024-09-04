@@ -1,3 +1,4 @@
+import logging
 import project.scripts.core.choice_window as choice_window
 import project.scripts.core.surface as surface
 
@@ -13,4 +14,5 @@ class CommandWindow(choice_window.ChoiceWindow):
     def refresh(self):
         self.contents.clear()
         for i, command in enumerate(self.__commands):
+            logging.info('command: %s', command)
             self.contents.draw_text(0, 32 * i, self.size[0] - 32, 32, command, 1)

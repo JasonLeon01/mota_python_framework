@@ -1,5 +1,6 @@
 import os
 import sys
+import logging
 from project.scripts.core.graphics import Graphics
 from project.scripts.core.system import System
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
@@ -19,21 +20,22 @@ class Surface(pygame.Surface):
         self.is_visible = True
         self.is_centre = False
         self._sprite_group = []
-        print('LOG: Surface initialized.')
+        logging.info('Surface initialized.')
         
     def add_sprite(self, sprite):
         self._sprite_group.append(sprite)
-        print('LOG: Sprite added into surface.', self, sprite)
+        logging.info('Sprite added into surface. %s', self, sprite)
         
     def remove_sprite(self, sprite):
         self._sprite_group.remove(sprite)
-        print('LOG: Sprite removed from surface.', self, sprite)
+        logging.info('Sprite removed from surface. %s', self, sprite)
 
     def clear_sprite(self):
         self._sprite_group.clear()
-        print('LOG: Sprite cleared from surface.', self)
+        logging.info('Sprite cleared from surface. %s', self)
 
     def draw_text(self, x, y, width, height, text, pos = 0, colour = (255, 255, 255, 255), font = System.font):
+        logging.info('text %s', text)
         size = font.size(text)
         dx, dy = 0, 0
         if size[0] < width:
@@ -45,11 +47,11 @@ class Surface(pygame.Surface):
             dy = (height - size[1]) / 2
         text_surface = font.render(text, True, colour)
         self.blit(text_surface, (x + dx, y + dy), (0, 0, min(size[0], width), min(size[1], height)))
-        print('LOG: Text drawn.', text)
+        logging.info('Text drawn. %s', text)
 
     def clear(self):
         self.fill((0, 0, 0, 0))
-        print('LOG: Surface cleared.', self)
+        logging.info('Surface cleared. %s', self)
         
     def update(self, dst = Graphics.canvas):
         if not self.is_visible:
@@ -73,7 +75,7 @@ class Surface(pygame.Surface):
     def dispose(self):
         self._sprite_group.clear()
         Graphics.remove_surface(self)
-        print('LOG: Surface disposed.', self)
+        logging.info('Surface disposed. %s', self)
     
     def get_color(self, clr):
         color_map = {

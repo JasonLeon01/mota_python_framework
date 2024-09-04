@@ -1,11 +1,9 @@
 from math import ceil
 import os
 import sys
-from project.scripts.core.animation import Animation
+import logging
+import datetime
 from project.scripts.core.system import System
-from project.scripts.core.sprite import Sprite
-from project.scripts.core.surface import Surface
-from project.scripts.core.window import Window
 sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 import pygame
 
@@ -16,6 +14,8 @@ class Graphics:
     __animation_group = []
     __frame_count = 0
     __freeze_Image = None
+    __last_frame_time = 0
+    __total_time = 0
     canvas = pygame.Surface((640, 480))
 
     @classmethod
@@ -26,48 +26,49 @@ class Graphics:
         cls.__animation_group = []
         cls.__frame_count = 0
         cls.__freeze_Image = None
+        cls.__last_frame_time = datetime.datetime.now()
         cls.canvas = pygame.Surface((640, 480))
-        print('LOG: Graphics initialized.')
+        logging.info('Graphics initialized.')
     
     @classmethod
-    def add_window(cls, window: Window):
+    def add_window(cls, window):
         cls.__window_group.append(window)
-        print('LOG: Window added.', window)
+        logging.info('Window added. %s', window)
 
     @classmethod
-    def remove_window(cls, window: Window):
+    def remove_window(cls, window):
         cls.__window_group.remove(window)
-        print('LOG: Window removed.', window)
+        logging.info('Window removed. %s', window)
 
     @classmethod
-    def add_sprite(cls, sprite: Sprite):
+    def add_sprite(cls, sprite):
         cls.__sprite_group.append(sprite)
-        print('LOG: Sprite added.', sprite)
+        logging.info('Sprite added. %s', sprite)
         
     @classmethod
-    def remove_sprite(cls, sprite: Sprite):
+    def remove_sprite(cls, sprite):
         cls.__sprite_group.remove(sprite)
-        print('LOG: Sprite removed.', sprite)
+        logging.info('Sprite removed. %s', sprite)
     
     @classmethod
-    def add_surface(cls, surface: Surface):
+    def add_surface(cls, surface):
         cls.__surface_group.append(surface)
-        print('LOG: Surface added.', surface)
+        logging.info('Surface added. %s', surface)
     
     @classmethod
-    def remove_surface(cls, surface: Surface):
+    def remove_surface(cls, surface):
         cls.__surface_group.remove(surface)
-        print('LOG: Surface removed.', surface)
+        logging.info('Surface removed. %s', surface)
 
     @classmethod
-    def add_animation(cls, animation: Animation):
+    def add_animation(cls, animation):
         cls.__animation_group.append(animation)
-        print('LOG: Animation added.', animation)
+        logging.info('Animation added. %s', animation)
 
     @classmethod
-    def remove_animation(cls, animation: Animation):
+    def remove_animation(cls, animation):
         cls.__animation_group.remove(animation)
-        print('LOG: Animation removed.', animation)
+        logging.info('Animation removed. %s', animation)
 
     @classmethod
     def frame_count(cls):
@@ -75,6 +76,7 @@ class Graphics:
         
     @classmethod
     def update(cls):
+        
         for event in pygame.event.get():
             if System.running and event.type == pygame.QUIT:
                 System.running = False
@@ -83,7 +85,7 @@ class Graphics:
             elif event.type == pygame.MOUSEWHEEL:
                 if event.y != 0:
                     System.wheel = event.y
-                    print('LOG: Mouse wheel event detected.', System.wheel)
+                    logging.info('Mouse wheel event detected. %s', System.wheel)
             else:
                 System.wheel = 0
         total_count = len(cls.__window_group) + len(cls.__surface_group) + len(cls.__sprite_group)
@@ -109,6 +111,15 @@ class Graphics:
         draw_surface = cls.canvas.copy()
         if cls.__freeze_Image is not None:
             draw_surface.blit(cls.__freeze_Image, (0, 0))
+            
+        if os.environ.get('DEBUG') == 'True':
+            now_time = datetime.datetime.now()
+            delta_time = now_time - cls.__last_frame_time
+            cls.__last_frame_time = now_time
+            cls.__total_time += delta_time.total_seconds()
+            draw_surface.blit(System.font.render(f'FPS: {1.0 / delta_time.total_seconds():.2f}', True, (255, 255, 255)), (0, 0))
+            draw_surface.blit(System.font.render(f'Average FPS: {cls.__frame_count / cls.__total_time:.2f}', True, (255, 255, 255)), (0, 20))
+            
         System.canvas.blit(pygame.transform.smoothscale(draw_surface, System.get_size()), (0, 0))
         pygame.display.update()
         cls.__frame_count += 1
