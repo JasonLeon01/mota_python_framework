@@ -24,7 +24,7 @@ class ChoiceWindow(Window):
 
     def update_cursor_rect(self):
         row = self.index / self.column
-        cursor_width = self.size[0] / self.column - 32
+        cursor_width = self.get_size()[0] / self.column - 32
         x = self.index % self.column * (cursor_width + 32)
         y = int(row) * self.cursor_height
         if self.contents:
@@ -32,19 +32,22 @@ class ChoiceWindow(Window):
         self.set_rect(x, y, cursor_width, self.cursor_height)
 
     def mouse_in_rect(self):
-        return Input.in_rect((self.x + 16, self.y + 16, self.size[0] - 32, self.size[1] - 32))
+        return Input.in_rect((self.x + 16, self.y + 16, self.get_size()[0] - 32, self.get_size()[1] - 32))
     
     def confirm(self):
-        if self.mouse_in_rect:
-            if Input.trigger(pygame.K_RETURN):
-                return True
+        if Input.trigger_confirm():
+            Audio.play_voice(Config.decision_se)
+            return True
+        if self.mouse_in_rect():
             if Input.left_click('trigger'):
                 x, y = Input.get_mouse_pos()
                 screen_index = (y - self.y - 16) // self.cursor_height
-                now_index = screen_index * self.column + (x - self.x - 16) // (self.size[0] / self.column - 32) + self.column * (self.contents.oy // self.cursor_height)
+                now_index = screen_index * self.column + (x - self.x - 16) // (self.get_size()[0] / self.column - 32) + self.column * (self.contents.oy // self.cursor_height)
                 logging.info('Caught index on screen is %s, now index is %s', now_index, self.index)
                 if now_index == self.index:
+                    Audio.play_voice(Config.decision_se)
                     return True
+                Audio.play_voice(Config.cursor_se)
                 self.index = now_index
         return False
 
@@ -88,8 +91,8 @@ class ChoiceWindow(Window):
         self._key_response()
         self._mouse_response()
         if self.contents:
-            if (self.index // self.column) * self.cursor_height - self.contents.oy + 32 > self.size[1] - 32:
-                self.contents.oy = (self.index // self.column) * self.cursor_height - self.size[1] + 64
+            if (self.index // self.column) * self.cursor_height - self.contents.oy + 32 > self.get_size()[1] - 32:
+                self.contents.oy = (self.index // self.column) * self.cursor_height - self.get_size()[1] + 64
             if (self.index // self.column) * self.cursor_height - self.contents.oy < 0:
                 self.contents.oy = (self.index // self.column) * self.cursor_height
         self.update_cursor_rect()

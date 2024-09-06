@@ -49,9 +49,10 @@ class Surface(pygame.Surface):
         self.blit(text_surface, (x + dx, y + dy), (0, 0, min(size[0], width), min(size[1], height)))
         logging.info('Text drawn. %s', text)
 
-    def clear(self):
+    def clear(self, need_log = False):
         self.fill((0, 0, 0, 0))
-        logging.info('Surface cleared. %s', self)
+        if need_log:
+            logging.info('Surface cleared. %s', self)
         
     def update(self, dst = Graphics.canvas):
         if not self.is_visible:

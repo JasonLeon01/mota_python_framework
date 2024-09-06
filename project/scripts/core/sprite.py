@@ -60,5 +60,5 @@ class Sprite(pygame.sprite.Sprite):
     def dispose(self):
         self.image = None
         Graphics.remove_sprite(self)
-        logging.info('Sprite disposed successfully.')
+        logging.info('Sprite disposed successfully. %s', self._frames)
     

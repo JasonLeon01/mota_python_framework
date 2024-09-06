@@ -1,4 +1,5 @@
 custom_lib
+app.log
 project/scripts/__pycache__
 project/scripts/core/__pycache__
 project/scripts/scene/__pycache__

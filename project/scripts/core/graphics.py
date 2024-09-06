@@ -76,7 +76,6 @@ class Graphics:
         
     @classmethod
     def update(cls):
-        
         for event in pygame.event.get():
             if System.running and event.type == pygame.QUIT:
                 System.running = False

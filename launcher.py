@@ -1,14 +1,8 @@
 import os
 import sys
 import configparser
-import traceback
 from tkinter import Tk, messagebox
 import logging
-
-from project.scripts.core.config import Config
-from project.scripts.core.system import System
-from project.scripts.core.cache import Cache
-from project.scripts.core.graphics import Graphics
 
 def main():
     root = Tk()
@@ -24,11 +18,6 @@ def main():
             logging.StreamHandler()
         ]
     )
-    
-    Config.init(r'project\data\system\config.json')
-    System.init('mota.ini')
-    Cache.init(r'project\assets', '.png')
-    Graphics.init()
     
     os.environ['DEBUG'] = 'True'
     
@@ -48,11 +37,7 @@ def main():
 
     with open(core_script, 'r', encoding='utf-8') as f:
         code = compile(f.read(), core_script, 'exec')
-        try:
-            exec(code, globals(), locals())
-        except Exception as e:
-            messagebox.showinfo("Error", traceback.format_exc())
-            sys.exit(1)
+        exec(code, globals(), locals())
 
 if __name__ == '__main__':
     main()

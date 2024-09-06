@@ -14,5 +14,4 @@ class CommandWindow(choice_window.ChoiceWindow):
     def refresh(self):
         self.contents.clear()
         for i, command in enumerate(self.__commands):
-            logging.info('command: %s', command)
-            self.contents.draw_text(0, 32 * i, self.size[0] - 32, 32, command, 1)
+            self.contents.draw_text(0, 32 * i, self.get_size()[0] - 32, 32, command, 1)

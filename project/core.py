@@ -4,10 +4,13 @@ from project.scripts.core.system import System
 from project.scripts.core.cache import Cache
 from project.scripts.core.graphics import Graphics
 
-
-import project.scripts.scene.title as title
+Config.init(r'project\data\system\config.json')
+System.init('mota.ini')
+Cache.init(r'project\assets', '.png')
+Graphics.init()
 
 logging.info('Game launched successfully.')
+import project.scripts.scene.title as title
 System.scene = title.Scene()
 while System.running and System.scene != None:
     System.scene.update()
