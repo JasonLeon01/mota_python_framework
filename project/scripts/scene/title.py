@@ -1,3 +1,9 @@
+"""
+此脚本为标题场景脚本，用于处理标题场景的逻辑。
+标题场景的内容会在读取title.json后自动处理，若在VS Code等IDE中看到红波浪线提示为正常现象。
+其中，title.json为静态场景制作器自动生成，但是逻辑需要在update处自行设置。
+"""
+
 import logging
 from project.scripts.core.system import System
 from project.scripts.core.scene import Scene_Base
@@ -15,8 +21,11 @@ class Scene(Scene_Base):
         super().update()
         if self.window_command.confirm():
             if self.window_command.index == 0:
-                pass
+                Audio.play_voice(Config.decision_se)
             elif self.window_command.index == 1:
-                pass
+                Audio.play_voice(Config.decision_se)
             elif self.window_command.index == 2:
+                Audio.play_voice(Config.decision_se)
                 System.scene = None
+            elif self.window_command.index == 3:
+                Audio.play_voice(Config.decision_se)

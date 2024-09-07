@@ -1,3 +1,7 @@
+"""
+此文件用于在VS Code等IDE中调试Mota工程，会打开DEBUG模式，错误将会在Terminal中显示，而不是在游戏中弹窗。
+"""
+
 import os
 import sys
 import configparser

@@ -1,4 +1,0 @@
-打开终端(Terminal)，输入下列命令：
-
-chmod +x Mota.sh
-./Mota.sh
