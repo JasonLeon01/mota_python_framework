@@ -10,6 +10,24 @@ import pygame
 
 class Window(Surface):
     def __init__(self, size, pos = (0, 0)):
+        """
+        初始化一个窗口对象。
+        
+        参数:
+            size (tuple): 窗口的尺寸。
+            pos (tuple): 窗口的位置。
+        
+        属性:
+            asset: 窗口的资源。
+            back_opacity: 窗口的背景透明度。
+            __size: 窗口的尺寸。
+            __window_back: 窗口的背景表面。
+            __content_surface: 窗口的内容表面。
+            __has_rect: 是否有矩形。
+            __rect_rect: 矩形的位置。
+            __cached_corner: 缓存的窗口四角资源。
+        """
+
         self.contents = None
         super().__init__(size, pos)
         self.asset = Cache.system(Config.windowskin_file)
@@ -39,19 +57,50 @@ class Window(Surface):
         logging.info('Window initialized successfully.')
 
     def set_rect(self, x: int, y: int, width: int, height: int):
+        """
+        设置选择矩形。
+        
+        参数:
+            x (int): 选择矩形的x坐标。
+            y (int): 选择矩形的y坐标。
+            width (int): 选择矩形的宽度。
+            height (int): 选择矩形的高度。
+        """
+
         self.__has_rect = True
         self.__rect_rect = (x, y, width, height)
 
     def get_size(self):
+        """
+        获取窗口尺寸。
+        
+        返回:
+            tuple: 窗口尺寸。
+        """
+
         return self.__size
     
     def set_size(self, size):
+        """
+        设置窗口尺寸。
+        
+        参数:
+            size (tuple): 窗口尺寸。
+        """
+
         if self.__size != size:
             self.__size = size
             self.__window_back = Surface(size)
             self.__render_back()
 
     def update(self, dst = Graphics.canvas):
+        """
+        更新窗口对象。
+        
+        参数:
+            dst: 目标画布。默认为Graphics.canvas。
+        """
+
         self.clear()
         self.__window_back.update(self)
         if self.contents:
@@ -63,12 +112,23 @@ class Window(Surface):
         super().update(dst)
 
     def dispose(self):
+        """
+        释放窗口对象。
+        """
+
         self._sprite_group.clear()
         self.contents = None
         Graphics.remove_window(self)
         logging.info('Window disposed. %s', type(self).__name__)
 
     def __presave_corner(self, area_rects):
+        """
+        预存窗口四角资源。
+        
+        参数:
+            area_rects (dict): 四角资源的位置。
+        """
+
         self.__cached_corner = {}
         for corner_type, corner_area in area_rects.items():
             self.__cached_corner[corner_type] = []
@@ -76,14 +136,36 @@ class Window(Surface):
                 self.__cached_corner[corner_type].append(pygame.Surface.subsurface(self.asset, corner_area[i]))        
 
     def __render_corner(self, area_caches, positions, dst):
+        """
+        绘制窗口四角。
+        
+        参数:
+            area_caches (list): 四角资源。
+            positions (list): 四角位置。
+            dst: 目标画布。
+        """
+
         for i in range(4):
             dst.blit(area_caches[i], positions[i])
 
     def __render_edge(self, area_rects, target_scales, positions, dst):
+        """
+        绘制窗口边缘。
+        
+        参数:
+            area_rects (list): 边缘资源位置。
+            target_scales (list): 边缘目标缩放。
+            positions (list): 边缘位置。
+        """
+
         for i in range(4):
             dst.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, area_rects[i]), target_scales[i]), positions[i])
 
     def __render_back(self):
+        """
+        绘制窗口背景。
+        """
+
         self.__window_back.clear()
         self.__content_surface.clear()
         if self.__content_surface.size != (self.__size[0] - 32, self.__size[1] - 32):
@@ -96,6 +178,14 @@ class Window(Surface):
         self.__render_edge([(144, 0, 32, 16), (144, 48, 32, 16), (128, 16, 16, 32), (176, 16, 16, 32)], [(self.size[0] - 32, 16), (self.size[0] - 32, 16), (16, self.size[1] - 32), (16, self.size[1] - 32)], [(16, 0), (16, self.size[1] - 16), (0, 16), (self.size[0] - 16, 16)], self.__window_back)
         
     def __render_rect(self, rect, dst):
+        """
+        绘制矩形，含选择矩形。
+        
+        参数:
+            rect (tuple): 矩形位置。
+            dst: 目标画布。
+        """
+
         x, y, width, height = rect
         draw_surface = pygame.surface.Surface((width, height), pygame.SRCALPHA)
         draw_surface.blit(pygame.transform.scale(pygame.Surface.subsurface(self.asset, (132, 68, 24, 24)), (width - 8, height - 8)), (4, 4))

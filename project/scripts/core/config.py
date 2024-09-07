@@ -2,6 +2,29 @@ import logging
 import project.scripts.core.method as method
 
 class Config:
+    """
+    表示一个配置对象。
+    
+    方法:
+        init(cls, file): 初始化配置设置。
+    
+    属性:
+        windowskin_file: 窗口皮肤文件。
+        title_file: 标题文件。
+        font_name: 字体名称。
+        title_bgm: 标题背景音乐。
+        cursor_se: 光标音效。
+        decision_se: 确认音效。
+        cancel_se: 取消音效。
+        buzzer_se: 警告音效。
+        shop_se: 商店音效。
+        save_se: 保存音效。
+        load_se: 载入音效。
+        gate_se: 门音效。
+        stair_se: 楼梯音效。
+        get_se: 获得物品音效。
+        window_opacity: 窗口透明度。
+    """
     windowskin_file = None
     title_file = None
     font_name = None
@@ -20,6 +43,12 @@ class Config:
 
     @classmethod
     def init(cls, file):
+        """
+        初始化配置设置。
+        参数: 
+            cls: 类对象。
+            file: 配置文件的路径。
+        """
         config = method.load_json_file(file)
         
         cls.windowskin_file = config['windowskin_file']
