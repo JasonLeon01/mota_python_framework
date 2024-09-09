@@ -1,6 +1,6 @@
 import json
 
-def load_json_file(file_path):
+def load_json_file(file_path: str) -> dict:
     """
     读取JSON文件。
     """

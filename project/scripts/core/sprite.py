@@ -1,13 +1,9 @@
-import os
-import sys
 import logging
-from typing import List, Union
-from project.scripts.core.graphics import Graphics
-sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
+from project.scripts.core.system import System
 import pygame
 
 class Sprite(pygame.sprite.Sprite):
-    def __init__(self, frames: Union[List[pygame.Surface], pygame.Surface] = None, pos = (0, 0)):
+    def __init__(self, frames = None, pos = (0, 0), viewport = None):
         super().__init__()
         self.x, self.y = pos
         self.z = 0
@@ -19,6 +15,9 @@ class Sprite(pygame.sprite.Sprite):
         self.is_centre = False
         self.frame_index = 0
         self.interval = 30
+        if viewport is None:
+            viewport = System.default_viewport
+        self.viewport = viewport
         self._frames = self.__process_frames(frames)
         self._frame_count = 0
         logging.info('Sprite created successfully. %s', self._frames)
@@ -35,7 +34,7 @@ class Sprite(pygame.sprite.Sprite):
         self._frames = self.__process_frames(frames)
         logging.info('Sprite frames updated successfully. %s', self._frames)
     
-    def update(self, dst = Graphics.canvas):
+    def update(self):
         if not self.is_visible:
             return
         self.angle = self.angle % 360
@@ -50,15 +49,10 @@ class Sprite(pygame.sprite.Sprite):
         rect.y = self.y
         if self.is_centre:
             rect.center = (self.x, self.y)
-        dst.blit(self.image, rect)
+        self.viewport.blit(self.image, rect)
         if self.is_animating:
             self._frame_count = self._frame_count + 1
             if self._frame_count >= self.interval:
                 self._frame_count = 0
                 self.frame_index = (self.frame_index + 1) % len(self._frames)
-        
-    def dispose(self):
-        self.image = None
-        Graphics.remove_sprite(self)
-        logging.info('Sprite disposed successfully. %s', self._frames)
     
