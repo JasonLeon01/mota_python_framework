@@ -3,13 +3,6 @@ import pygame
 class Animation:
     """
     表示一个动画对象。
-
-    方法:
-    
-        __init__(frames, voices): 初始化一个 Animation 对象。
-        frame(): 生成一个动画帧。
-        update(): 通过将当前帧绘制到目标画布来更新动画。
-        dispose(): 释放动画资源。
     """
 
     def __init__(self, frames, voices: str, viewport: pygame.Surface):

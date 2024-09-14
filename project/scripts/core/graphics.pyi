@@ -7,32 +7,7 @@ import pygame
 class Graphics:
     """
     图形系统类。
-    方法:
-    
-        init(): 初始化图形系统。
-        add_window(window): 添加一个窗口。
-        remove_window(window): 移除一个窗口。
-        add_sprite(sprite): 添加一个精灵。
-        remove_sprite(sprite): 移除一个精灵。
-        add_surface(surface): 添加一个画布。
-        remove_surface(surface): 移除一个画布。
-        add_animation(animation): 添加一个动画。
-        remove_animation(animation): 移除一个动画。
-        frame_count: 获取帧计数。
-        update: 更新图形系统。
-        debug_info(draw_surface): 输出调试信息。
-        freeze: 冻结画面。
-        transition(time): 过渡效果。
     """
-    
-    __sprite_group: list[Sprite]
-    """精灵组"""
-    
-    __surface_group: list[Surface]
-    """画布组"""
-    
-    __window_group: list[Window]
-    """窗口组"""
     
     __animation_group: list[Animation]
     """动画组"""
@@ -56,66 +31,6 @@ class Graphics:
         """
         pass
     
-    @classmethod
-    def add_window(cls, window: Window) -> None:
-        """
-        添加一个窗口。
-        
-        参数:
-            window: 要添加的窗口。
-        """
-        pass
-
-    @classmethod
-    def remove_window(cls, window: Window) -> None:
-        """
-        移除一个窗口。
-        
-        参数:
-            window: 要移除的窗口。
-        """
-        pass
-
-    @classmethod
-    def add_sprite(cls, sprite: Sprite) -> None:
-        """
-        添加一个精灵。
-        
-        参数:
-            sprite: 要添加的精灵。
-        """
-        pass
-        
-    @classmethod
-    def remove_sprite(cls, sprite: Sprite) -> None:
-        """
-        移除一个精灵。
-        
-        参数:
-            sprite: 要移除的精灵。
-        """
-        pass
-    
-    @classmethod
-    def add_surface(cls, surface: Surface) -> None:
-        """
-        添加一个画布。
-        
-        参数:
-            surface: 要添加的画布。
-        """
-        pass
-    
-    @classmethod
-    def remove_surface(cls, surface: Surface) -> None:
-        """
-        移除一个画布。
-        
-        参数:
-            surface: 要移除的画布。
-        """
-        pass
-
     @classmethod
     def add_animation(cls, animation: Animation) -> None:
         """

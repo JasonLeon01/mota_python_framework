@@ -7,6 +7,7 @@ from project.scripts.core.surface import Surface
 from project.scripts.core.system import System
 from project.scripts.core.window import Window
 from project.scripts.core.graphics import Graphics
+from project.scripts.core.viewport import ViewportManager
 
 class Scene_Base:
     def __init__(self):
@@ -15,18 +16,14 @@ class Scene_Base:
         for _, attr_value in self.__dict__.items():
             if isinstance(attr_value, list):
                 for sub in attr_value:
-                    if isinstance(sub, Window):
-                        Graphics.add_window(sub)
-                    elif isinstance(sub, Surface):
-                        Graphics.add_surface(sub)
+                    if isinstance(sub, Surface):
+                        ViewportManager.add_surface(sub)
                     elif isinstance(sub, Sprite):
-                        Graphics.add_sprite(sub)
-            elif isinstance(attr_value, Window):
-                Graphics.add_window(attr_value)
+                        ViewportManager.add_sprite(sub)
             elif isinstance(attr_value, Surface):
-                Graphics.add_surface(attr_value)
+                ViewportManager.add_surface(attr_value)
             elif isinstance(attr_value, Sprite):
-                Graphics.add_sprite(attr_value)
+                ViewportManager.add_sprite(attr_value)
                 
     def load_data_from_json(self, file):
         script_name = os.path.basename(file)
@@ -66,18 +63,15 @@ class Scene_Base:
         for _, attr_value in self.__dict__.items():
             if isinstance(attr_value, list):
                 for sub in attr_value:
-                    if isinstance(sub, Window):
-                        Graphics.remove_window(sub)
-                    elif isinstance(sub, Surface):
-                        Graphics.remove_surface(sub)
+                    if isinstance(sub, Surface):
+                        ViewportManager.remove_surface(sub)
                     elif isinstance(sub, Sprite):
-                        Graphics.remove_sprite(sub)
-            elif isinstance(attr_value, Window):
-                Graphics.remove_window(attr_value)
+                        ViewportManager.remove_sprite(sub)
             elif isinstance(attr_value, Surface):
-                Graphics.remove_surface(attr_value)
+                ViewportManager.remove_surface(attr_value)
+                attr_value.dispose()
             elif isinstance(attr_value, Sprite):
-                Graphics.remove_sprite(attr_value)
+                ViewportManager.remove_sprite(attr_value)
     
     def __del__(self):
         if not self.__quitted:

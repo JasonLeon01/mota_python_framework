@@ -1,9 +1,4 @@
 app.log
 .vscode
-custom_lib/__pycache__
-custom_lib/pygame/__pycache__
-custom_lib/pygame-2.5.2.dist-info/__pycache__
-project/scripts/__pycache__
-project/scripts/core/__pycache__
-project/scripts/scene/__pycache__
-project/scripts/module/__pycache__
+*.pyc
+*.pyc

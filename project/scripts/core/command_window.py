@@ -3,10 +3,10 @@ from project.scripts.core.surface import Surface
 from project.scripts.core.system import System
 
 class CommandWindow(ChoiceWindow):
-    def __init__(self, width, commands, pos=(0, 0), viewport = None):
+    def __init__(self, width, commands, pos=(0, 0)):
         self.__commands = commands
         height = 32 * (len(self.__commands) + 1)
-        super().__init__((width, height), pos, viewport)
+        super().__init__((width, height), pos)
         self.items = len(self.__commands)
         self.contents = Surface((width - 32, height - 32))
         self.refresh()

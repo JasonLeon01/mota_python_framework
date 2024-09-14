@@ -3,12 +3,10 @@ import os
 import logging
 import datetime
 from project.scripts.core.system import System
+from project.scripts.core.viewport import ViewportManager
 import pygame
 
 class Graphics:
-    __sprite_group = []
-    __surface_group = []
-    __window_group = []
     __animation_group = []
     __frame_count = 0
     __freeze_Image = None
@@ -17,46 +15,12 @@ class Graphics:
 
     @classmethod
     def init(cls):
-        cls.__sprite_group = []
-        cls.__surface_group = []
-        cls.__window_group = []
         cls.__animation_group = []
         cls.__frame_count = 0
         cls.__freeze_Image = None
         cls.__last_frame_time = datetime.datetime.now()
         logging.info('Graphics initialized.')
     
-    @classmethod
-    def add_window(cls, window):
-        cls.__window_group.append(window)
-        logging.info('Window added. %s', window)
-
-    @classmethod
-    def remove_window(cls, window):
-        cls.__window_group.remove(window)
-        logging.info('Window removed. %s', window)
-
-    @classmethod
-    def add_sprite(cls, sprite):
-        cls.__sprite_group.append(sprite)
-        logging.info('Sprite added. %s', sprite)
-        
-    @classmethod
-    def remove_sprite(cls, sprite):
-        cls.__sprite_group.remove(sprite)
-        logging.info('Sprite removed. %s', sprite)
-    
-    @classmethod
-    def add_surface(cls, surface):
-        cls.__surface_group.append(surface)
-        logging.info('Surface added. %s', surface)
-    
-    @classmethod
-    def remove_surface(cls, surface):
-        surface.clear_sprite()
-        cls.__surface_group.remove(surface)
-        logging.info('Surface removed. %s', surface)
-
     @classmethod
     def add_animation(cls, animation):
         cls.__animation_group.append(animation)
@@ -85,24 +49,8 @@ class Graphics:
             else:
                 System.wheel = 0
         
-        total_count = len(cls.__window_group) + len(cls.__surface_group) + len(cls.__sprite_group)
-        count, z = 0, 0
         System.canvas.fill((0, 0, 0, 0))
-        System.default_viewport.fill((0, 0, 0, 0))
-        while count < total_count:
-            for surface in cls.__surface_group:
-                if surface.z == z:
-                    surface.update()
-                    count += 1
-            for sprite in cls.__sprite_group:
-                if sprite.z == z:
-                    sprite.update()
-                    count += 1
-            for window in cls.__window_group:
-                if window.z == z:
-                    window.update()
-                    count += 1
-            z += 1
+        ViewportManager.update()
         
         for animation in cls.__animation_group:
             animation.update()
@@ -118,7 +66,8 @@ class Graphics:
         if os.environ.get('DEBUG') == 'True':
             cls.debug_info(System.default_viewport)
         
-        System.canvas.blit(pygame.transform.smoothscale(System.default_viewport, System.get_size()), (0, 0))
+        width, height = System.get_size()
+        System.canvas.blit(pygame.transform.smoothscale(System.default_viewport, (width * System.get_scale(), height * System.get_scale())), (0, 0))
         pygame.display.flip()
         cls.__frame_count += 1
         System.clock.tick(System.frame_rate)

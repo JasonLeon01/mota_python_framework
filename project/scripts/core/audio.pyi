@@ -3,10 +3,6 @@ import pygame
 class Audio:
     """
     播放音频文件。
-    方法:
-
-        play_voice(cls, file: str) -> None: 播放语音文件。
-        play_music(cls, file: str) -> None: 播放指定的音乐文件。
     """
     
     @classmethod

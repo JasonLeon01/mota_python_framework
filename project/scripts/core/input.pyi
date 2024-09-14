@@ -3,23 +3,6 @@ class Input:
     输入类。
 
     该类提供了一系列的方法，用于检查键盘和鼠标的输入。
-        
-    方法:
-
-        press(key): 检查按键是否按下。
-        trigger(key): 检查按键是否触发。
-        repeat(key, interval): 检查按键是否重复。
-        get_mouse_pos(): 获取鼠标位置。
-        left_click(type, interval): 检查鼠标左键是否按下。
-        right_click(type, interval): 检查鼠标右键是否按下。
-        press_confirm(): 检查确认键是否按下。
-        press_cancel(): 检查取消键是否按下。
-        repeat_confirm(): 检查确认键是否重复。
-        repeat_cancel(): 检查取消键是否重复。
-        trigger_confirm(): 检查确认键是否触发。
-        trigger_cancel(): 检查取消键是否触发。
-        dir4(): 检查方向键。
-        in_rect(rect): 检查鼠标是否在矩形内。
     """
     
     __keys_hash: dict[any, bool]
