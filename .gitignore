@@ -8,3 +8,6 @@ project/scripts/core/__pycache__
 project/scripts/scene/__pycache__
 project/scripts/module/__pycache__
 custom_lib/pygame/__pycache__
+custom_lib/pygame-2.5.2.dist-info/__pycache__
+custom_lib/pygame/threads/__pycache__
+custom_lib/pygame/sdl2/__pycache__
