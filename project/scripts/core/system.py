@@ -16,17 +16,16 @@ class System:
     is_voice_on = True
     scene = None
     wheel = 0
-    default_viewport = pygame.Surface((640, 480))
+    default_viewport = None
 
     @classmethod
     def init(cls, inifile):
         pygame.init()
         iniconfig = configparser.ConfigParser()
         iniconfig.read(inifile)
+        cls.default_viewport = pygame.Surface((cls.__width, cls.__height))
         cls.__scale = iniconfig['Mota'].getfloat('Scale')
-        cls.__width = int(cls.__width * cls.__scale)
-        cls.__height = int(cls.__height * cls.__scale)
-        cls.canvas = pygame.display.set_mode((cls.__width, cls.__height), pygame.DOUBLEBUF | pygame.HWSURFACE)
+        cls.canvas = pygame.display.set_mode((cls.__width * cls.__scale, cls.__height * cls.__scale), pygame.DOUBLEBUF | pygame.HWSURFACE)
         cls.title = iniconfig['Mota'].get('title', 'Mota')
         pygame.display.set_caption(cls.title)
         icon = pygame.image.load('icon.ico')

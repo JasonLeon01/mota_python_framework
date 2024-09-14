@@ -1,4 +1,5 @@
 from typing import List, Union
+from project.scripts.core.surface import Surface
 import pygame
 
 class Sprite(pygame.sprite.Sprite):
@@ -6,17 +7,10 @@ class Sprite(pygame.sprite.Sprite):
     精灵类。
 
     该类继承自pygame.sprite.Sprite，用于在屏幕上绘制和更新精灵对象。
-            
-    方法:
-
-        __init__(frames, pos, viewport): 初始化精灵对象。
-        __process_frames(frames): 处理帧数据。
-        set_frames(frames): 设置精灵的帧数据。
-        update(): 更新精灵的状态和图像。
     """
     
 
-    def __init__(self, frames: Union[List[pygame.Surface], pygame.Surface] = None, pos: tuple[int, int] = (0, 0), viewport: pygame.Surface = System.default_viewport) -> None:
+    def __init__(self, frames: Union[List[pygame.Surface], pygame.Surface] = None, pos: tuple[int, int] = (0, 0)) -> None:
         """
         初始化精灵对象。
         
@@ -24,7 +18,6 @@ class Sprite(pygame.sprite.Sprite):
 
             frames: 精灵的帧数据，可以是一个Surface对象或Surface对象的列表。
             pos: 精灵的初始位置，默认为(0, 0)。
-            viewport: 精灵的视口，默认为System.default_viewport。
         """
 
         self.x: int
@@ -60,9 +53,6 @@ class Sprite(pygame.sprite.Sprite):
         self.interval: int
         """帧动画的间隔"""
         
-        self.viewport: pygame.Surface
-        """精灵的视口"""
-        
         self._frames: list[pygame.Surface]
         """精灵的帧列表"""
         
@@ -95,6 +85,12 @@ class Sprite(pygame.sprite.Sprite):
         """
         pass
     
-    def update(self) -> None:
-        """更新精灵的状态和图像。"""
+    def update(self, dst: Surface) -> None:
+        """
+        更新精灵的状态和图像。
+
+        参数:
+            
+                dst: 目标Surface对象。
+        """
         pass

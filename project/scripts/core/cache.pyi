@@ -3,18 +3,6 @@ import pygame
 class Cache:
     """
     用于缓存游戏资源的类。
-
-    方法:
-    
-        init(directory: str, prefix: str) -> None: 初始化缓存，并从指定目录加载图像。
-        get(part: str, file: str) -> pygame.Surface: 获取特定文件的缓存内容。
-        block(block_file: str) -> pygame.Surface: 从缓存中获取一个块。
-        character(character_file: str) -> pygame.Surface: 从缓存中获取一个角色。
-        enemy(enemy_file: str) -> pygame.Surface: 从缓存中获取一个敌人。
-        item(item_file: str) -> pygame.Surface: 从缓存中获取一个物品。
-        npc(npc_file: str) -> pygame.Surface: 从缓存中获取一个 NPC。
-        tileset(tileset_file: str) -> pygame.Surface: 从缓存中获取一个图块集。
-        system(system_file: str) -> pygame.Surface: 从缓存中获取一个系统文件。
     """
     
     __cache: dict[str, dict[str, pygame.Surface]] # 缓存字典

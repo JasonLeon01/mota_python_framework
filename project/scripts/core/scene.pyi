@@ -7,12 +7,6 @@ class Scene_Base:
     属性:
     
         __quitted: 退出标志。
-        
-    方法:
-    
-        load_data_from_json(file): 从JSON文件中加载数据。
-        update(): 更新方法。
-        quit(): 退出方法。
     """
     
     __quitted: bool

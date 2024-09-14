@@ -5,15 +5,6 @@ class Text(Surface):
     文本类。
 
     该类继承自Surface类，用于在画布上绘制文本。
-        
-    方法:
-
-        refresh(): 刷新文本内容。
-        get_content(): 获取文本内容。
-        set_content(new_content): 设置新的文本内容。
-        get_colour(): 获取文本颜色。
-        set_colour(new_colour): 设置新的文本颜色。
-        set_font_style(new_font_style): 设置新的字体样式。
     """
 
     def __init__(self, content: str, pos: tuple[int, int] = (0, 0), colour: tuple[int, int, int, int] = (255, 255, 255, 255)) -> None:

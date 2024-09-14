@@ -6,19 +6,9 @@ class Window(Surface):
     窗口类。
     
     该类继承自Surface类，用于在画布上绘制窗口。
-
-    方法:
-
-        set_rect(x, y, width, height): 设置选择矩形。
-        update(): 更新窗口对象。
-        __presave_corner(area_rects): 预存窗口四角资源。
-        __render_corner(area_caches, positions, dst): 绘制窗口四角。
-        __render_edge(area_rects, target_scales, positions, dst): 绘制窗口边缘。
-        __render_back(): 绘制窗口背景。
-        __render_rect(rect, dst): 绘制矩形，含选择矩形。
     """
 
-    def __init__(self, size: tuple[int, int], pos: tuple[int, int] = (0, 0), viewport: pygame.Surface = None) -> None:
+    def __init__(self, size: tuple[int, int], pos: tuple[int, int] = (0, 0)) -> None:
         """
         初始化一个窗口对象。
         
@@ -26,7 +16,6 @@ class Window(Surface):
 
             size: 窗口的尺寸。
             pos: 窗口的位置。
-            viewport: 绘制所在的视口，默认为System.default_viewport。
         """
 
         self.contents: Surface
@@ -71,8 +60,14 @@ class Window(Surface):
         """
         pass
     
-    def update(self) -> None:
-        """更新窗口对象。"""
+    def update(self, dst: Surface) -> None:
+        """
+        更新窗口对象。
+        
+        参数:
+        
+            dst: 目标画布。
+        """
         pass
 
     def __presave_corner(self, area_rects: dict[str, list[tuple[int, int, int, int]]]) -> None:

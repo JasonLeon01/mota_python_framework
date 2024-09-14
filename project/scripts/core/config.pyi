@@ -1,9 +1,6 @@
 class Config:
     """
     表示一个配置对象。
-    
-    方法:
-        init(cls, file): 初始化配置设置。
     """
     
     windowskin_file: str

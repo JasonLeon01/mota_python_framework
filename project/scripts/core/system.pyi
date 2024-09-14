@@ -5,14 +5,6 @@ class System:
     系统类。
 
     该类提供了系统的基本属性和方法。
-        
-    方法:
-
-        init(inifile): 初始化系统的基本属性。
-        get_size(): 获取窗口尺寸。
-        get_scale(): 获取窗口缩放比例。
-        change_scale(scale): 更改窗口缩放比例。
-        get_variable(name): 获取系统变量。
     """
     
     __width: int

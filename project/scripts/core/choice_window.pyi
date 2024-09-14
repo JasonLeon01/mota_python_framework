@@ -3,21 +3,9 @@ from project.scripts.core.window import Window
 class ChoiceWindow(Window):
     """
     表示一个选择窗口。
-    
-    方法:
-
-        __init__(size: tuple[int, int], pos: tuple[int, int], viewport = None) -> None: 初始化一个 ChoiceWindow 对象。
-        rows() -> int: 返回 ChoiceWindow 的行数。
-        update_cursor_rect() -> None: 更新光标的矩形。
-        mouse_in_rect() -> bool: 判断鼠标是否在 ChoiceWindow 的矩形内。
-        confirm() -> bool: 判定是否确认，含有鼠标点击和键盘触发两种情况。
-        cancel() -> bool: 判定是否取消，含有鼠标点击和键盘触发两种情况。
-        _key_response() -> None: 处理键盘输入，包括上下左右键，用于选择。
-        _mouse_response() -> None: 处理鼠标输入，包括鼠标滚轮，用于选择。
-        update() -> None: 更新 ChoiceWindow 对象至视口画面。
     """
 
-    def __init__(self, size: tuple[int, int], pos: tuple[int, int], viewport) -> None:
+    def __init__(self, size: tuple[int, int], pos: tuple[int, int]) -> None:
         """
         初始化一个 ChoiceWindow 对象。
 
@@ -25,7 +13,6 @@ class ChoiceWindow(Window):
         
             size (tuple[int, int]): ChoiceWindow 的大小。
             pos (tuple[int, int]): ChoiceWindow 的位置。
-            viewport: 可选参数，视口设置，默认为 System.default_viewport。
         """
 
         self.column: int

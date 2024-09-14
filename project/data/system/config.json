@@ -2,7 +2,7 @@
     "windowskin_file": "001-Blue01",
     "title_file": "GrassBackground",
     "font_name": "NotoSansSC-Regular.ttf",
-    "title_bgm": "Airship.flac",
+    "title_bgm": "Airship.ogg",
     "cursor_se": "cursor.ogg",
     "decision_se": "decision1.ogg",
     "cancel_se": "cancel.ogg",

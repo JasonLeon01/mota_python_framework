@@ -7,8 +7,8 @@ from project.scripts.core.input import Input
 import pygame
 
 class ChoiceWindow(Window):
-    def __init__(self, size, pos, viewport = None):
-        super().__init__(size, pos, viewport)
+    def __init__(self, size, pos):
+        super().__init__(size, pos)
         self.column = 1
         self.cursor_height = 32
         self.index = 0
@@ -79,8 +79,8 @@ class ChoiceWindow(Window):
                 Audio.play_voice(Config.cursor_se)
             System.wheel = 0
 
-    def update(self):
-        super().update()
+    def update(self, dst):
+        super().update(dst)
         if not self.is_active or self.items == 0 or self.index < 0:
             return
         

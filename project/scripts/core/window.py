@@ -5,13 +5,13 @@ from project.scripts.core.config import Config
 import pygame
 
 class Window(Surface):
-    def __init__(self, size, pos=(0, 0), viewport=None):
+    def __init__(self, size, pos=(0, 0)):
         self.contents = None
-        super().__init__(size, pos, viewport)
+        super().__init__(size, pos)
         self.asset = Cache.system(Config.windowskin_file)
         self.back_opacity = Config.window_opacity
-        self.__window_back = Surface(size, (0, 0), self)
-        self.__content_surface = Surface((size[0] - 32, size[1] - 32), (16, 16), self)
+        self.__window_back = Surface(size, (0, 0))
+        self.__content_surface = Surface((size[0] - 32, size[1] - 32), (16, 16))
         self.__has_rect = False
         self.__rect_rect = (0, 0, 0, 0)
         self.__presave_corner({
@@ -36,18 +36,17 @@ class Window(Surface):
         self.__has_rect = True
         self.__rect_rect = (x, y, width, height)
     
-    def update(self):
+    def update(self, dst):
         self.__render_count += 1
         self.clear()
-        self.__window_back.update()
+        self.__window_back.update(self)
         if self.contents:
             self.__content_surface.clear()
-            self.contents.viewport = self.__content_surface
-            self.contents.update()
+            self.contents.update(self.__content_surface)
             if self.__has_rect:
                 self.__render_rect(self.__rect_rect, self.__content_surface)
-            self.__content_surface.update()
-        super().update()
+            self.__content_surface.update(self)
+        super().update(dst)
 
     def __presave_corner(self, area_rects):
         self.__cached_corner = {}

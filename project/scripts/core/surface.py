@@ -1,12 +1,11 @@
 import logging, enum
-from project.scripts.core.system import System
 import pygame
 
 class Surface(pygame.Surface):
     class FontStyle(enum.Enum):
         NORMAL, SHADOW, STROKE = range(3)
 
-    def __init__(self, size, pos = (0, 0), viewport = None):
+    def __init__(self, size, pos = (0, 0)):
         super().__init__(size, pygame.SRCALPHA)
         self.x, self.y = pos
         self.ox = 0
@@ -19,11 +18,9 @@ class Surface(pygame.Surface):
         self.font_style = self.FontStyle.NORMAL
         self.is_visible = True
         self.is_centre = False
-        if viewport is None:
-            viewport = System.default_viewport
-        self.viewport = viewport
         self._sprite_group = []
-        logging.info('Surface initialized.')
+        self._surface_group = []
+        logging.info('Surface initialized')
         
     def get_size(self):
         return self._size
@@ -40,8 +37,21 @@ class Surface(pygame.Surface):
         self._sprite_group.clear()
         logging.info('Sprite cleared from surface. %s', self)
 
+    def add_surface(self, surface):
+        self._surface_group.append(surface)
+        logging.info('Surface added into surface. %s', surface)
+    
+    def remove_surface(self, surface):
+        self._surface_group.remove(surface)
+        logging.info('Surface removed from surface. %s', surface)
+
+    def clear_surface(self):
+        self._surface_group.clear()
+        logging.info('Surface cleared from surface. %s', self)
+
     def draw_text(self, x, y, width, height, text, pos=0, colour=(255, 255, 255, 255)):
         logging.info('text %s', text)
+        from project.scripts.core.system import System
         size = System.font.size(text)
         dx, dy = 0, 0
         if size[0] < width:
@@ -72,19 +82,29 @@ class Surface(pygame.Surface):
         if need_log:
             logging.info('Surface cleared. %s', self)
         
-    def update(self):
+    def update(self, dst):
         if not self.is_visible:
             return
         
         self.angle = self.angle % 360
         
-        row_surface = self.copy()
-        for sprite in self._sprite_group:
-            sprite.update(row_surface)
+        total_count = len(self._surface_group) + len(self._sprite_group)
+        raw_surface = self.copy()
+        count, z = 0, 0
+        while count < total_count:
+            for sprite in self._sprite_group:
+                if sprite.z == z:
+                    sprite.update(raw_surface)
+                    count += 1
+            for surface in self._surface_group:
+                if surface.z == z:
+                    surface.update(raw_surface)
+                    count += 1
+            z += 1
         if self.scale != 1.0 or self.angle != 0:
-            draw_surface = pygame.transform.rotozoom(row_surface, self.angle, self.scale)
+            draw_surface = pygame.transform.rotozoom(raw_surface, self.angle, self.scale)
         else:
-            draw_surface = row_surface
+            draw_surface = raw_surface
         
         draw_surface.set_alpha(self.opacity)
         
@@ -93,7 +113,7 @@ class Surface(pygame.Surface):
         rect.y = self.y - self.oy
         if self.is_centre:
             rect.center = (self.x, self.y)
-        self.viewport.blit(draw_surface, (rect.x, rect.y))
+        dst.blit(draw_surface, (rect.x, rect.y))
             
     def get_color(self, clr):
         color_map = {
@@ -111,3 +131,8 @@ class Surface(pygame.Surface):
             "pink": (255, 128, 255, 255)
         }
         return color_map.get(clr, (255, 255, 255, 255))
+    
+    def dispose(self):
+        self.clear_sprite()
+        self.clear_surface()
+        logging.info('Surface deleted. %s', self)

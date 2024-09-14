@@ -1,7 +1,6 @@
-import os
-import sys
 from project.scripts.core.cache import Cache
 from project.scripts.core.graphics import Graphics
+from project.scripts.core.viewport import ViewportManager
 from project.scripts.module.object import Object
 from project.scripts.core.surface import Surface
 import pygame
@@ -9,8 +8,11 @@ import pygame
 class Map:
     def __init__(self):
         self.name = ''
+        self.width = 11
+        self.height = 11
         self.tileset = None
         self.bgm = None
+        self.background = None
         self.tile = []
         # 地图主视口，用来限制显示
         self.viewport = Surface((416, 416))
@@ -46,19 +48,17 @@ class Map:
             add_obj.frame_index = obj['loc'][0]
             add_obj.id = obj['id']
             add_obj.name = obj['name']
-            add_obj.map_x = obj['pos'][0]
-            add_obj.map_y = obj['pos'][1]
+            add_obj.x = obj['pos'][0]
+            add_obj.y = obj['pos'][1]
             add_obj.condition = obj['condition']
-            add_obj.move = eval(obj['move'])
+            add_obj.is_animating = eval(obj['move'])
             add_obj.todo = obj['todo']
-            self.viewport2.add_sprite(add_obj)
+            ViewportManager.add_sprite(add_obj, self.viewport2)
 
-    def update(self, dst = Graphics.canvas):
-        if not self.is_visible:
-            return
-        self.viewport.fill((0, 0, 0, 0))
+    def update(self, dst):
+        self.viewport.clear()
         self.viewport.blit(self.background, (0, 0))
-        self.viewport2.fill((0, 0, 0, 0))
+        self.viewport2.clear()
         _, __, width, height = self.tileset.get_rect()
         line_max = width // 32
         column_max = height // 32

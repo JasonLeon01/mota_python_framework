@@ -6,19 +6,9 @@ class Surface(pygame.Surface):
     画布类。
 
     该类继承自pygame.Surface，提供了一系列的方法，用于绘制图像。
-        
-    方法:
-
-        add_sprite(sprite): 添加精灵到画布中。
-        remove_sprite(sprite): 从画布中移除精灵。
-        clear_sprite(): 清除画布中的精灵。
-        draw_text(x, y, width, height, text, pos, colour): 在画布上绘制文本。
-        clear(need_log): 清除画布。
-        update(): 更新画布。
-        get_color(clr): 获取颜色。
     """
     
-    def __init__(self, size: tuple[int, int], pos: tuple[int, int] = (0, 0), viewport: pygame.Surface = System.default_viewport) -> None:
+    def __init__(self, size: tuple[int, int], pos: tuple[int, int] = (0, 0)) -> None:
         """
         初始化一个画布对象。
 
@@ -64,7 +54,10 @@ class Surface(pygame.Surface):
         
         self._sprite_group: list[Sprite]
         """画布的精灵组"""
-        
+
+        self._surface_group: list[Surface]
+        """画布的画布组"""
+
         pass
         
     def get_size(self) -> tuple[int, int]:
@@ -101,6 +94,30 @@ class Surface(pygame.Surface):
         """清除画布中的精灵。"""
         pass
 
+    def add_surface(self, surface: Surface) -> None:
+        """
+        添加画布到画布中。
+        
+        参数:
+
+            surface: 画布对象。
+        """
+        pass
+
+    def remove_surface(self, surface: Surface) -> None:
+        """
+        从画布中移除画布。
+        
+        参数:
+
+            surface: 画布对象。
+        """
+        pass
+
+    def clear_surface(self) -> None:
+        """清除画布中的画布。"""
+        pass
+
     def draw_text(self, x: int, y: int, width: int, height: int, text: str, pos: int = 0, colour: tuple[int, int, int, int] = (255, 255, 255, 255)) -> None:
         """
         在画布上绘制单行的文本。
@@ -127,10 +144,16 @@ class Surface(pygame.Surface):
         """
         pass
         
-    def update(self) -> None:
-        """更新画布。"""
-        pass
+    def update(self, dst) -> None:
+        """
+        更新画布。
+
+        参数:
             
+                dst: 目标画布。
+        """
+        pass
+
     def get_color(self, clr: str) -> tuple[int, int, int, int]:
         """
         获取颜色。
@@ -139,4 +162,8 @@ class Surface(pygame.Surface):
 
             clr: 颜色名称。
         """
+        pass
+
+    def dispose(self) -> None:
+        """释放资源。"""
         pass
