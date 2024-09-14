@@ -66,7 +66,8 @@ class Graphics:
         if os.environ.get('DEBUG') == 'True':
             cls.debug_info(System.default_viewport)
         
-        System.canvas.blit(pygame.transform.smoothscale(System.default_viewport, System.get_size()), (0, 0))
+        width, height = System.get_size()
+        System.canvas.blit(pygame.transform.smoothscale(System.default_viewport, (width * System.get_scale(), height * System.get_scale())), (0, 0))
         pygame.display.flip()
         cls.__frame_count += 1
         System.clock.tick(System.frame_rate)
