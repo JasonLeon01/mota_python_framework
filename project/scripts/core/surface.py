@@ -1,9 +1,11 @@
-import logging, enum
+import logging, enum, copy
+from project.scripts.core.system import System
 import pygame
 
+class FontStyle(enum.Enum):
+    NORMAL, SHADOW, STROKE = range(3)
+
 class Surface(pygame.Surface):
-    class FontStyle(enum.Enum):
-        NORMAL, SHADOW, STROKE = range(3)
 
     def __init__(self, size, pos = (0, 0)):
         super().__init__(size, pygame.SRCALPHA)
@@ -15,7 +17,7 @@ class Surface(pygame.Surface):
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
-        self.font_style = self.FontStyle.NORMAL
+        self.font_style = FontStyle.NORMAL
         self.is_visible = True
         self.is_centre = False
         self._sprite_group = []
@@ -49,10 +51,12 @@ class Surface(pygame.Surface):
         self._surface_group.clear()
         logging.info('Surface cleared from surface. %s', self)
 
-    def draw_text(self, x, y, width, height, text, pos=0, colour=(255, 255, 255, 255)):
+    def draw_text(self, x, y, width, height, text, pos=0, colour=(255, 255, 255, 255), font_size = -1):
         logging.info('text %s', text)
         from project.scripts.core.system import System
-        size = System.font.size(text)
+        if font_size == -1:
+            font_size = System.default_font_size
+        size = System.fonts[font_size].size(text)
         dx, dy = 0, 0
         if size[0] < width:
             if (pos == 1):
@@ -62,17 +66,17 @@ class Surface(pygame.Surface):
         if size[1] < height:
             dy = (height - size[1]) / 2
 
-        if self.font_style != self.FontStyle.NORMAL:
-            effect_text_surface = System.font.render(text, True, (0, 0, 0))
-            if self.font_style == self.FontStyle.SHADOW:
+        if self.font_style != FontStyle.NORMAL:
+            effect_text_surface = System.fonts[font_size].render(text, True, (0, 0, 0))
+            if self.font_style == FontStyle.SHADOW:
                 self.blit(effect_text_surface, (x + dx + 1, y + dy + 1), (0, 0, width, height))
-            if self.font_style == self.FontStyle.STROKE:
+            if self.font_style == FontStyle.STROKE:
                 self.blit(effect_text_surface, (x + dx + 1, y + dy + 1), (0, 0, width, height))
                 self.blit(effect_text_surface, (x + dx - 1, y + dy + 1), (0, 0, width, height))
                 self.blit(effect_text_surface, (x + dx + 1, y + dy - 1), (0, 0, width, height))
                 self.blit(effect_text_surface, (x + dx - 1, y + dy - 1), (0, 0, width, height))
                 
-        text_surface = System.font.render(text, True, colour)
+        text_surface = System.fonts[font_size].render(text, True, colour)
         self.blit(text_surface, (x + dx, y + dy), (0, 0, width, height))
         
         logging.info('Text drawn. %s', text)

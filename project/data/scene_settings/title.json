@@ -5,6 +5,16 @@
             "frames":  "Cache.system(Config.title_file)"
         }
     },
+    "title": {
+        "type": "text.Text",
+        "para": {
+            "content": "'Mota Python Framework'",
+            "size": "(480, 64)",
+            "pos": "(80, 160)",
+            "font_size": 36,
+            "font_style": "FontStyle.STROKE"
+        }
+    },
     "star_sprite": {
         "type": "sprite.Sprite",
         "para": {

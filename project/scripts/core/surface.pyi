@@ -1,6 +1,15 @@
 import pygame
 from project.scripts.core.sprite import Sprite
 
+class FontStyle:
+    """字体样式枚举类。"""
+    NORMAL = 0
+    """正常"""
+    SHADOW = 1
+    """阴影"""
+    STROKE = 2
+    """描边"""
+
 class Surface(pygame.Surface):
     """
     画布类。
@@ -118,7 +127,7 @@ class Surface(pygame.Surface):
         """清除画布中的画布。"""
         pass
 
-    def draw_text(self, x: int, y: int, width: int, height: int, text: str, pos: int = 0, colour: tuple[int, int, int, int] = (255, 255, 255, 255)) -> None:
+    def draw_text(self, x: int, y: int, width: int, height: int, text: str, pos: int = 0, colour: tuple[int, int, int, int] = (255, 255, 255, 255), font_size: int = -1) -> None:
         """
         在画布上绘制单行的文本。
         

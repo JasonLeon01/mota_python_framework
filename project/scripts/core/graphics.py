@@ -1,7 +1,5 @@
 from math import ceil
-import os
-import logging
-import datetime
+import os, psutil, logging, datetime
 from project.scripts.core.system import System
 from project.scripts.core.viewport import ViewportManager
 import pygame
@@ -78,8 +76,10 @@ class Graphics:
         delta_time = now_time - cls.__last_frame_time
         cls.__last_frame_time = now_time
         cls.__total_time += delta_time.total_seconds()
-        draw_surface.blit(System.font.render(f'FPS: {1.0 / delta_time.total_seconds():.2f}', True, (255, 255, 255)), (0, 0))
-        draw_surface.blit(System.font.render(f'Average FPS: {cls.__frame_count / cls.__total_time:.2f}', True, (255, 255, 255)), (0, 20))
+        draw_surface.blit(System.fonts[12].render(f'FPS: {1.0 / delta_time.total_seconds():.2f}', True, (255, 255, 255)), (0, 0))
+        draw_surface.blit(System.fonts[12].render(f'Average FPS: {cls.__frame_count / cls.__total_time:.2f}', True, (255, 255, 255)), (0, 16))
+        process = psutil.Process()
+        draw_surface.blit(System.fonts[12].render(f'Memory Usage: {process.memory_info().rss / (1024 * 1024):.2f}MB', True, (255, 255, 255)), (0, 32))
 
     @classmethod
     def freeze(cls):

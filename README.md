@@ -3,10 +3,11 @@
 ## 需求和安装
 Python 3.9.0或更高级的版本，如果使用的不是3.9.0，那么就必须根据[Game-Launcher](https://github.com/JasonLeon01/Game-Launcher)里面的`README.md`指示构建自己的exe。
 
-如果要将项目整体打包为新的exe，则可以安装`pygame`至系统：
+如果要将项目整体打包为新的exe，则可以安装`pygame`和`psutil`至系统：
 
 ```
 pip install pygame==2.5.2
+pip install psutil==6.0.0
 ```
 
 同时需删除自带引用`pygame`处前方的
@@ -19,6 +20,7 @@ sys.path.append(os.path.join(os.getcwd(), 'custom_lib'))
 
 ```
 pip install pygame==2.5.2 --target=custom_lib
+pip install psutil==6.0.0 --target=custom_lib
 ```
 
 ## 注意

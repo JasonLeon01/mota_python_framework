@@ -6,7 +6,7 @@ from project.scripts.core.surface import Surface
 import pygame
 
 class Map:
-    def __init__(self):
+    def __init__(self, pos = (192, 32)):
         self.name = ''
         self.width = 11
         self.height = 11
@@ -15,7 +15,7 @@ class Map:
         self.background = None
         self.tile = []
         # 地图主视口，用来限制显示
-        self.viewport = Surface((416, 416))
+        self.viewport = Surface((416, 416), pos)
         # 地图画面视口
         self.viewport2 = None
         
@@ -28,6 +28,7 @@ class Map:
         self.width = map_data['width']
         self.height = map_data['height']
         if self.viewport2:
+            ViewportManager.remove_viewport(self.viewport2)
             self.viewport2.clear()
             self.viewport2.clear_sprite()
             self.viewport2 = None

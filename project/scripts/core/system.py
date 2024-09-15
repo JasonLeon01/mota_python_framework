@@ -10,6 +10,7 @@ class System:
     title = ""
     font = None
     frame_rate = 30
+    default_font_size = 22
     running = False
     clock = None
     is_music_on = True
@@ -30,8 +31,11 @@ class System:
         pygame.display.set_caption(cls.title)
         icon = pygame.image.load('icon.ico')
         pygame.display.set_icon(icon)
-        cls.font = pygame.font.Font((r'project\assets\fonts\{}'.format(Config.font_name)), 22)
+        cls.fonts = {}
+        for i in range(12, 49):
+            cls.fonts[i] = pygame.font.Font((r'project\assets\fonts\{}'.format(Config.font_name)), i)
         cls.frame_rate = iniconfig['Mota'].getint('FrameRate')
+        cls.default_font_size = iniconfig['Mota'].getint('FontSize')
         cls.running = True
         cls.clock = pygame.time.Clock()
         cls.is_music_on = True

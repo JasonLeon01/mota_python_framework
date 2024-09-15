@@ -3,9 +3,9 @@ from project.scripts.core.cache import Cache
 from project.scripts.core.config import Config
 import project.scripts.core.method as method
 from project.scripts.core.sprite import Sprite
+from project.scripts.core.surface import FontStyle
 from project.scripts.core.surface import Surface
 from project.scripts.core.system import System
-from project.scripts.core.window import Window
 from project.scripts.core.graphics import Graphics
 from project.scripts.core.viewport import ViewportManager
 
