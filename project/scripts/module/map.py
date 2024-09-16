@@ -1,4 +1,5 @@
 from project.scripts.core.cache import Cache
+from project.scripts.core.sprite import Sprite
 from project.scripts.core.graphics import Graphics
 from project.scripts.core.viewport import ViewportManager
 from project.scripts.module.object import Object
@@ -31,7 +32,6 @@ class Map:
             ViewportManager.remove_viewport(self.viewport2)
             self.viewport2.clear()
             self.viewport2.clear_sprite()
-            self.viewport2 = None
         self.viewport2 = Surface((self.width * 32, self.height * 32))
         self.tileset = map_data['tileset']
         self.bgm = map_data['bgm']
@@ -45,16 +45,12 @@ class Map:
             frame_count = cache.get_rect().width // 32
             for i in range(frame_count):
                 frames.append(pygame.Surface.subsurface(cache, (i * 32, obj['loc'][1], 32, 32)))
-            add_obj = Object(frames)
-            add_obj.frame_index = obj['loc'][0]
+            add_obj = Object(Sprite(frames), (obj['pos'][0], obj['pos'][1]), obj['interval'], eval(obj['move']))
             add_obj.id = obj['id']
             add_obj.name = obj['name']
-            add_obj.x = obj['pos'][0]
-            add_obj.y = obj['pos'][1]
             add_obj.condition = obj['condition']
-            add_obj.is_animating = eval(obj['move'])
             add_obj.todo = obj['todo']
-            ViewportManager.add_sprite(add_obj, self.viewport2)
+            self.viewport2.add_sprite(add_obj)
 
     def update(self, dst):
         self.viewport.clear()
@@ -63,10 +59,10 @@ class Map:
         _, __, width, height = self.tileset.get_rect()
         line_max = width // 32
         column_max = height // 32
-        for idx in range(len(self.tile)):
+        for tile in self.tile:
             for y in range(column_max):
                 for x in range(line_max):
-                    tile_id = self.tile[idx][y][x]
+                    tile_id = tile[y][x]
                     if tile_id == 0:
                         continue
                     self.viewport2.blit(self.tileset, (x * 32, y * 32), ((tile_id - 1) % line_max * 32, (tile_id - 1) // line_max * 32, 32, 32))
