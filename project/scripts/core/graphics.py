@@ -78,10 +78,10 @@ class Graphics:
         delta_time = now_time - cls.__last_frame_time
         cls.__last_frame_time = now_time
         cls.__total_time += delta_time.total_seconds()
-        cls.__debug_font.render_to(draw_surface, (0, 0), f'FPS: {1.0 / delta_time.total_seconds():.2f}', (255, 255, 255))
-        cls.__debug_font.render_to(draw_surface, (0, 16), f'Average FPS: {cls.__frame_count / cls.__total_time:.2f}', (255, 255, 255))
+        cls.__debug_font.render_to(draw_surface, (16, 16), f'FPS: {1.0 / delta_time.total_seconds():.2f}', (255, 255, 255))
+        cls.__debug_font.render_to(draw_surface, (16, 32), f'Average FPS: {cls.__frame_count / cls.__total_time:.2f}', (255, 255, 255))
         process = psutil.Process()
-        cls.__debug_font.render_to(draw_surface, (0, 32), f'Memory Usage: {process.memory_info().rss / (1024 * 1024):.2f}MB', (255, 255, 255))
+        cls.__debug_font.render_to(draw_surface, (16, 48), f'Memory Usage: {process.memory_info().rss / (1024 * 1024):.2f}MB', (255, 255, 255))
 
     @classmethod
     def freeze(cls):

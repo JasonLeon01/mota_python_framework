@@ -131,7 +131,7 @@ class Surface(pygame.Surface):
         """清除画布中的画布。"""
         pass
 
-    def draw_text(self, x: int, y: int, width: int, height: int, text: str, pos: int = 0, colour: tuple[int, int, int, int] = (255, 255, 255, 255), font_size: int = -1) -> None:
+    def draw_text(self, x: int, y: int, width: int, height: int, text: str, pos: int = 0, colour: tuple[int, int, int, int] = (255, 255, 255, 255), font_size: float = 0, back_colour: tuple[int, int, int, int] = None, font_style: int = pygame.freetype.STYLE_DEFAULT) -> None:
         """
         在画布上绘制单行的文本。
         

@@ -12,7 +12,8 @@
             "size": "(480, 64)",
             "pos": "(80, 160)",
             "font_size": 36,
-            "font_style": "FontStyle.STROKE"
+            "font_effect": "FontStyle.STROKE",
+            "font_style": "pygame.freetype.STYLE_WIDE | pygame.freetype.STYLE_STRONG | pygame.freetype.STYLE_OBLIQUE"
         }
     },
     "star_sprite": {

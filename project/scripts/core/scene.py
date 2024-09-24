@@ -1,4 +1,5 @@
 import logging, os
+import pygame, pygame.freetype
 from project.scripts.core.cache import Cache
 from project.scripts.core.config import Config
 import project.scripts.core.method as method

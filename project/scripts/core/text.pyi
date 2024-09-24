@@ -70,12 +70,3 @@ class Text(Surface):
         """
         pass
         
-    def set_font_style(self, new_font_style: Surface.FontStyle) -> None:
-        """
-        设置新的字体样式。
-
-        参数:
-
-            new_font_style: 新的字体样式。
-        """
-        pass
