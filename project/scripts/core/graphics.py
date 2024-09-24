@@ -3,6 +3,7 @@ import os, psutil, logging, datetime
 from project.scripts.core.system import System
 from project.scripts.core.viewport import ViewportManager
 import pygame
+import pygame.freetype
 
 class Graphics:
     __animation_group = []
@@ -17,6 +18,7 @@ class Graphics:
         cls.__frame_count = 0
         cls.__freeze_Image = None
         cls.__last_frame_time = datetime.datetime.now()
+        cls.__debug_font = pygame.freetype.Font(System.font.path, 12)
         logging.info('Graphics initialized.')
     
     @classmethod
@@ -76,10 +78,10 @@ class Graphics:
         delta_time = now_time - cls.__last_frame_time
         cls.__last_frame_time = now_time
         cls.__total_time += delta_time.total_seconds()
-        draw_surface.blit(System.fonts[12].render(f'FPS: {1.0 / delta_time.total_seconds():.2f}', True, (255, 255, 255)), (0, 0))
-        draw_surface.blit(System.fonts[12].render(f'Average FPS: {cls.__frame_count / cls.__total_time:.2f}', True, (255, 255, 255)), (0, 16))
+        cls.__debug_font.render_to(draw_surface, (0, 0), f'FPS: {1.0 / delta_time.total_seconds():.2f}', (255, 255, 255))
+        cls.__debug_font.render_to(draw_surface, (0, 16), f'Average FPS: {cls.__frame_count / cls.__total_time:.2f}', (255, 255, 255))
         process = psutil.Process()
-        draw_surface.blit(System.fonts[12].render(f'Memory Usage: {process.memory_info().rss / (1024 * 1024):.2f}MB', True, (255, 255, 255)), (0, 32))
+        cls.__debug_font.render_to(draw_surface, (0, 32), f'Memory Usage: {process.memory_info().rss / (1024 * 1024):.2f}MB', (255, 255, 255))
 
     @classmethod
     def freeze(cls):

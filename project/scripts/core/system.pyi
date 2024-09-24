@@ -1,4 +1,5 @@
 import pygame
+import pygame.freetype
 
 class System:
     """
@@ -22,7 +23,7 @@ class System:
     title: str
     """窗口标题"""
     
-    font: pygame.font.Font
+    font: pygame.freetype.Font
     """窗口字体"""
     
     frame_rate: int

@@ -1,4 +1,5 @@
 import pygame
+import pygame.freetype
 from project.scripts.core.sprite import Sprite
 
 class FontStyle:
@@ -54,6 +55,9 @@ class Surface(pygame.Surface):
         
         self.scale: float
         """画布的缩放比例"""
+        
+        self.font: pygame.freetype.Font
+        """画布的字体"""
         
         self.is_visible: bool
         """画布的可见性"""

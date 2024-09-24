@@ -1,6 +1,7 @@
 import logging, enum, copy
 from project.scripts.core.system import System
 import pygame
+import pygame.freetype
 
 class FontStyle(enum.Enum):
     NORMAL, SHADOW, STROKE = range(3)
@@ -17,6 +18,7 @@ class Surface(pygame.Surface):
         self.angle = 0
         self.opacity = 255
         self.scale = 1.0
+        self.font = pygame.freetype.Font(System.font.path, System.font.size)
         self.font_style = FontStyle.NORMAL
         self.is_visible = True
         self.is_centre = False
@@ -53,10 +55,11 @@ class Surface(pygame.Surface):
 
     def draw_text(self, x, y, width, height, text, pos=0, colour=(255, 255, 255, 255), font_size = -1):
         logging.info('text %s', text)
-        from project.scripts.core.system import System
-        if font_size == -1:
-            font_size = System.default_font_size
-        size = System.fonts[font_size].size(text)
+        if font_size != -1:
+            font_size_record = self.font.size
+            self.font.size = font_size
+        size_rect = self.font.get_rect(text)
+        size = [size_rect.width, size_rect.height]
         dx, dy = 0, 0
         if size[0] < width:
             if (pos == 1):
@@ -67,7 +70,7 @@ class Surface(pygame.Surface):
             dy = (height - size[1]) / 2
 
         if self.font_style != FontStyle.NORMAL:
-            effect_text_surface = System.fonts[font_size].render(text, True, (0, 0, 0))
+            effect_text_surface, _ = self.font.render(text, (0, 0, 0))
             if self.font_style == FontStyle.SHADOW:
                 self.blit(effect_text_surface, (x + dx + 1, y + dy + 1), (0, 0, width, height))
             if self.font_style == FontStyle.STROKE:
@@ -76,8 +79,10 @@ class Surface(pygame.Surface):
                 self.blit(effect_text_surface, (x + dx + 1, y + dy - 1), (0, 0, width, height))
                 self.blit(effect_text_surface, (x + dx - 1, y + dy - 1), (0, 0, width, height))
                 
-        text_surface = System.fonts[font_size].render(text, True, colour)
+        text_surface, _ = self.font.render(text, colour)
         self.blit(text_surface, (x + dx, y + dy), (0, 0, width, height))
+        if font_size != -1:
+            self.font.size = font_size_record
         
         logging.info('Text drawn. %s', text)
 

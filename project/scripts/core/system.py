@@ -1,6 +1,7 @@
 import configparser, logging
 from project.scripts.core.config import Config
 import pygame
+import pygame.freetype
 
 class System:
     __width = 640
@@ -31,11 +32,9 @@ class System:
         pygame.display.set_caption(cls.title)
         icon = pygame.image.load('icon.ico')
         pygame.display.set_icon(icon)
-        cls.fonts = {}
-        for i in range(12, 49):
-            cls.fonts[i] = pygame.font.Font((r'project\assets\fonts\{}'.format(Config.font_name)), i)
         cls.frame_rate = iniconfig['Mota'].getint('FrameRate')
         cls.default_font_size = iniconfig['Mota'].getint('FontSize')
+        cls.font = pygame.freetype.Font(r'project\assets\fonts\{}'.format(Config.font_name), cls.default_font_size)
         cls.running = True
         cls.clock = pygame.time.Clock()
         cls.is_music_on = True

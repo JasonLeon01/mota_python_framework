@@ -6,7 +6,7 @@ from project.scripts.core.system import System
 class Text(Surface):
     def __init__(self, content, size, pos, font_size, font_style = FontStyle.NORMAL, colour=(255, 255, 255, 255)):
         super().__init__(size, pos)
-        self.__font_size = font_size
+        self.font.size = font_size
         self.font_style = font_style
         self.__content = content
         self.__colour = colour
@@ -15,7 +15,7 @@ class Text(Surface):
 
     def refresh(self):
         self.clear()
-        self.draw_text(0, 0, self._size[0], self._size[1], self.__content, 1, self.__colour, self.__font_size)
+        self.draw_text(0, 0, self._size[0], self._size[1], self.__content, 1, self.__colour)
         logging.info('Text refreshed.')
         
     def get_content(self):
@@ -40,10 +40,3 @@ class Text(Surface):
         self.refresh()
         logging.info('New font style settled.')
     
-    def get_font_size(self):
-        return self.__font_size
-    
-    def set_font_size(self, new_font_size):
-        self.__font_size = new_font_size
-        self.refresh()
-        logging.info('New font size settled.')
