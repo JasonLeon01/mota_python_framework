@@ -1,0 +1,17 @@
+{
+    "id": 0,
+    "name": "勇士",
+    "file": "classic-cha-braver01.png",
+    "attributes": {
+        "level": 1,
+        "hp": 100,
+        "atk": 10,
+        "def": 10,
+        "mdef": 5
+    },
+    "wealth": {
+        "exp": 0,
+        "gold": 0
+    },
+    "items": {}
+}

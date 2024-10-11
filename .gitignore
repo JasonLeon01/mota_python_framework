@@ -1,3 +1,8 @@
 app.log
 .vscode
 *.pyc
+Newtonsoft.Json.xml
+Newtonsoft.Json.dll
+MotaMaster.pdb
+MotaMaster.exe.config
+MotaMaster.exe

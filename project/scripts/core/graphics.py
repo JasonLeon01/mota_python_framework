@@ -1,9 +1,9 @@
 from math import ceil
-import os, psutil, logging, datetime
 from project.scripts.core.system import System
 from project.scripts.core.viewport import ViewportManager
 import pygame
 import pygame.freetype
+import os, logging, datetime
 
 class Graphics:
     __animation_group = []
@@ -74,6 +74,7 @@ class Graphics:
 
     @classmethod
     def debug_info(cls, draw_surface):
+        import psutil
         now_time = datetime.datetime.now()
         delta_time = now_time - cls.__last_frame_time
         cls.__last_frame_time = now_time
