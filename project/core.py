@@ -6,7 +6,7 @@ from project.scripts.core.viewport import ViewportManager
 from project.scripts.core.cache import Cache
 from project.scripts.core.graphics import Graphics
 
-Config.init(r'project\data\system\config.json')
+Config.init(r'project\data\config.json')
 System.init('mota.ini')
 ViewportManager.init()
 Cache.init(r'project\assets', '.png')
