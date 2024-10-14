@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "name": "小盾",
+    "file": [
+        "classic-equips.png",
+        0,
+        1
+    ],
+    "description": "一面小盾，似乎很坚固。",
+    "attributes_plus": {
+        "def": 5
+    },
+    "type": "armor",
+    "animation_id": -1
+}

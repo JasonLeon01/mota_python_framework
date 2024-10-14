@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "name": "铁剑",
+    "file": [
+        "classic-equips.png",
+        0,
+        2
+    ],
+    "description": "一把铁剑，似乎很锋利。",
+    "attributes_plus": {
+        "atk": 10
+    },
+    "type": "weapon",
+    "animation_id": 3
+}

@@ -13,5 +13,15 @@
         "exp": 0,
         "gold": 0
     },
-    "items": {}
+    "items": {},
+    "equip_slot": [
+        "weapon",
+        "armor"
+    ],
+    "equip": [
+        -1,
+        -1
+    ],
+    "alternative_equip": [0, 1, 2, 3],
+    "animation_id": 1
 }
