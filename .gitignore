@@ -6,3 +6,7 @@ Newtonsoft.Json.dll
 MotaMaster.pdb
 MotaMaster.exe.config
 MotaMaster.exe
+PowerLib.dll
+PowerLib.Winform.dll
+PowerLib.Winform.xml
+PowerLib.xml
